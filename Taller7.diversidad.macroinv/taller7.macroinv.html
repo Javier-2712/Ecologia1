@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Javier Rodríguez_Barrios y Kenedith Méndez">
-<meta name="dcterms.date" content="2023-05-17">
+<meta name="dcterms.date" content="2023-05-18">
 
 <title>Taller 7. Visualización de Comunidades</title>
 <style>
@@ -123,7 +123,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#paso-1.-completitud-de-las-muestras" id="toc-paso-1.-completitud-de-las-muestras" class="nav-link" data-scroll-target="#paso-1.-completitud-de-las-muestras">Paso 1. Completitud de las muestras</a></li>
   <li><a href="#paso-2.-análisis-asintótico" id="toc-paso-2.-análisis-asintótico" class="nav-link" data-scroll-target="#paso-2.-análisis-asintótico">Paso 2. Análisis asintótico</a></li>
   <li><a href="#paso-3.-perfil-no-asintótico-basado-en-interpolación-y-extrapolación-inext" id="toc-paso-3.-perfil-no-asintótico-basado-en-interpolación-y-extrapolación-inext" class="nav-link" data-scroll-target="#paso-3.-perfil-no-asintótico-basado-en-interpolación-y-extrapolación-inext">Paso 3. Perfil no asintótico basado en interpolación y extrapolación (iNEXT)</a></li>
-  <li><a href="#paso-4.-uniformidad-de-las-muestras" id="toc-paso-4.-uniformidad-de-las-muestras" class="nav-link" data-scroll-target="#paso-4.-uniformidad-de-las-muestras">Paso 4. Uniformidad de las muestras</a></li>
+  <li><a href="#paso-4.-uniformidad-de-las-muestras-tramos-evaluados" id="toc-paso-4.-uniformidad-de-las-muestras-tramos-evaluados" class="nav-link" data-scroll-target="#paso-4.-uniformidad-de-las-muestras-tramos-evaluados">Paso 4. Uniformidad de las muestras (tramos evaluados)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -152,7 +152,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 17, 2023</p>
+      <p class="date">May 18, 2023</p>
     </div>
   </div>
   
@@ -211,7 +211,8 @@ Atopsyche      159  18   1</code></pre>
 <p>La base de datos, también se puede cargar desde el icono “<code>Import Dataset</code>” ubicado a la derecha del panel de <code>posit.cloud</code> y seleccionar “<code>From text (base)</code>”</p>
 <p>Con el siguiente resumen estadístico se definen las abundancias para cada sitio evaluado (<code>Max.</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparación de estadísticos de las muestras evaluadas (A, B y C)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       A                 B                C        
  Min.   :   0.00   Min.   :  0.00   Min.   :  0.0  
@@ -245,15 +246,15 @@ Atopsyche      159  18   1</code></pre>
 
 $`STEP2. Asymptotic analysis`
   Assemblage         Diversity Observed Estimator  s.e.   LCL    UCL
-1          A  Species richness    83.00     98.04 12.36 83.00 122.27
-2          A Shannon diversity    13.91     14.05  0.23 13.59  14.51
-3          A Simpson diversity     6.66      6.66  0.14  6.40   6.93
-4          B  Species richness    78.00     86.65 11.74 78.00 109.66
-5          B Shannon diversity    24.31     24.64  0.49 23.68  25.59
-6          B Simpson diversity    16.03     16.10  0.38 15.36  16.84
-7          C  Species richness    65.00     75.56  8.96 65.00  93.12
-8          C Shannon diversity    15.56     15.80  0.42 14.98  16.63
-9          C Simpson diversity     7.97      7.99  0.26  7.49   8.49
+1          A  Species richness    83.00     98.04 14.03 83.00 125.53
+2          A Shannon diversity    13.91     14.05  0.29 13.48  14.63
+3          A Simpson diversity     6.66      6.66  0.16  6.36   6.97
+4          B  Species richness    78.00     86.65  9.15 78.00 104.58
+5          B Shannon diversity    24.31     24.64  0.49 23.67  25.60
+6          B Simpson diversity    16.03     16.10  0.39 15.33  16.87
+7          C  Species richness    65.00     75.56 10.20 65.00  95.56
+8          C Shannon diversity    15.56     15.80  0.42 14.99  16.62
+9          C Simpson diversity     7.97      7.99  0.24  7.52   8.46
 
 $`STEP3. Non-asymptotic coverage-based rarefaction and extrapolation analysis`
   Cmax = 0.999 q = 0 q = 1 q = 2
@@ -291,15 +292,15 @@ C      0.64  0.21  0.10</code></pre>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP2. Asymptotic analysis"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Assemblage         Diversity Observed Estimator  s.e.   LCL    UCL
-1          A  Species richness    83.00     98.04 12.36 83.00 122.27
-2          A Shannon diversity    13.91     14.05  0.23 13.59  14.51
-3          A Simpson diversity     6.66      6.66  0.14  6.40   6.93
-4          B  Species richness    78.00     86.65 11.74 78.00 109.66
-5          B Shannon diversity    24.31     24.64  0.49 23.68  25.59
-6          B Simpson diversity    16.03     16.10  0.38 15.36  16.84
-7          C  Species richness    65.00     75.56  8.96 65.00  93.12
-8          C Shannon diversity    15.56     15.80  0.42 14.98  16.63
-9          C Simpson diversity     7.97      7.99  0.26  7.49   8.49</code></pre>
+1          A  Species richness    83.00     98.04 14.03 83.00 125.53
+2          A Shannon diversity    13.91     14.05  0.29 13.48  14.63
+3          A Simpson diversity     6.66      6.66  0.16  6.36   6.97
+4          B  Species richness    78.00     86.65  9.15 78.00 104.58
+5          B Shannon diversity    24.31     24.64  0.49 23.67  25.60
+6          B Simpson diversity    16.03     16.10  0.39 15.33  16.87
+7          C  Species richness    65.00     75.56 10.20 65.00  95.56
+8          C Shannon diversity    15.56     15.80  0.42 14.99  16.62
+9          C Simpson diversity     7.97      7.99  0.24  7.52   8.46</code></pre>
 </div>
 </div>
 <p>La diferencia entre la diversidad estimada y la observada define al número de especies o taxones faltantes (no detectados). <code>s.e.</code> y <code>LCL</code>, son los errores estándar y los límites de confianza, respectivamente, para las proyecciones gráficas que se definen a continuación.</p>
@@ -337,7 +338,8 @@ C      0.64  0.21  0.10</code></pre>
 <h3 class="anchored" data-anchor-id="insumos-gráficos-de-los-cuatro-pasos">Insumos gráficos de los cuatro pasos</h3>
 <p><code>figure[[6]]</code> relaciona a las seis figuras que resumen el proceso de los cuatro pasos para valorar la diversidad de los tres sitios evaluados.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>figure[[<span class="dv">6</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figuras generadas por los cuatro pasos de la valoración de la diversidad.</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>figure[[<span class="dv">6</span>]]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -347,27 +349,39 @@ C      0.64  0.21  0.10</code></pre>
 <h3 class="anchored" data-anchor-id="paso-1.-completitud-de-las-muestras">Paso 1. Completitud de las muestras</h3>
 <p><code>Completeness</code>, se utiliza para medir la integridad de la muestra, a través del perfil de completitud (primer paso de la valoración). este procedimiento puede demorar algunos minutos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">Completeness</span>(<span class="at">data =</span> datos, <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggCompleteness</span>(result1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Perfil de completitud de las muestras</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">Completeness</span>(<span class="at">data =</span> datos, <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La siguiente figura puede ser complementada con la figura relacionada en la propuesta de <a href="https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102">Chao et al.&nbsp;(2020)</a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura del perfil de completitud</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggCompleteness</span>(result1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="672"></p>
+<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>Similar a lo descrito en la tabla del paso 1, se observa en la figura, que la muestra más completa es la del tramo B, seguida de los tramos C y A, respectivamente. Al analizar el eje X (q = 0, 1 y 2) se observa que la menor completitud se presenta en el orden q = 0, lo cual indica que hay taxones no detectados en las muestras evaluadas.</p>
 </section>
 <section id="paso-2.-análisis-asintótico" class="level3">
 <h3 class="anchored" data-anchor-id="paso-2.-análisis-asintótico">Paso 2. Análisis asintótico</h3>
 <p>“Diversidad asintótica” es la que se obtiene cuando por más que aumente la abundancia de individuos, no aumenta la diversidad (la curva se vuelve asintótica o con pendiente = 0). Estos perfiles son útiles para comparar la diversidad de muestras de diferentes tamaños y preferiblemente que sean grandes, lo cual no es el caso del presente ejercicio.</p>
 <p><strong>2.1 Análisis Asintótico basado en interpolación y extrapolación (iNEXT)</strong> Para esta figura, no hay una función en <code>iNEXT 4 steps</code>, que permita realizarla por separado, por ello se utilizará la versión anterior (<code>iNEXT</code>).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("iNEXT")</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("iNEXT")</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Se proyectará hasta 4000 individuos que corresponden a un poco más del doble de la abundancia para el sitio con mayor número de individuos colectados.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>result2 <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(datos, <span class="at">q=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype=</span><span class="st">"abundance"</span>, <span class="at">endpoint=</span><span class="dv">4000</span>)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span>(result2, <span class="at">type=</span><span class="dv">1</span>, <span class="at">facet.var=</span><span class="st">"Order.q"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo del perfil asintótico con los tres estimadores de diversidad</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>result2 <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(datos, <span class="at">q=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype=</span><span class="st">"abundance"</span>, <span class="at">endpoint=</span><span class="dv">4000</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figuras del perfil asintótico calculado</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggiNEXT</span> (result2, <span class="at">type=</span><span class="dv">1</span>, <span class="at">facet.var=</span><span class="st">"Order.q"</span>) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>        <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Número de individuos"</span>, <span class="at">y =</span> <span class="st">"Diversidad"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
+<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Para este caso, las curvas del primer panel (q = 0) no se estabilizan o no se vuelven asintóticas, debido a que el esfuerzo de muestreo es insuficiente, por lo cual se sugiere reemplazar a este análisis por el siguiente perfil que no es asintótico (pendiente de la curva mayor a cero).</p>
@@ -376,24 +390,34 @@ C      0.64  0.21  0.10</code></pre>
 <h3 class="anchored" data-anchor-id="paso-3.-perfil-no-asintótico-basado-en-interpolación-y-extrapolación-inext">Paso 3. Perfil no asintótico basado en interpolación y extrapolación (iNEXT)</h3>
 <p>Comparación de las curvas asumiendo tamaños de muestra insuficiente o de muestras pequeñas, mediante la extracción de una submuestra del total evaluado (Cmax), extrapolándola e interpolándola.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>result2 <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(datos, <span class="at">q=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">300</span>, <span class="at">endpoint =</span> <span class="dv">4000</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(result2, <span class="at">type =</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo del perfil no asintótico con los tres estimadores de diversidad</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>result3 <span class="ot">&lt;-</span> <span class="fu">iNEXT</span>(datos, <span class="at">q=</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>), <span class="at">datatype =</span> <span class="st">"abundance"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">size =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">300</span>, <span class="at">endpoint =</span> <span class="dv">4000</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura del perfil no asintótico</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>plot <span class="ot">&lt;-</span> <span class="fu">plot</span>(result3, <span class="at">type =</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
-<section id="paso-4.-uniformidad-de-las-muestras" class="level3">
-<h3 class="anchored" data-anchor-id="paso-4.-uniformidad-de-las-muestras">Paso 4. Uniformidad de las muestras</h3>
-<p><code>Evenness</code> valora el nivel de uniformidad en las abundancias de los taxones de invertebrados acuáticos.</p>
+<section id="paso-4.-uniformidad-de-las-muestras-tramos-evaluados" class="level3">
+<h3 class="anchored" data-anchor-id="paso-4.-uniformidad-de-las-muestras-tramos-evaluados">Paso 4. Uniformidad de las muestras (tramos evaluados)</h3>
+<p><code>Evenness</code> valora el nivel de uniformidad en las abundancias de los taxones de invertebrados acuáticos. La siguiente figura muestra a cinco estimadores de uniformidad, basado en la propuesta de <a href="https://www.jstor.org/stable/pdf/26853666.pdf">Chao y Ricotta (2019)</a>. Ver tabla 1 y figura 2 del artículo.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">Evenness</span>(<span class="at">data =</span> datos, <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggEvenness</span>(result1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de los cinco modelos de uniformidad</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">Evenness</span>(<span class="at">data =</span> datos, <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A continuación se relacionan los cinco modelos de uniformidad (E1 a E5), desarrollados por <a href="https://www.jstor.org/stable/pdf/26853666.pdf">Chao y Ricotta (2019)</a>. Ver tabla 1 y figura 2 del artículo.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura con los cinco modelos de uniformidad</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggEvenness</span>(result1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+<p><img src="taller7.macroinv_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p><strong>Como citar la información referente a este taller</strong></p>
+<p>En la figura se observa que para los cinco modelos de uniformidad, el tramo A es el que presenta mayor uniformidad, seguido del C y el B, respectivamente. La mayor uniformidad del tramo A se presenta especialmente para los taxones dominantes (q = 1) y muy dominantes (q = 2) (ver los órdenes de diversidad en el eje x). En el modelo E4, los valores de uniformidad son casi iguales para los taxones dominantes y muy dominantes (q = 0, 1 y 2).</p>
+<p><strong>Como citar la fuente de estos cálculos</strong></p>
 <p>Chao, A., Y. Kubota, D. Zelený, C.-H. Chiu, C.-F. Li, B. Kusumoto, M. Yasuhara, S. Thorn, C.-L. Wei, M. J. Costello, and R. K. Colwell (2020). Quantifying sample completeness and comparing diversities among assemblages. Ecological Research, 35, 292-314.</p>
 </section>
 </section>
