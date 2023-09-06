@@ -1,0 +1,84 @@
+---
+title: "Salida de Campo Ecología 1"
+subtitle: "Ambiente y ensamblaje de macrinvertebrados acuáticos"
+author: "Javier Rodríguez_Barrios - Universidad del Magdalena"
+date: 'Actualizado: `r Sys.Date()`'
+lang: "es-ES"
+format:
+  html:
+    toc: true
+    toc-title: Contents
+    toc-depth: 4
+    toc-location: left
+    html-math-method: katex
+    css: styles.css  
+    link-external-icon: true
+    link-external-newwindow: true
+    theme: flatly
+---
+
+<b style='color:#1f78b4;'>
+
+# TEMA: Salida de Campo de Ecología 1
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Fotos/Foto6.png){width="500"}
+
+La presente actividad tiene como objetivo, el reconocimiento de ecosistemas en ambientes fluviales, para aprender a evaluar parámetros ambientales, relacionados con la hidrología, la fisicoquímica y la geomorfología, asícomo el entorno relacionado con la vegetación de las riberas y la relación de estos atributos con la estructura y diversidad de ensamblajes de macroinvertebrados acuáticos, bajo diferentes escenarios de alteración que se evidencian en el sector de Minca, Sierra Nevada de Santa Marta.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Fechas de la salida por cada grupo de Ecología
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Fotos/Foto11.png){width="420"}
+
+1.  Ecología - Grupo 1. Viernes y Sábado 15 y 16 de septiembre. Salimos a las 5.45 am.
+
+2.  Ecología - Grupo 2. Viernes y Sábado 22 y 23 de septiembre. Salimos a las 5.45 am.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Guía de campo
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Fotos/Foto10.png){width="420"}
+
+La siguiente guía recoge los diferentes pasos a realizar en campo, es necesario estudiarla, dias previos a la actividad, para tener mayor claridad sobre aspectos necesarios.
+
+[Enlace a la guía de Campo](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADa%20R%C3%ADos%202023.pdf) Guía general de campo, que será alimentada con los cuatro formatos que se relacionan a continuación.
+
+A continuación se relacionan algunos enlaces complementarios que se deben descargar para los diferentes momentos de la actividad: antes de, durante y después de la salida de campo.
+
+1.  [Formatos de campo_sept. 2.xlsx](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Formatos%20de%20campo_sept.%202.xlsx) Se requiere llevar este archivo para la actividad de cómputo que realizarémos durante la salida.
+
+2.  [Formatos de campo para imprimir.docx](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Formatos%20de%20campo%20para%20imprimir.docx) Es necesario que cada grupo de trabajo, lleve estas guías impresas, para tabular la información en los sitios a visitar.
+
+3.  [Guía de Campo - RQI.pdf](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADa%20de%20riberas/Gu%C3%ADa%20de%20Campo%20-%20RQI.pdf) Cada grupo debe llevar una copia impresa de esta guía, la cual se relaciona con la valoración de las riberas en los tramos del río a visitar. En este enlace, se encuentra un artículo referente para esta guía [Articulo RQI](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADa%20de%20riberas/RQI.pdf)
+
+4.  [Video de cómo tabular los datos \*Pendiente de cargar]()El siguiente video es un ejemplo de lo que se requiere tabular para la actividad de campo. Se requiere estudiar, previo a la salida.
+
+5.  [Guías taxonómicas]() Se van a requerir para la identificación de los taxones colectado de campo y transportados al laboratorio de Biología.
+
+5.1 [Claves generales](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADas%20taxon%C3%B3micas/Claves%20generales.pdf)
+
+5.2 [Claves McCafferty](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADas%20taxon%C3%B3micas/Claves%20McCafferty1.pdf)
+
+5.3 [Claves Roldán](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADas%20taxon%C3%B3micas/Claves%20Rold%C3%A1n%201989.pdf)
+
+5.4 [Claves PNN Tayrona](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1/Gu%C3%ADas%20taxon%C3%B3micas/Macroinv.%20PNNT.pdf)
+
+6.  [Tabulación taxones identificados](). En los siguientes enlaces, se tabularán los resultados de la identificación y conteo de taxones, que se realizará en el laboratorio de Biología, posterior a la salida de campo. **Nota:** Cada estudiante debe tener claro a que grupo de ecología pertenece, para que no haya inconvenientes a la hora de tabular los datos.
+
+6.1 [Tabulación taxones identificados (grupo 1)](https://universidadmag-my.sharepoint.com/:x:/g/personal/jrodriguez_unimagdalena_edu_co/EXIwbtd2c9xFgKTJZ-ANSMoBIPIqWyx5lIG1li0J3Jc8vA?e=LqAL7h)
+
+6.2 [Tabulación taxones identificados (grupo 2)](https://universidadmag-my.sharepoint.com/:x:/g/personal/jrodriguez_unimagdalena_edu_co/ET4Di-JdlCxOl7Zc0wStab0BWxE-FjA40BtMD26Wk1HJrg?e=1ARab1)
+
+7. [Imágen de bolsas y viales requeridos](https://javier-2712.github.io/Ecologia1/Campo.rios.eco1//bolsas.viales.pdf)
