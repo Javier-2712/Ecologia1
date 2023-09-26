@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Javier Rodríguez-Barrios">
-<meta name="dcterms.date" content="2023-09-25">
+<meta name="dcterms.date" content="2023-09-26">
 
 <title>Taller 7. Modelación matricial</title>
 <style>
@@ -156,9 +156,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul class="collapse">
   <li><a href="#section-8" id="toc-section-8" class="nav-link" data-scroll-target="#section-8"></a></li>
   <li><a href="#section-9" id="toc-section-9" class="nav-link" data-scroll-target="#section-9"></a></li>
-  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"></a></li>
+  <li><a href="#section-10" id="toc-section-10" class="nav-link" data-scroll-target="#section-10"></a>
+  <ul class="collapse">
+  <li><a href="#análisis-de-la-matriz-de-transición" id="toc-análisis-de-la-matriz-de-transición" class="nav-link" data-scroll-target="#análisis-de-la-matriz-de-transición"><strong>Análisis de la matriz de transición</strong></a></li>
+  </ul></li>
+  <li><a href="#section-11" id="toc-section-11" class="nav-link" data-scroll-target="#section-11"></a></li>
+  <li><a href="#section-12" id="toc-section-12" class="nav-link" data-scroll-target="#section-12"></a></li>
+  <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13"></a></li>
+  <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14"></a></li>
+  <li><a href="#section-15" id="toc-section-15" class="nav-link" data-scroll-target="#section-15"></a></li>
   <li><a href="#cuestionario" id="toc-cuestionario" class="nav-link" data-scroll-target="#cuestionario"><strong>Cuestionario</strong></a></li>
   <li><a href="#referentes-bibliográficos" id="toc-referentes-bibliográficos" class="nav-link" data-scroll-target="#referentes-bibliográficos"><strong>Referentes Bibliográficos</strong></a></li>
+  <li><a href="#section-16" id="toc-section-16" class="nav-link" data-scroll-target="#section-16"></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -187,7 +196,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 25, 2023</p>
+      <p class="date">September 26, 2023</p>
     </div>
   </div>
   
@@ -204,7 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </b><section id="introducción" class="level2"><b style="color:#1f78b4;">
 <h2 class="anchored" data-anchor-id="introducción"><strong>Introducción</strong></h2>
 </b><p><b style="color:#1f78b4;"></b></p>
-<p><img src="https://javier-2712.github.io/Visualizacion/Taller6.poblaciones/Taller7.poblaciones.estado1_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="450"></p>
+<p><img src="Figuras/Modelo.multiedad.png" class="img-fluid" width="440"></p>
 <div style="text-align: justify">
 
 <p>Para algunos estudiantes o investigadores, el trabajo con tablas de vida puede ser demandante de tiempo, algo confuso y tedioso, en cuanto a estimaciones de parámetros de supervivencia, reproducción y otros como la <strong><em>esperanza de vida (e<sub>x</sub>)</em></strong>, la <strong><em>distribución estable de edades (c<sub>x</sub>)</em></strong> o el <strong><em>valor reproductivo (v<sub>x</sub>)</em></strong>, por lo que los <strong>sistemas matriciales</strong>, con la ayuda de <strong>programas computacionales</strong> como Excel o R, pueden generar una ayuda al ser funciones más prácticas, a la hora de conocer cómo se obtienen esos estimadores junto a las densidades de la población en sus clases de edad o de estado, mediante simulaciones de la densidad poblacional por edades o estados (Nt) en el tiempo. En este sentido, el presente taller se orienta a la <strong>proyección mediante simulaciones</strong>, de la densidad poblacional, haciendo uso de <strong>matrices de Leslie (L)</strong> y de vectores que representan a la densidad de la población por <strong>edades (x)</strong> o <strong>clases de edades o estados (i)</strong>.</p>
@@ -670,47 +679,40 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>simulación <span class="ot">&lt;-</span> simulación <span class="sc">%&gt;%</span></span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Tiempo =</span> <span class="dv">1</span><span class="sc">:</span>(<span class="fu">nrow</span>(simulación)) <span class="sc">-</span> <span class="dv">1</span>)</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Convertir la base de datos a formato largo (simulación_l)</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>simulación_l <span class="ot">&lt;-</span> simulación <span class="sc">%&gt;%</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Tiempo, <span class="at">names_to =</span> <span class="st">"Edad"</span>, <span class="at">values_to =</span> <span class="st">"Abundancia"</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 3.1) Redondear la columna "Abundancia" a cero decimales</span></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>simulación_l <span class="ot">&lt;-</span> simulación_l <span class="sc">%&gt;%</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Abundancia =</span> <span class="fu">round</span>(Abundancia, <span class="dv">0</span>))</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Opcional: Visualizar la base de datos de la Simulación</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(simulación)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.1) Opcional: Visualizar la base de datos de la Simulación</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(simulación) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Edad_0"</span>,<span class="st">"Edad_1"</span>,<span class="st">"Edad_2"</span>,<span class="st">"Edad_3"</span>,<span class="st">"Edad_4"</span>, <span class="st">"Tiempo"</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">round</span>(simulación))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   Edad1 Edad2 Edad3 Edad4 Edad5 Tiempo
-1    500   423   260   195    50      0
-2    794   425   258   195    51      1
-3    918   675   259   194    51      2
-4   1186   780   412   194    50      3
-5   1503  1008   476   309    51      4
-6   1895  1278   615   357    80      5
-7   2402  1611   779   461    93      6
-8   3039  2042   983   584   120      7
-9   3845  2583  1245   737   152      8
-10  4866  3268  1576   934   192      9
-11  6158  4136  1994  1182   243     10</code></pre>
+<pre><code>  Edad_0 Edad_1 Edad_2 Edad_3 Edad_4 Tiempo
+1    500    423    260    195     50      0
+2    794    425    258    195     51      1
+3    918    675    259    194     51      2
+4   1186    780    412    194     50      3
+5   1503   1008    476    309     51      4
+6   1895   1278    615    357     80      5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar la base en formato largo</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>simulación_l</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Convertir la base de datos a formato largo (simulación_l)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>simulación_l <span class="ot">&lt;-</span> simulación <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="sc">-</span>Tiempo, <span class="at">names_to =</span> <span class="st">"Edad"</span>, <span class="at">values_to =</span> <span class="st">"Abundancia"</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3.1) Redondear la columna "Abundancia" a cero decimales</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>simulación_l <span class="ot">&lt;-</span> simulación_l <span class="sc">%&gt;%</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Abundancia =</span> <span class="fu">round</span>(Abundancia, <span class="dv">0</span>))</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar la base en formato largo</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(simulación_l)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 55 × 3
-   Tiempo Edad  Abundancia
-    &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
- 1      0 Edad1        500
- 2      0 Edad2        423
- 3      0 Edad3        260
- 4      0 Edad4        195
- 5      0 Edad5         50
- 6      1 Edad1        794
- 7      1 Edad2        425
- 8      1 Edad3        258
- 9      1 Edad4        195
-10      1 Edad5         51
-# ℹ 45 more rows</code></pre>
+<pre><code># A tibble: 6 × 3
+  Tiempo Edad   Abundancia
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+1      0 Edad_0        500
+2      0 Edad_1        423
+3      0 Edad_2        260
+4      0 Edad_3        195
+5      0 Edad_4         50
+6      1 Edad_0        794</code></pre>
 </div>
 </div>
 <p><b style="color:#fc9272;"> <strong>Paso 5.</strong> </b> Figura de la proyección multi-edad de acuerdo a la simulación realizada.</p>
@@ -727,18 +729,172 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>                                  <span class="fu">max</span>(simulación_l<span class="sc">$</span>Tiempo), <span class="at">by =</span> <span class="dv">2</span>)) <span class="sc">+</span></span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()  <span class="sc">+</span>                                                            <span class="co"># Capa 6. Fondo de la figura</span></span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">13</span>),                               <span class="co"># Capa 7. Varias operaciones</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),                                   <span class="co"># Ajuste de tamaño de textos</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),                            <span class="co"># Ajuste de tamaño de textos</span></span>
 <span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>),</span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),                                       <span class="co"># Quitar la cuadrículas del fondo.</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),                                <span class="co"># Quitar la cuadrículas del fondo.</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>        <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>())    </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="taller.matrices_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+<p><img src="taller.matrices_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 </section>
 <section id="section-10" class="level2">
 <h2 class="anchored" data-anchor-id="section-10"></h2>
+<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
+</b><section id="análisis-de-la-matriz-de-transición" class="level3"><b style="color:#1f78b4;">
+<h3 class="anchored" data-anchor-id="análisis-de-la-matriz-de-transición"><strong>Análisis de la matriz de transición</strong></h3>
+</b><p><b style="color:#1f78b4;"></b></p>
+<p>Este análisis es relevante, principalmente para conocer la proyección de la población en cuanto a su dinámica a corto plazo, asumiendo que varios parámetros no son afectados por el fluctuaciones del ambiente. A partir de esto, se puede calcular:</p>
+<ul>
+<li><p>La tasa finita de aumento de la población (λ)</p></li>
+<li><p>La estructura estable de edades (cx).</p></li>
+<li><p>El valor reproductivo (vx)</p></li>
+<li><p>Análisis de sensibilidad y de elasticidad.</p></li>
+</ul>
+</section>
+</section>
+<section id="section-11" class="level2">
+<h2 class="anchored" data-anchor-id="section-11"></h2>
+<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
+</b><section id="la-tasa-finita-de-aumento-de-la-población-λ" class="level4"><b style="color:#1f78b4;">
+<h4 class="anchored" data-anchor-id="la-tasa-finita-de-aumento-de-la-población-λ"><strong>La tasa finita de aumento de la población (λ)</strong></h4>
+</b><p><b style="color:#1f78b4;"></b></p>
+<p>Este análisis es conocido como el de autovalores o eigenvalues, de mucha aplicación en ecología, para estimaciones multivariadas (ej. en pca) o en estos análisis de transiciones poblacionales en el tiempo. el análisis de autovalores es el que permite calcular a lambda (<code>λ</code>) o tasa de aumento finito de la población.</p>
+<p><span class="math display">  Lw=λw  </span></p>
+<p>En donde w corresponde a los autovectores (vector columna) con el mismo número de filas de la matriz de Leslie (<span class="math inline">L</span>). Si la matriz de Leslie es de 2 x 2, entonces:</p>
+<p>$$ * = λ </p>
+<p>$$</p>
+<p>Para el <strong>ejemplo 1</strong>, el cálculo de lambda (λ) se realiza de la siguiente forma:</p>
+<p>Paso 1. Cargar la matriz de transición de Leslie (L).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0   0.42   0.86   0.75   0.13      0
+Edad_1   0.85   0.00   0.00   0.00      0
+Edad_2   0.00   0.61   0.00   0.00      0
+Edad_3   0.00   0.00   0.75   0.00      0
+Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
+</div>
+</div>
+<p>Paso 2. Calcular los autovalores (<span class="math inline">eigen</span>) y los autovectores (<span class="math inline">vectors</span>)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>autoval <span class="ot">&lt;-</span> <span class="fu">eigen</span>(matriz1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Paso 3. Calcular el primer autovalor principal que corresponde a la tasa finita de crecimiento de la población.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>((lambda1 <span class="ot">&lt;-</span> autoval<span class="sc">$</span>values[<span class="dv">1</span>]),<span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.265+0i</code></pre>
+</div>
+</div>
+<p>Este valor de <code>lamnda</code>, indica que el crecimiento promedio anual de la población es de ((lamda-1)*100) del <code>26%</code> para las diferentes edades evaluadas. Esto se produce una vez la población alcanza su distribución estable.</p>
+<p>Otra forma es calcular el valor propio dominantes más grande, pidiendo a R que indique la posición del indice (i) con el valor absoluto más grande de los autovalores o lambdas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>( pos.dom <span class="ot">&lt;-</span> <span class="fu">which.max</span>( <span class="fu">Mod</span>(autoval[[<span class="st">"values"</span>]]) )  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Ahora se mantiene la parte real usando el comando <code>Re()</code> y descartando la parte imaginaria.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracción del autovalor dominante</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(( Lambda1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(autoval[[<span class="st">"values"</span>]][pos.dom])),<span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.265</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="section-12" class="level2">
+<h2 class="anchored" data-anchor-id="section-12"></h2>
+<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
+</b><section id="distribución-estable-de-edades-cx" class="level4"><b style="color:#1f78b4;">
+<h4 class="anchored" data-anchor-id="distribución-estable-de-edades-cx"><strong>Distribución estable de edades (cx)</strong></h4>
+</b><p><b style="color:#1f78b4;"></b></p>
+<p>Corresponde a un vector el cual indica que cuando todas las tasas demográficas permanecen constantes, el aumento o disminución de la población (dependiendo de si lambda es mayor o menos a 1) alcanzará su distribución estable de edades.</p>
+<p>Para el cálculo de cx, se requiere extraer el vector propio o autovector dominante (w1) y dividirlo por la sumatoria de sus elementos.</p>
+<p><span class="math display">  c_{x}=\frac{w_{1}}{\sum(w_{1})}.  </span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo del vector propio dominante</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>w1 <span class="ot">&lt;-</span>  <span class="fu">Re</span>(autoval[[<span class="st">"vectors"</span>]][,pos.dom])</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo del vector de distribución estable</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(w1<span class="sc">/</span><span class="fu">sum</span>(w1))</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          cx
+edad_0 0.449
+edad_1 0.302
+edad_2 0.145
+edad_3 0.086
+edad_4 0.018</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">matrix</span>((w1<span class="sc">/</span><span class="fu">sum</span>(w1))<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         cx
+edad_0 44.9
+edad_1 30.2
+edad_2 14.5
+edad_3  8.6
+edad_4  1.8</code></pre>
+</div>
+</div>
+<p>Lo anterior indica el porcentaje de aumento que presentará la población en sus diferentes edades, una vez alcance su distribución estable, con una tasa finita de aumento o lambda de 1.265 (26.5% de aumento anual)</p>
+</section>
+</section>
+<section id="section-13" class="level2">
+<h2 class="anchored" data-anchor-id="section-13"></h2>
+<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
+</b><section id="valor-reproductivo-vx" class="level4"><b style="color:#1f78b4;">
+<h4 class="anchored" data-anchor-id="valor-reproductivo-vx"><strong>Valor reproductivo (vx)</strong></h4>
+</b><p><b style="color:#1f78b4;"></b></p>
+<p>Brinda información de la importancia reproductiva de los individuos en cada edad, por lo que corresponde a la contribución esperada de los individuos para el mantenimiento de la población, debido a sus reclutas o descendientes exitósos. Para su cálculo, se requiere obtener el vector propio o autovector izquierdo dominante <span class="math inline">v</span>.</p>
+<p><span class="math display">  vL=λv  </span> Se requiere realizar un escalamiento, para que todos los valores resproductivos sean relativos a la primera etapa, que inicia en 1.</p>
+<p><span class="math display">  \frac{v_{1}}{v_{1[1]}}.  </span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tL <span class="ot">&lt;-</span> <span class="fu">t</span>(matriz1) <span class="co"># Transpuesta de la matriz de Leslie (matriz1)</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>autovalL <span class="ot">&lt;-</span> <span class="fu">eigen</span>(tL) <span class="co"># Autovalores y autovectores</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>pos.dom <span class="ot">&lt;-</span> <span class="fu">which.max</span>(<span class="fu">Mod</span>(autovalL<span class="sc">$</span>values)) <span class="co"># Valor resproductivo más grande (1)</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(autovalL<span class="sc">$</span>vectors[,pos.dom])  <span class="co"># Autovector dominante en valores reales</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector de valores reproductivos por cada edad (x)</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v1<span class="sc">/</span>v1[<span class="dv">1</span>])   </span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(vx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(vx)</span>
+<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(vx, <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         vx
+edad_0 1.00
+edad_1 0.99
+edad_2 0.65
+edad_3 0.10
+edad_4 0.00</code></pre>
+</div>
+</div>
+<p>Para este caso se observa que el valor reproductivo disminuye con la edad, aunque por lo general, el valor reproductivo debe aumentar en edades con mayor potencial de fecundidad.</p>
+</section>
+</section>
+<section id="section-14" class="level2">
+<h2 class="anchored" data-anchor-id="section-14"></h2>
+<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
+</b><section id="sensibilidad-y-elasticidad" class="level4"><b style="color:#1f78b4;">
+<h4 class="anchored" data-anchor-id="sensibilidad-y-elasticidad"><strong>Sensibilidad y Elasticidad</strong></h4>
+</b><p><b style="color:#1f78b4;"></b></p>
+<p><strong>Pendiente</strong></p>
+</section>
+</section>
+<section id="section-15" class="level2">
+<h2 class="anchored" data-anchor-id="section-15"></h2>
 <p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
 </b></section><b style="color:#1f78b4;">
 </b><section id="cuestionario" class="level2"><b style="color:#1f78b4;">
@@ -747,13 +903,13 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <p><img src="https://javier-2712.github.io/Visualizacion/Taller6.poblaciones/Taller7.poblaciones.estado1_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="516"></p>
 <ol type="1">
 <li><p>Realizar la proyección de la población de la tabla de vida (tabla 2) para un <strong>censo pre-reproductivo,</strong> siguiendo los pasos del ejemplo 1.</p></li>
-<li><p>Realizar una revisión del <strong>libro "Applied Population Ecology"</strong> de Akcakaya et al.&nbsp;(1999) (p.&nbsp;133 – 141)</p>
+<li><p>Realizar una revisión del <strong>libro “Applied Population Ecology”</strong> de Akcakaya et al.&nbsp;(1999) (p.&nbsp;133 – 141)</p>
 <ol type="1">
 <li>Estudiar la temática de tópicos especiales.</li>
 <li>Estudiar y analizar la figura 4.7, enfatizando en las diferencias en censos pre y post reproductivos.</li>
 <li>Realizar el ejercicio para la construcción de matrices pre y post reproductivas y la relación de estas con la figura 4.7.</li>
 </ol></li>
-<li><p>Realizar una revisión del <strong>libro “Técnicas para el estudio de poblaciones de Fauna Silvestre"</strong> de Lemos et al.&nbsp;(2005) (p.&nbsp;116 – 126).</p>
+<li><p>Realizar una revisión del <strong>libro “Técnicas para el estudio de poblaciones de Fauna Silvestre”</strong> de Lemos et al.&nbsp;(2005) (p.&nbsp;116 – 126).</p>
 <ol type="1">
 <li>¿Cuál es la diferencia entre matrices de Leslie y de Lefkovitch?</li>
 <li>¿Analizar la figura 12, correspondiente al ciclo de vida de una tortuga?</li>
@@ -761,7 +917,7 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <li>Cálculo de la distribución estable de edades (c<sub>x</sub>) y su relación con lambda (λ) (tasa finita de crecimiento)</li>
 </ol>
 <p>Cálculo del valor reproductivo.</p></li>
-<li><p>Realizar una revisión del <strong>libro “Primer of Ecology"</strong> de Gotelli (2008) (Capitulo 3)</p>
+<li><p>Realizar una revisión del <strong>libro “Primer of Ecology”</strong> de Gotelli (2008) (Capitulo 3)</p>
 <ol type="1">
 <li><p>Analizar cómo se construye una tabla de vida, incluido sus estimadores generales (Ro, T, r, λ) (tabla 3.1)</p></li>
 <li><p>Descripción de estructuras de edad (p.&nbsp;59)</p></li>
@@ -821,6 +977,9 @@ N_{t}  = \left[\begin{array}{ccc}
 <li><strong>Libro: A Primer of Ecology.</strong> (Gotelli, Nicholas J. 2008). - <a href="https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/1mttj4m/alma990000339950107076">ENLACE</a>.</li>
 </ol>
 <p><img src="https://i.ebayimg.com/images/g/eAAAAOSwRv1jR8ko/s-l500.jpg" class="img-fluid" width="169"></p>
+</section>
+<section id="section-16" class="level2">
+<h2 class="anchored" data-anchor-id="section-16"></h2>
 </section>
 </div></div></section>
 
