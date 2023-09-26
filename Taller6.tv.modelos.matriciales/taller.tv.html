@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Javier Rodríguez-Barrios">
-<meta name="dcterms.date" content="2023-09-19">
+<meta name="dcterms.date" content="2023-09-25">
 
-<title>Taller 6. Tablas de vida y modelación matricial</title>
+<title>Taller 6.1 Tablas de vida por edades</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +35,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="taller.tv_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="taller.tv_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="taller.tv_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+<script src="taller.tv_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="taller.tv_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -68,7 +71,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#cuestionario" id="toc-cuestionario" class="nav-link" data-scroll-target="#cuestionario"><strong>Cuestionario</strong></a></li>
   <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
   <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
-  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
   <li><a href="#referentes-bibliográficos" id="toc-referentes-bibliográficos" class="nav-link" data-scroll-target="#referentes-bibliográficos"><strong>Referentes Bibliográficos</strong></a></li>
   </ul>
 </nav>
@@ -79,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Taller 6. Tablas de vida y modelación matricial</h1>
+<h1 class="title">Taller 6.1 Tablas de vida por edades</h1>
 <p class="subtitle lead">Taller de Ecología de Poblaciones mediante Tablas de Vida y Matrices</p>
 </div>
 
@@ -97,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 19, 2023</p>
+      <p class="date">September 25, 2023</p>
     </div>
   </div>
   
@@ -171,125 +173,135 @@ n_{n+1}\\
 <li><p><strong>Realizar una proyección de la población por tres periodos</strong> (n<sub>0</sub> a n<sub>5</sub>) y graficar en <strong>x</strong> los periodos de tiempo (t) proyectados y en <strong>y</strong> los valores de <strong>Nx</strong>.</p></li>
 </ol></li>
 </ol>
-<p><em>Tabla de vida para la población en estudio</em></p>
-<table class="table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>x</th>
-<th>N<sub>x</sub></th>
-<th>m<sub>x</sub></th>
-<th>B<sub>x</sub></th>
-<th>l<sub>x</sub></th>
-<th>S<sub>x</sub></th>
-<th>d<sub>x</sub></th>
-<th>p<sub>x</sub></th>
-<th>q<sub>x</sub></th>
-<th>F<sub>x(pre)</sub></th>
-<th>F<sub>x(pos)</sub></th>
-<th>l<sub>x</sub>.m<sub>x</sub></th>
-<th>x.l<sub>x</sub>.m<sub>x</sub></th>
-<th><strong>e<sup>-rx</sup>.l<sub>x</sub>.m<sub>x</sub></strong></th>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>Tabla 1. Tabla de vida para la población en estudio</caption>
+ <thead>
+<tr>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="12"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Estimadores generales</div></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Estimadores de r</div></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Esperanza de vida</div></th>
 </tr>
-</thead>
+  <tr>
+   <th style="text-align:right;"> x </th>
+   <th style="text-align:left;"> Nx </th>
+   <th style="text-align:left;"> mx </th>
+   <th style="text-align:left;"> Bx </th>
+   <th style="text-align:left;"> Sx </th>
+   <th style="text-align:left;"> Dx </th>
+   <th style="text-align:left;"> lx </th>
+   <th style="text-align:left;"> dx </th>
+   <th style="text-align:left;"> qx </th>
+   <th style="text-align:left;"> Px </th>
+   <th style="text-align:left;"> lx.mx </th>
+   <th style="text-align:left;"> x.lx.mx </th>
+   <th style="text-align:left;"> e^(-r.x) </th>
+   <th style="text-align:left;"> e^(-r.x).(lx.mx) </th>
+   <th style="text-align:left;"> e^(-r.x) </th>
+   <th style="text-align:left;"> e^(-r.x).(lx.mx) </th>
+   <th style="text-align:left;"> Lx </th>
+   <th style="text-align:left;"> Tx </th>
+   <th style="text-align:left;"> ex </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td>0</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Total</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
 </tbody>
 </table>
+
+</div>
+</div>
 </section>
 <section id="section-1" class="level2">
 <h2 class="anchored" data-anchor-id="section-1"></h2>
@@ -299,170 +311,153 @@ n_{n+1}\\
 <li>Construir su tabla de vida, calcular los estimadores a hasta d, del ejercicio anterior.</li>
 </ol></li>
 </ol>
-<table class="table">
-<colgroup>
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-<col style="width: 7%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>x</th>
-<th>N<sub>x</sub></th>
-<th>m<sub>x</sub></th>
-<th>B<sub>x</sub></th>
-<th>l<sub>x</sub></th>
-<th>S<sub>x</sub></th>
-<th>d<sub>x</sub></th>
-<th>p<sub>x</sub></th>
-<th>q<sub>x</sub></th>
-<th>F<sub>x(pre)</sub></th>
-<th>F<sub>x(pos)</sub></th>
-<th>l<sub>x</sub>.m<sub>x</sub></th>
-<th>x.l<sub>x</sub>.m<sub>x</sub></th>
-<th><strong>e<sup>rx</sup>.l<sub>x</sub>.m<sub>x</sub></strong></th>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
+<caption>Tabla 2. Tabla de vida para la población en estudio</caption>
+ <thead>
+<tr>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="12"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Estimadores generales</div></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="4"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Estimadores de r</div></th>
+<th style="padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">Esperanza de vida</div></th>
 </tr>
-</thead>
+  <tr>
+   <th style="text-align:right;"> x </th>
+   <th style="text-align:right;"> Nx </th>
+   <th style="text-align:right;"> mx </th>
+   <th style="text-align:left;"> Bx </th>
+   <th style="text-align:left;"> Sx </th>
+   <th style="text-align:left;"> Dx </th>
+   <th style="text-align:left;"> lx </th>
+   <th style="text-align:left;"> dx </th>
+   <th style="text-align:left;"> qx </th>
+   <th style="text-align:left;"> Px </th>
+   <th style="text-align:left;"> lx.mx </th>
+   <th style="text-align:left;"> x.lx.mx </th>
+   <th style="text-align:left;"> e^(-r.x) </th>
+   <th style="text-align:left;"> e^(-r.x).(lx.mx) </th>
+   <th style="text-align:left;"> e^(-r.x) </th>
+   <th style="text-align:left;"> e^(-r.x).(lx.mx) </th>
+   <th style="text-align:left;"> Lx </th>
+   <th style="text-align:left;"> Tx </th>
+   <th style="text-align:left;"> ex </th>
+  </tr>
+ </thead>
 <tbody>
-<tr class="odd">
-<td>0</td>
-<td>500</td>
-<td>0</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>423</td>
-<td>0,5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>260</td>
-<td>1,4</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>195</td>
-<td>1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>50</td>
-<td>0,5</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td><strong>Total</strong></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 500 </td>
+   <td style="text-align:right;"> 0.0 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:right;"> 423 </td>
+   <td style="text-align:right;"> 0.5 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 260 </td>
+   <td style="text-align:right;"> 1.4 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:right;"> 195 </td>
+   <td style="text-align:right;"> 1.0 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 0.5 </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+   <td style="text-align:left;"> . </td>
+  </tr>
 </tbody>
 </table>
-<table class="table">
-<thead>
-<tr class="header">
-<th>Estimador</th>
-<th>Valor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>R<sub>0</sub>=</strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>T=</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>r<sub>est=</sub></strong></td>
-<td></td>
-</tr>
-<tr class="even">
-<td><strong>Lambda (λ)=</strong></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td><strong>r=</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+
+</div>
+</div>
 <ol start="2" type="a">
 <li><p>Investigar en que significa el “<strong>valor reproductivo de la población - <em>v<sub>x</sub></em></strong>” y calcular para la segunda tabla de vida, utilizando la fórmula propuesta por <em>Gotelli (2008)</em> (ver hoja de fórmulas) y el procedimiento realizado por <em>Lemos et al.&nbsp;(2005)</em>, a nivel matricial (p.&nbsp;123 – 126).</p></li>
 <li><p>Investigar en que consiste “<strong>la distribución estable de edades - <em>c<sub>x</sub></em></strong>” y calcular para la segunda tabla de vida, utilizando la fórmula propuesta por <em>Gotelli (2008)</em> (ver hoja de fórmulas) y el procedimiento realizado por <em>Lemos et al.&nbsp;(2005)</em>, a nivel matricial (p.&nbsp;121 – 123).</p></li>
@@ -470,27 +465,6 @@ n_{n+1}\\
 </section>
 <section id="section-2" class="level2">
 <h2 class="anchored" data-anchor-id="section-2"></h2>
-<ol start="3" type="1">
-<li><p>Averiguar en qué consiste la “tasa finita de crecimiento poblacional - λ” y cómo puede ser calculada.</p></li>
-<li><p>Averiguar en que consiste la “estructura estable de una población - w”, cómo puede ser calculada y graficada a partir de proyecciones matriciales.</p></li>
-<li><p>Averiguar que significa el “valor reproductivo de la población - v” y cómo puede ser calaculado, a través de las tablas de vida o los ciclos de vida.</p></li>
-<li><p>Calcular los siguientes estimadores: λ, w, para la siguiente matriz propuesta por Doak et al.&nbsp;(1994), realizada para una población de tortugas del desierto Gopherus agasizzi, adicionalmente realizar una figura de su ciclo de vida.</p></li>
-</ol>
-<p><span class="math display">
-Lk  = \left[\begin{array}{ccc}
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 2,22 &amp; 3,38 &amp; 4,38\\
-0,716 &amp; 0,567 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0,149 &amp; 0,576 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0,149 &amp; 0,604 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0,235 &amp; 0,56 &amp; 0 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0,225 &amp; 0,678 &amp; 0 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0,249 &amp; 0,851 &amp; 0\\
-0 &amp; 0 &amp; 0 &amp; 05 &amp; 0 &amp; 0 &amp; 0,016 &amp; 0,86\\
-\end{array}\right]
-</span></p>
-</section>
-<section id="section-3" class="level2">
-<h2 class="anchored" data-anchor-id="section-3"></h2>
 <p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
 </b></section><b style="color:#1f78b4;">
 </b><section id="referentes-bibliográficos" class="level2"><b style="color:#1f78b4;">
