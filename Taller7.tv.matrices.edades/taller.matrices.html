@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Javier Rodríguez-Barrios">
-<meta name="dcterms.date" content="2023-09-26">
+<meta name="dcterms.date" content="2023-09-27">
 
 <title>Taller 7. Modelación matricial</title>
 <style>
@@ -165,9 +165,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#section-13" id="toc-section-13" class="nav-link" data-scroll-target="#section-13"></a></li>
   <li><a href="#section-14" id="toc-section-14" class="nav-link" data-scroll-target="#section-14"></a></li>
   <li><a href="#section-15" id="toc-section-15" class="nav-link" data-scroll-target="#section-15"></a></li>
+  <li><a href="#section-16" id="toc-section-16" class="nav-link" data-scroll-target="#section-16"></a></li>
+  <li><a href="#section-17" id="toc-section-17" class="nav-link" data-scroll-target="#section-17"></a></li>
   <li><a href="#cuestionario" id="toc-cuestionario" class="nav-link" data-scroll-target="#cuestionario"><strong>Cuestionario</strong></a></li>
   <li><a href="#referentes-bibliográficos" id="toc-referentes-bibliográficos" class="nav-link" data-scroll-target="#referentes-bibliográficos"><strong>Referentes Bibliográficos</strong></a></li>
-  <li><a href="#section-16" id="toc-section-16" class="nav-link" data-scroll-target="#section-16"></a></li>
+  <li><a href="#section-18" id="toc-section-18" class="nav-link" data-scroll-target="#section-18"></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -196,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div>
     <div class="quarto-title-meta-heading">Fecha de publicación</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 26, 2023</p>
+      <p class="date">September 27, 2023</p>
     </div>
   </div>
   
@@ -763,12 +765,23 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <p>Este análisis es conocido como el de autovalores o eigenvalues, de mucha aplicación en ecología, para estimaciones multivariadas (ej. en pca) o en estos análisis de transiciones poblacionales en el tiempo. el análisis de autovalores es el que permite calcular a lambda (<code>λ</code>) o tasa de aumento finito de la población.</p>
 <p><span class="math display">  Lw=λw  </span></p>
 <p>En donde w corresponde a los autovectores (vector columna) con el mismo número de filas de la matriz de Leslie (<span class="math inline">L</span>). Si la matriz de Leslie es de 2 x 2, entonces:</p>
-<p>$$ * = λ </p>
-<p>$$</p>
-<p>Para el <strong>ejemplo 1</strong>, el cálculo de lambda (λ) se realiza de la siguiente forma:</p>
-<p>Paso 1. Cargar la matriz de transición de Leslie (L).</p>
+<p><span class="math display">
+\left[\begin{array}{ccc}
+l_{11} &amp; l_{12} \\
+l_{21} &amp; l_{21}  \\
+\end{array}\right] * \left[\begin{array}{ccc}
+w_{11}\\
+w_{21}\\
+\end{array}\right] = λ \left[\begin{array}{ccc}
+w_{11}\\
+w_{21}\\
+\end{array}\right]
+</span></p>
+<p>Para el <strong>ejemplo 1</strong>, el cálculo de <strong>lambda (λ)</strong> se realiza de la siguiente forma:</p>
+<p><strong>Paso 1</strong>. Cargar la matriz de transición de Leslie (L).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>matriz1 <span class="ot">=</span> <span class="fu">read.csv2</span>(<span class="st">"matriz1.csv"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
 Edad_0   0.42   0.86   0.75   0.13      0
@@ -778,11 +791,11 @@ Edad_3   0.00   0.00   0.75   0.00      0
 Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 </div>
 </div>
-<p>Paso 2. Calcular los autovalores (<span class="math inline">eigen</span>) y los autovectores (<span class="math inline">vectors</span>)</p>
+<p><strong>Paso 2</strong>. Calcular los autovalores (<span class="math inline">eigen</span>) y los autovectores (<span class="math inline">vectors</span>)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>autoval <span class="ot">&lt;-</span> <span class="fu">eigen</span>(matriz1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Paso 3. Calcular el primer autovalor principal que corresponde a la tasa finita de crecimiento de la población.</p>
+<p><strong>Paso 3</strong>. Calcular el primer autovalor principal que corresponde a la tasa finita de crecimiento de la población.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>((lambda1 <span class="ot">&lt;-</span> autoval<span class="sc">$</span>values[<span class="dv">1</span>]),<span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -797,7 +810,7 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <pre><code>[1] 1</code></pre>
 </div>
 </div>
-<p>Ahora se mantiene la parte real usando el comando <code>Re()</code> y descartando la parte imaginaria.</p>
+<p><strong>Paso 4</strong>. Ahora se mantiene la parte real usando el comando <code>Re()</code> y descartando la parte imaginaria.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extracción del autovalor dominante</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(( Lambda1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(autoval[[<span class="st">"values"</span>]][pos.dom])),<span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -811,20 +824,43 @@ Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
 <h2 class="anchored" data-anchor-id="section-12"></h2>
 <p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
 </b><section id="distribución-estable-de-edades-cx" class="level4"><b style="color:#1f78b4;">
-<h4 class="anchored" data-anchor-id="distribución-estable-de-edades-cx"><strong>Distribución estable de edades (cx)</strong></h4>
+<h4 class="anchored" data-anchor-id="distribución-estable-de-edades-cx"><strong>Distribución estable de edades (c<sub>x</sub>)</strong></h4>
 </b><p><b style="color:#1f78b4;"></b></p>
 <p>Corresponde a un vector el cual indica que cuando todas las tasas demográficas permanecen constantes, el aumento o disminución de la población (dependiendo de si lambda es mayor o menos a 1) alcanzará su distribución estable de edades.</p>
 <p>Para el cálculo de cx, se requiere extraer el vector propio o autovector dominante (w1) y dividirlo por la sumatoria de sus elementos.</p>
-<p><span class="math display">  c_{x}=\frac{w_{1}}{\sum(w_{1})}.  </span></p>
+<p><span class="math display">  c_{x}=\frac{w_{1}}{\sum(w_{1})}.  </span> Para el <strong>ejemplo 1</strong>, el cálculo de <strong>c<sub>x</sub></strong> se realiza de la siguiente forma:</p>
+<p><strong>Paso 1</strong>. Cargar la matriz de transición de Leslie (L).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo del vector propio dominante</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>w1 <span class="ot">&lt;-</span>  <span class="fu">Re</span>(autoval[[<span class="st">"vectors"</span>]][,pos.dom])</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo del vector de distribución estable</span></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(w1<span class="sc">/</span><span class="fu">sum</span>(w1))</span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>matriz1 <span class="ot">=</span> <span class="fu">read.csv2</span>(<span class="st">"matriz1.csv"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0   0.42   0.86   0.75   0.13      0
+Edad_1   0.85   0.00   0.00   0.00      0
+Edad_2   0.00   0.61   0.00   0.00      0
+Edad_3   0.00   0.00   0.75   0.00      0
+Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
+</div>
+</div>
+<p><strong>Paso 2</strong>. Cálculo de los valores y vectores própios (<code>autoval</code>) y del vector própio dominante (<code>w1</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de autovalores y autovectores de la matriz L</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>autoval <span class="ot">&lt;-</span> <span class="fu">eigen</span>(matriz1)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo del vector propio dominante</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>w1 <span class="ot">&lt;-</span>  <span class="fu">Re</span>(autoval[[<span class="st">"vectors"</span>]][,pos.dom])</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>w1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.79195711 -0.53195652 -0.25642568 -0.15197716 -0.03122534</code></pre>
+</div>
+</div>
+<p><strong>Paso 3</strong>. Cálculo del vector de distribución estable en proporciones y porcentajes (<code>c_{x}</code>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculo del vector de distribución estable</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span>  <span class="fu">matrix</span>(w1<span class="sc">/</span><span class="fu">sum</span>(w1))</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">3</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>          cx
 edad_0 0.449
@@ -833,10 +869,11 @@ edad_2 0.145
 edad_3 0.086
 edad_4 0.018</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">matrix</span>((w1<span class="sc">/</span><span class="fu">sum</span>(w1))<span class="sc">*</span><span class="dv">100</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de cx en términos porcentuales</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">matrix</span>((w1<span class="sc">/</span><span class="fu">sum</span>(w1))<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(cx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>cx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(cx)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(cx, <span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         cx
 edad_0 44.9
@@ -853,25 +890,42 @@ edad_4  1.8</code></pre>
 <h2 class="anchored" data-anchor-id="section-13"></h2>
 <p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
 </b><section id="valor-reproductivo-vx" class="level4"><b style="color:#1f78b4;">
-<h4 class="anchored" data-anchor-id="valor-reproductivo-vx"><strong>Valor reproductivo (vx)</strong></h4>
+<h4 class="anchored" data-anchor-id="valor-reproductivo-vx"><strong>Valor reproductivo (v<sub>x</sub>)</strong></h4>
 </b><p><b style="color:#1f78b4;"></b></p>
 <p>Brinda información de la importancia reproductiva de los individuos en cada edad, por lo que corresponde a la contribución esperada de los individuos para el mantenimiento de la población, debido a sus reclutas o descendientes exitósos. Para su cálculo, se requiere obtener el vector propio o autovector izquierdo dominante <span class="math inline">v</span>.</p>
 <p><span class="math display">  vL=λv  </span> Se requiere realizar un escalamiento, para que todos los valores resproductivos sean relativos a la primera etapa, que inicia en 1.</p>
 <p><span class="math display">  \frac{v_{1}}{v_{1[1]}}.  </span></p>
+<p>Para el <strong>ejemplo 1</strong>, el cálculo de <strong>v<sub>x</sub></strong> se realiza de la siguiente forma:</p>
+<p><strong>Paso 1</strong>. Cargar la matriz de transición de Leslie (L).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tL <span class="ot">&lt;-</span> <span class="fu">t</span>(matriz1) <span class="co"># Transpuesta de la matriz de Leslie (matriz1)</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>autovalL <span class="ot">&lt;-</span> <span class="fu">eigen</span>(tL) <span class="co"># Autovalores y autovectores</span></span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>pos.dom <span class="ot">&lt;-</span> <span class="fu">which.max</span>(<span class="fu">Mod</span>(autovalL<span class="sc">$</span>values)) <span class="co"># Valor resproductivo más grande (1)</span></span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(autovalL<span class="sc">$</span>vectors[,pos.dom])  <span class="co"># Autovector dominante en valores reales</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector de valores reproductivos por cada edad (x)</span></span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v1<span class="sc">/</span>v1[<span class="dv">1</span>])   </span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(vx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(vx)</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(vx, <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>matriz1 <span class="ot">=</span> <span class="fu">read.csv2</span>(<span class="st">"matriz1.csv"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0   0.42   0.86   0.75   0.13      0
+Edad_1   0.85   0.00   0.00   0.00      0
+Edad_2   0.00   0.61   0.00   0.00      0
+Edad_3   0.00   0.00   0.75   0.00      0
+Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
+</div>
+</div>
+<p><strong>Paso 2</strong>. Cálculo del autovector dominante en valores reales <code>v_{1}</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tL <span class="ot">&lt;-</span> <span class="fu">t</span>(matriz1) <span class="co"># Transpuesta de la matriz de Leslie (matriz1)</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>autoval <span class="ot">&lt;-</span> <span class="fu">eigen</span>(tL) <span class="co"># Autovalores y autovectores de la matriz transpuesta</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>pos.dom <span class="ot">&lt;-</span> <span class="fu">which.max</span>(<span class="fu">Mod</span>(autoval<span class="sc">$</span>values)) <span class="co"># Valor resproductivo más grande (1)</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">Re</span>(autoval<span class="sc">$</span>vectors[,pos.dom])  <span class="co"># Autovector dominante en valores reales</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>Paso 3</strong>. Cálculo del vector del valor reproductivo <code>v_{x}</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vector de valores reproductivos por cada edad (x)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">matrix</span>(v1<span class="sc">/</span>v1[<span class="dv">1</span>])   </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(vx) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad_0"</span>,<span class="st">"edad_1"</span>,<span class="st">"edad_2"</span>,<span class="st">"edad_3"</span>,<span class="st">"edad_4"</span>)</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>vx <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(vx)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(vx, <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         vx
 edad_0 1.00
@@ -890,11 +944,123 @@ edad_4 0.00</code></pre>
 </b><section id="sensibilidad-y-elasticidad" class="level4"><b style="color:#1f78b4;">
 <h4 class="anchored" data-anchor-id="sensibilidad-y-elasticidad"><strong>Sensibilidad y Elasticidad</strong></h4>
 </b><p><b style="color:#1f78b4;"></b></p>
-<p><strong>Pendiente</strong></p>
+<p>Estos elementos hacen parte de los análisis de perturbaciones prospectivas (Lemos et al.&nbsp;2005), que evalúan el efecto de pequeños cambios en atributos vitales en alguna etapa de la vida en una población de interés, como sus tasas de crecimiento (<span class="math inline">c_{x}</span>), de reproducción (<span class="math inline">m_{x}</span> o <span class="math inline">F_{x}</span>) y de supervivencia (<span class="math inline">l_{x}</span> o <span class="math inline">S_{x}</span>) y su efecto en una variable respuesta que por lo general es la tasa de crecimiento finito (<span class="math inline">\lambda</span>). Esto ayuda a tomar medidas de manejo, orientadas a la conservación o el control de poblaciones, dado que de esta manera es posible conocer la importancia de cada atributo vital mencionado. Estos análisis (Sensibilidad o Elasticidad), permiten simular o proyectar la respuesta de <span class="math inline">\lambda</span> debido al cambio en algun atributo vital (<span class="math inline">c_{x}</span>, <span class="math inline">l_{x}</span> o <span class="math inline">S_{x}</span>, <span class="math inline">m_{x}</span> o <span class="math inline">F_{x}</span>), para alguna edad o estado en particular. Ej. se puede saber la respuesta de <span class="math inline">\lambda</span> si aumenta <span class="math inline">S_{x}</span> en alguna proporción específica.</p>
 </section>
 </section>
 <section id="section-15" class="level2">
 <h2 class="anchored" data-anchor-id="section-15"></h2>
+<p><b style="color:#fc9272;"></b></p><b style="color:#fc9272;">
+</b><section id="análisis-de-sensibilidad" class="level5"><b style="color:#fc9272;">
+<h5 class="anchored" data-anchor-id="análisis-de-sensibilidad"><strong>1. Análisis de Sensibilidad</strong></h5>
+</b><p><b style="color:#fc9272;"></b></p>
+<p><strong>La sensibilidad</strong> <span class="math inline">S_{ij}</span> mide el <em>impacto absoluto</em> <strong>(</strong><span class="math inline">\delta</span><strong>)</strong> en la tasa finita de crecimiento poblabional <span class="math inline">\lambda</span>, sobre el <em>cambio absoluto</em> en uno de los elementos de la matriz de transición de Leslie <span class="math inline">L</span>. De esta forma, las sensibilidades son consideradas contribuciones directas de cada transición en la matriz <span class="math inline">L</span>, sobre el valor de <span class="math inline">\lambda_{1}</span>.</p>
+<p><span class="math display">
+S_{ij}=\frac{\delta\lambda}{\delta l_{ij}}=\frac{v_{1[i]} .\omega_{1[j]}}{v_{1} .\omega_{1}}
+</span></p>
+<p>En donde <span class="math inline">l_{ij}</span> corresponde al elemento de la matriz de Leslie <span class="math inline">L</span> que ha sido alterado de forma absoluta (<span class="math inline">\delta</span>). <span class="math inline">v_{1} .\omega_{1}</span> es el producto de cada combinación de pares de elementos de los vectores própios dominantes izquierdo y derecho - <span class="math inline">v</span> y <span class="math inline">\omega</span>, respectivamente. El numerador se genera por el valor reproductivo (<span class="math inline">v_{x}</span>) del periodo objetivo y la distribución estable del periodo actual (<span class="math inline">\omega_{1}</span>).</p>
+<p><span class="math display">
+\left[\begin{array}{ccc}
+v_{1}\\
+v_{2}\\
+\end{array}\right] * \left[\begin{array}{ccc}
+\omega_{1} &amp; \omega_{2} \\
+\end{array}\right] = \left[\begin{array}{ccc}
+v_{1}\omega_{1} &amp; v_{1}\omega_{2}\\
+v_{2}\omega_{1} &amp; v_{2}\omega_{2}\\
+\end{array}\right]
+</span></p>
+<p>Para el cálculo de la Sensibilidad, se realiza un producto entre el vector del valor reproductivo (<span class="math inline">v_{x}</span>) y la transpuesta del vector de distribución estable (<span class="math inline">\omega</span>). En el denominador de la ecuación de la sensibilidad <strong>S</strong> , se realiza la suma de los productos por pares de cada elemento del vector.</p>
+<p><span class="math display"> v_{11}\omega_{11} +  v_{12}\omega_{12} + ... + v_{1n}\omega_{1n}</span> Para el <strong>ejemplo 1</strong>, el cálculo de la <strong>Sensibilidad</strong> (<span class="math inline">S_{ij}</span>) se realiza de la siguiente forma:</p>
+<p><strong>Paso 1</strong>. Cargar la matriz de transición de Leslie (L).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>matriz1 <span class="ot">=</span> <span class="fu">read.csv2</span>(<span class="st">"matriz1.csv"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0   0.42   0.86   0.75   0.13      0
+Edad_1   0.85   0.00   0.00   0.00      0
+Edad_2   0.00   0.61   0.00   0.00      0
+Edad_3   0.00   0.00   0.75   0.00      0
+Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
+</div>
+</div>
+<p><code>vx1</code> y <code>cx1</code>son el valor reproductivo (vx) y la distribución estable de edades (cx) en formato matricial. <code>vw</code> es el producto de los valores alterados (<span class="math inline">v_{1} .\omega_{1}</span>) en el numerador de la ecuación y <span class="math inline">prod</span> es la suma de los productos por pares.</p>
+<p><strong>Paso 2</strong>. Cálculo del estimador de sensibilidad de la matriz</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Valor reproductivo y distribución estable en formato matricial</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>vx1 <span class="ot">=</span> <span class="fu">as.matrix</span>(vx)</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>cx1 <span class="ot">=</span> <span class="fu">as.matrix</span>(cx)</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Numerador y denominador de la ecuación de sensibilidad</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>vw <span class="ot">=</span> vx1 <span class="sc">%*%</span> <span class="fu">t</span>(cx1)</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>prod <span class="ot">&lt;-</span> <span class="fu">sum</span>(vx1<span class="sc">*</span>cx1) </span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de la sensibilidad (S)</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>((s <span class="ot">&lt;-</span> vw<span class="sc">/</span>prod),<span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       edad_0 edad_1 edad_2 edad_3 edad_4
+edad_0   0.53   0.35   0.17   0.10   0.02
+edad_1   0.52   0.35   0.17   0.10   0.02
+edad_2   0.34   0.23   0.11   0.07   0.01
+edad_3   0.05   0.04   0.02   0.01   0.00
+edad_4   0.00   0.00   0.00   0.00   0.00</code></pre>
+</div>
+</div>
+<p>La anterior en la matriz de sensibilidad <span class="math inline">S_{ij}</span>, resultante de <span class="math inline">\delta\lambda/\delta l_{ij}</span> correspondiente a los cambios absolutos de las tasas vitales (cx y vx) sobre la respuesta relativa de <span class="math inline">\lambda</span>. Para el ejemplo realizado, la mayor sensibilidad es de 0,053, la cual se presenta en el elemento <span class="math inline">l_{11}</span> que corresponde a la fecundidad o aporte de individuos recien nacidos (<span class="math inline">F_{0}</span>). La segunda mayor sensibilidad es de 0,52, que correrponde al elemento <span class="math inline">l_{21}</span> que corresponde a los individuos de edad 0, que sobreviven a la edad 1. Lo anterior implica que cambios absolutos pequeños sobre esos individuos, pueden generar los mayores efectos sobre el incremento finito de la población (<span class="math inline">\lambda</span>).</p>
+</section>
+</section>
+<section id="section-16" class="level2">
+<h2 class="anchored" data-anchor-id="section-16"></h2>
+<p><b style="color:#fc9272;"></b></p><b style="color:#fc9272;">
+</b><section id="análisis-de-elasticidad" class="level5"><b style="color:#fc9272;">
+<h5 class="anchored" data-anchor-id="análisis-de-elasticidad"><strong>2. Análisis de Elasticidad</strong></h5>
+</b><p><b style="color:#fc9272;"></b></p>
+<p>En las matrices de transición de Leslie (L), como las escalas de supervivencia no pueden ser mayores a uno, pero las de fecundidad pueden superar esos valores, los análisis de Sensibilidad al ponderar cambios absolutos en los estimadores vitales, pierden relevancia a la hora de hacer comparaciones entre poblaciones de diferentes especies.</p>
+<p>En este sentido <strong>La elasticidad</strong> <span class="math inline">e_{ij}</span> mide el <em>impacto proporcional</em> (<span class="math inline">\delta</span>) en la tasa finita de crecimiento poblabional <span class="math inline">\lambda</span>, resultante del cambio proporcional en cada elemento de la matriz de transición de Leslie (L). de esta manera, las elasticidades son estandarizaciones de las matrices de sensibilidad. <span class="math inline">e_{ij}</span> está determinada por la siguiente ecuación:</p>
+<p><span class="math display">
+e_{ij}=\left(\frac{l_{ij}}{\lambda}\right)\left(S_{ij}\right)
+</span></p>
+<p>En donde <span class="math inline">l_{ij}</span> corresponde al elemento de la matriz de Leslie <span class="math inline">L</span> que ha sido alterado de forma proporcional (<span class="math inline">\lambda</span>) es la tasa finita de crecimiento de la población y <span class="math inline">S_{ij}</span> es la sensibilidad estimada anteriormente. Todos los elementos de la matriz <span class="math inline">e_{ij}</span> suman <strong>uno</strong>, haciendo que sus resultados sean más comparables con los de otras poblaciones.</p>
+<p><span class="math display">
+\sum{e_{ij}}=1
+</span></p>
+<p>Para el <strong>ejemplo 1</strong>, el cálculo de la <strong>Eslasticidad</strong> (<span class="math inline">e_{ij}</span>) es muy sencillo y se realiza de la siguiente forma:</p>
+<p><strong>Paso 1</strong>. Cargar la matriz de transición de Leslie (L).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>matriz1 <span class="ot">=</span> <span class="fu">read.csv2</span>(<span class="st">"matriz1.csv"</span>,<span class="at">row.names=</span><span class="dv">1</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>matriz1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0   0.42   0.86   0.75   0.13      0
+Edad_1   0.85   0.00   0.00   0.00      0
+Edad_2   0.00   0.61   0.00   0.00      0
+Edad_3   0.00   0.00   0.75   0.00      0
+Edad_4   0.00   0.00   0.00   0.26      0</code></pre>
+</div>
+</div>
+<p><strong>Paso 2</strong>. Cálculo de la matriz de elasticidad e_{ij}.</p>
+<p><code>e</code> = Es la matriz de elasticidad a calcular</p>
+<p><code>s</code> = Es la matriz de sensibilidad calculada en el paso anterior.</p>
+<p><code>Lambda1</code> = Es el autovalor o tasa finita de crecimiento, calculada anteriormente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>e <span class="ot">&lt;-</span> (matriz1<span class="sc">/</span>Lambda1) <span class="sc">*</span> s</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>(<span class="fu">round</span>(e, <span class="dv">3</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       Edad_0 Edad_1 Edad_2 Edad_3 Edad_4
+Edad_0  0.175  0.240  0.101   0.01      0
+Edad_1  0.352  0.000  0.000   0.00      0
+Edad_2  0.000  0.111  0.000   0.00      0
+Edad_3  0.000  0.000  0.010   0.00      0
+Edad_4  0.000  0.000  0.000   0.00      0</code></pre>
+</div>
+</div>
+<p>Para este caso se observa que la supervivencia en la edad 0 (elemento l<sub>21</sub> = 0.35) y la fecundidad de la edad 1 (elemento l<sub>12</sub> = 0.24) son las que tienen mayor efecto sobre <span class="math inline">\lambda</span>. En este sentido, un cambio en la supervivencia de los recien nacidos (edad 0) o en la fecundidad de los de edad 1, tendra un impacto mayor en el aumento de la población (<span class="math inline">\lambda</span>), comparado al resto de tasas vitales, dado a que son las tasas con mayor elasticidad.</p>
+<p>La diferencia de este patrón con el generado en la matriz de sensibilidad se presenta porque la matriz de sensibilidad refleja un <em>cambio proporcional</em> de los elementos de la matriz y entre todas suman <em>uno</em>, mientras que las sensibilidades generan un efecto absoluto o de cantidades constantes sobre dichos eleentos.</p>
+<p>De las matrices de <em>sensibilidad</em> y de <em>elasticidad</em> se puede concluir, que los elementos que controlan la tasa de crecimiento finito <span class="math inline">\lambda</span> en esta población estructurada por edades (x), son la fecundidad y la supervivencia de las edades 0 y 1. Esto es de mucha importancia para proyectos orientados al control de poblaciones invasoras o aquellas que por el contrario, se encuentren amenazadas por extinción.</p>
+</section>
+</section>
+<section id="section-17" class="level2">
+<h2 class="anchored" data-anchor-id="section-17"></h2>
 <p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
 </b></section><b style="color:#1f78b4;">
 </b><section id="cuestionario" class="level2"><b style="color:#1f78b4;">
@@ -978,8 +1144,8 @@ N_{t}  = \left[\begin{array}{ccc}
 </ol>
 <p><img src="https://i.ebayimg.com/images/g/eAAAAOSwRv1jR8ko/s-l500.jpg" class="img-fluid" width="169"></p>
 </section>
-<section id="section-16" class="level2">
-<h2 class="anchored" data-anchor-id="section-16"></h2>
+<section id="section-18" class="level2">
+<h2 class="anchored" data-anchor-id="section-18"></h2>
 </section>
 </div></div></section>
 
