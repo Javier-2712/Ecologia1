@@ -1,0 +1,41 @@
+<b style='color:#1f78b4;'>
+
+## Objetivo de la actividad
+
+</b>
+
+
+Entrenamiento de procedimientos básicos para el análisis de modelos exponenciales continuos y discretos en poblaciones silvestres y humana, con la aplicación del programa RStudio. 
+
+
+
+### <b style='color:#d95f02;'> Modelos de crecimiento exponencial </b> 
+
+1. Realizar un entrenamiento inicial de R, orientado al análisis de modelos exponenciales de poblaciones.
+
+2. Realizar el ejercicio de modelación exponencial del taller realizado con Ramas Ecolab.
+
+3. 	Una población biológica crece a una tasa anual del 6%. Si la población actual es de 5000, ¿cuál será en 7 años?
+
+4. 	Una población de hormigas presenta una tasa de disminución anual del 7,2%. ¿Cuántos años le tomará a esta población de 227 gramos para llegar a 93 gramos de biomasa? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
