@@ -1,0 +1,254 @@
+# Taller4.1 Mod. Exponenciales  {.unnumbered}
+
+## 
+
+<img src="https://images.pexels.com/photos/4147986/pexels-photo-4147986.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" width="49%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Vladimir Blyufer](https://www.pexels.com/es-es/@vladimir-blyufer-1991484/) </n>\]
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Introducción
+
+</b>
+
+<div style="text-align: justify">
+
+**La Ecología de Poblaciones** puede ser considerada como un cuerpo teórico y conjunto de metodologías que estudian los aspectos cuantitativos de los individuos en sus poblaciones. Tiene como objetivo el estudio de las poblaciones y que trata de su dimensión, estructura, evolución y características generales, considerados desde un punto de vista cuantitativo. **La dinámica de poblaciones** utiliza conceptos demográficos, para saber si una población aumenta, disminuye o se mantiene constante. Lo anterior es de suma importancia, para entender el estatus de conservación de una población, explotación sostenida, control de plagas o especies exóticas, o conocer la acción de la selección natural. La dinámica poblacional, consiste en saber como cambia una población en el tiempo. A partir de estimaciones de nacimientos, muertes, inmigraciones o emigraciones. Aunque suele considerarse a las poblaciones cerradas.
+
+![Figura: Elementos en la ecología de poblaciones](https://javier-2712.github.io/Ecologia1/Figuras/Captura1.JPG){width="70%"}
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Objetivo de la actividad
+
+</b>
+
+<img src="https://t3.ftcdn.net/jpg/06/24/02/44/240_F_624024485_fNiSstDIEEclBP5bgvs2Rd5uMVtZenaN.jpg" width="50%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Damianius](https://stock.adobe.com/co/contributor/211350149/damianius?load_type=author&prev_url=detail) </n>\]
+
+<div style="text-align: justify">
+
+Entrenamiento de procedimientos básicos para el análisis de modelos exponenciales continuos y discretos en poblaciones silvestres y humana, con la aplicación de diferentes programas computacionales.
+
+<b style='color:#1f78b4;'>
+
+## Programa Ramas Ecolab
+
+</b>
+
+![*Akcakaya et al. (1999)*](https://pictures.abebooks.com/isbn/9780878930289-es.jpg){fig-align="left" width="133"}
+
+<div style="text-align: justify">
+
+EcoLab es un programa que sirve de complemento interactivo a los capítulos del libro de **Akcakaya et al. (1999)**, el cual se encuentra en una versión física en la biblioteca de la Universidad ([enlace](https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/kc5p7o/alma990000155580107076)).
+
+​Este programa cuenta con cuatro módulos para: (1) generar números aleatorios, (2) realizar modelos simples que incorporan variabilidad y dependencia de la densidad. (3) producir modelos matriciales que incorporan estructura de edad y denso-dependientes. (4) realizar modelos de metapoblaciones.
+
+Algunos de estos módulos los veremos en la asignatura (2 y 3), para que los estudiantes puedan manipular sus propios modelos y observar la simulación de sus trayectorias en el tiempo, complementando esta información, con la que se ofrece en los capítulos del libro guía de Akcakaya et al. (1999).
+
+<b style='color:#1f78b4;'>
+
+## Programas RStudio y R
+
+</b>
+
+![Programas de R y RStudio](https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png){fig-align="left" width="198"}
+
+Son dos programas que trabajan de forma simultánea y que permitirán el diseño y edición de diferentes variantes a los modelos de crecimiento exponencial y logístico de poblaciones. A diferencia del programa anterior (Ramas Ecolab), su manejo no es tan básico e intuitivo, porque requieren un manejo más complejo, pero con la ventaja de poder producir resultados con un mayor nivel de calidad, para informes y publicaciones en casi cualquier revista científica, entre otras ventajas.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Procedimiento del taller en clase
+
+</b>
+
+<img src="https://as1.ftcdn.net/v2/jpg/06/07/91/14/1000_F_607911458_OSemRM34vhjtwEQE2Ug4F87bgYtI66Tl.jpg" width="40%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Karina](https://stock.adobe.com/co/contributor/211153814/karina?load_type=author&prev_url=detail) </n>\]
+
+<div style="text-align: justify">
+
+<div style="text-align: justify">
+
+**Nota**: Previo a la sesión del taller de cómputo, es necesario que revisen el video de la clase en donde se explica el procedimiento (ver [enlace de videos semanas 5 a 6](http://localhost:3107/videos.clases.html#videos-de-la-semanas-5-a-6)), el día de la sesión, el docente evaluará la revisión que se haya hecho de ese material.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 1. Descarga de de los programas requeridos**
+
+</b>
+
+-   **Ramas Ecolab**. Se requiere descargar el siguiente archivo y descomprimirlo en un directorio, previo a su apertura: [Programa_Ramas_Ecolab](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/EcoLab.zip).
+
+-   **RStudio y R**. Para la descarga e instalación de estos programas, seguir el paso a paso del siguiente enlace ([enlace](https://posit.co/download/rstudio-desktop/)). Instalar primero el **R** y posteriormente **RStudio**.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 2. Procedimiento del taller en Ramas Ecolab**
+
+</b>
+
+![*Akcakaya et al. (1999)*](https://pictures.abebooks.com/isbn/9780878930289-es.jpg){alt="Libro de Akcakaya et al. (1999)" fig-align="left" width="115"}
+
+Las pautas resumidas de este taller se encuentran en el siguiente enlace [Enlace al pdf del Taller](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Taller_ramas_ecolab.pdf).
+
+-   <b style='color:#66c2a5;'> **1.** **SIMULACIONES DE CRECIMIENTO EXPONENCIAL (DETERMINISTICO Y ESTOCASTICO).** </b>
+
+    A\_ Entrar al programa RAMAS EcoLab y seleccionar el subprograma \"**Population Grow**\".
+
+    B\_ Seleccionar \"**General Information**\" e incluir el titulo y comentarios para el ejercicio.
+
+    C\_ Entrar los siguientes parámetros al modelo:
+
+    -   Replication: 0
+    -   Duration: 12
+
+    D\_ Entrar en \"**Model**\" y hacer click \"**Population**\". Editar los siguientes valores:
+
+    1.  Initial abundance 31
+    2.  Growth  rate (R): 1.148
+
+    E\_ ¿*Cuál será la tasa instantánea de crecimiento exponencial*? ¿*Cuál será la velocidad de crecimiento*?
+
+    F\_ Seleccionar \"**Simulation**\" y hacer click en \"**Run**\". Se desarrollará una simulación en 12 pasos de tiempo. Salir de la simulación.
+
+    G\_ Seleccionar \"**Trajectory summary**\", la cual simulará el crecimiento exponencial ¿Cuál será el tamaño final de la población?
+
+    H\_ Seleccionar \"**General Information**\" y editar el número de replicas de 100. y hacer click en \"**Demographic stochasticity**\".
+
+    I\_ Entrar en \"**Population**\". Editar los siguientes valores:
+
+    -   Initial abundance: 31
+    -   Growth  rate (R): 1.148
+    -   Survival rate (s): 0.921
+    -   Standard deviation of R: 0.075
+
+    J\_ Repetir los pasos: E y F. ¿Alguna trayectoria es similar a la trayectoria determinística? ¿Que causa estas diferencias?. Salvar el documento.
+
+    K\_ Seleccionar \"**Extinction/Decline**\"
+
+    -   ¿Cuál es el riesgo de que desciendan 31 individuos basados en la curva?
+
+    -   Hacer clic en \"**Show numbers**\" y responder esta interrogante.
+
+---
+
+<b style='color:#fc8d62;'>
+
+### **Paso 3. Procedimiento del taller en RStudio**
+
+</b>
+
+![Programas de R y RStudio](https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png){alt="Programas de R y RStudio" fig-align="left" width="155"}
+
+-   <b style='color:#66c2a5;'> **SIMULACIONES DE CRECIMIENTO EXPONENCIAL.** </b>
+
+    -   El archivo de base para este este taller (extensión quarto - *qmd*) se encuentran en el siguiente enlace ([Enlace_Taller](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Taller4.poblaciones.exp.qmd)).
+    -   Seguir las indicaciones del docente.
+
+---
+
+\
+<b style='color:#1f78b4;'>
+
+## Referencias bibliográficas
+
+</b>
+
+<div style="text-align: justify">
+
+1.  **Akçakaya,** H. Resit, Mark A. Burgman, and Lev R. Ginzburg. Applied Population Ecology: Principles and Computer Exercises Using RAMAS EcoLab 2.0. Segunda erdición. Sunderland: Sinauer Associates, 1999. ([enlace del libro](https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/kc5p7o/alma990000155580107076))
+
+    ![Ver Capítulo 1. Population Growth.](https://m.media-amazon.com/images/I/41w-rdJNSCL._SX357_BO1,204,203,200_.jpg){alt="Capítulo 1. Population Growth." fig-align="left" width="15%"}
+
+```{=html}
+<!-- -->
+```
+2.  **Gotelli**, Nicholas J. A Primer of Ecology. Cuarta edición. Massachusetts: Sinauer Associates, 2008. ([enlace del libro](https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/1mttj4m/alma990000339950107076))
+
+    ![Ver Capítulo 1. Exponential Population Growth.](https://i.ebayimg.com/images/g/eAAAAOSwRv1jR8ko/s-l500.jpg){alt="Capítulo 1. Exponential Population Growth." fig-align="left" width="15%"}
+
+```{=html}
+<!-- -->
+```
+3.  **Notas de clase de poblaciones**. Javier Rodríguez-Barrios. [Enlace al pdf de las notas de clase](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Notas_clase_poblaciones.pdf)
+
+    <img src="https://images.pexels.com/photos/6238030/pexels-photo-6238030.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" width="22%"/>
+
+```{=html}
+<!-- -->
+```
+4.  **Ecuaciones requeridas** para las clases de poblaciones. Javier Rodríguez-Barrios. [Enlace al pdf de las ecuaciones](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Ecuaciones_poblaciones_ex_log.pdf)
+
+    <img src="https://media.istockphoto.com/id/467782423/es/foto/pizarra.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=qQgX6gxRoi4TYneBKbV8iQyCzKSB8K9hKRyJuK5H8-E=" width="21%"/>
+
+```{=html}
+<!-- -->
+```
+5.  **Diapositivas** para las clases de poblaciones. Javier Rodríguez-Barrios. [Enlace al pdf de las diapositivas](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Clase4.Poblaciones_Diapositivas.pdf)
+
+    <img src="https://media.istockphoto.com/id/1452436256/es/foto/diapositiva-de-control-remoto-de-mano-de-hombre-de-negocios-con-presentaci%C3%B3n-en-pantalla.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=YmUqCtGDSRNLlBO1v_b44o8O1JD6ZXQqKz2KIoIbfiI=" width="21%"/>
+
+---
+
+<b style='color:#1f78b4;'>
+
+## Cuestionario de estudio
+
+</b>
+
+<img src="https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg" width="36%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Alex Green](https://www.pexels.com/es-es/@alex-green/) </n>\]
+
+<div style="text-align: justify">
+
+El siguiente cuestionario es tomado de las notas de clase [Enlace](), se requiere resolver las siguientes preguntas, que servirán para realizar un entrenamiento, previo a la evaluación que realizará el docente sobre modelos exponenciales en poblaciones. En la medida de las posibilidades, es necesario que cada ejercicio sea graficado y analizar los resultados obtenidos.
+
+### <b style='color:#d95f02;'> Preguntas sobre modelos de crecimiento exponencial </b>
+
+1.  Una población biológica crece a una tasa anual del 6%. Si la población actual es de 5000, ¿cuál será en 7 años?
+
+2.  Una población de aves crece a un ritmo anual del 5%. Si la población actual es de 2000, ¿cuántos años se tardará para que vuelvan a doblar? Redondea tu respuesta a la centésima más cercana.
+
+3.  Una población de hormigas presenta una tasa de disminución anual del 7,2%. ¿Cuántos años le tomará a esta población de 227 gramos para llegar a 93 gramos de biomasa?
+
+4.  Supongamos que la población de peces marinos crece a una tasa anual del 7%. Si la población actual es de 8000 individuos, ¿cuántos años se tardará para que llegue a 18000?
+
+5.  Una población silvestre crece a una tasa anual del 7%. Si la población aumenta a 2000 en 7 años, ¿Cuál sería el tamaño de la población inicial?
+
+6.  Una población de curíes de interés para consumo, crece a una tasa anual del 3%. Si la población actual es de 3.000 individuos, ¿cuántos años se tardará para que doble su densidad?
+
+7.  Una población endémica de mariposas declina su densidad anual en 12,5%. A partir de una muestra de 127 gramos de biomasa, ¿cuál será su biomasa a los 6 años?
+
+8.  De acuerdo al artículo que titular "U.S. reaching the 300 million person milestone", se destaca en unos de sus apartes, que la población de U.S. alcanzó 200 millones de personas en 1967. De acuerdo a lo anterior:
+
+<!-- -->
+
+a.  Asumiendo que en 2007 la población alcanza los 303 millones (303.106), calcular la tasa de incremento instantáneo por año.
+
+b.  Si esta tendencia continúa por los 20 años siguientes, ¿cuál será el tamaño de la población en el año 2027?
+
+<!-- -->
+
+9.  La proyección de naciones unidas para la población mundial, se da en un rango basado en diferentes escenarios posibles que pueden darse en el futuro. El menor estimador global para la población de 2050 es de 7.3 billones de personas y el mayor estimador es de 10.7 billones. ¿Cuál será la tasa de incremento anual en cada estimador, asumiendo que la población inicia con 8,1 billones en 2023? <https://countrymeters.info/es/World>
+
+10. ¿Cuánto tiempo puede tomar para que un par de individuos produzcan la población mundial actual (cerca de 10 billones de personas) con la presente tasa de crecimiento poblacional (r = 2,8% por año)? ¿En qué tiempo se doblaría esta población? Discuta el resultado.
+
+11. En el momento en el que un libro de cabecera fue escrito se esperaba que la población humana mundial doblara en tamaño en aproximadamente 50 años. (a) calcule r para la población humana. Si la población en 1993 era de 5400 millones, (b) ¿cuál es el tamaño proyectado para el año 2030?
+
+12. Usted estudia una población de escarabajos de tamaño 3.000. Durante el periodo de un mes usted registra 400 nacimientos y 150 muertes en esta población. (a) Estime r y (b) proyecte el tamaño poblacional en 6 meses.
+
+13. Usted estudia una población de orquídeas en peligro para las cuales b= 0.0021 nacimientos/individuo.año y d= 0.0020 muertes/individuo.año. La población actual es de 40 plantas. Un nuevo centro comercial eliminará parte del hábitat de las orquídeas y reducirá la población a 20 plantas. Explique el efecto del desarrollo propuesto sobre la probabilidad de extinción de esta población.
+
+14. Si una población de *E. coli* crece de 1000 células a 2x109 células en 6 h, ¿Cuál será su tasa intrínseca de incremento? ¿Está doblando su tiempo?
+
+### 

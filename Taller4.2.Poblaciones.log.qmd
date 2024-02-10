@@ -1,0 +1,432 @@
+# Taller4.2 Mod. Logísticos {.unnumbered}
+
+<b style='color:#1f78b4;'>
+
+## Objetivo de la actividad
+
+</b>
+
+<div style="text-align: justify">
+
+Entrenamiento de procedimientos básicos para el análisis de modelos logísticos en poblaciones silvestres, con la aplicación del programa RStudio. Este taller es continuación del anterior ([enlace](https://javier-2712.github.io/Manuales/6.Manual_eco1/Taller4.1.Poblaciones.exp.html)).
+
+<b style='color:#1f78b4;'>
+
+## Procedimiento del taller en clase
+
+</b>
+
+![](https://as1.ftcdn.net/v2/jpg/06/07/91/14/1000_F_607911458_OSemRM34vhjtwEQE2Ug4F87bgYtI66Tl.jpg){width="40%"}
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Karina](https://stock.adobe.com/co/contributor/211153814/karina?load_type=author&prev_url=detail) </n>\]
+
+<div style="text-align: justify">
+
+<div style="text-align: justify">
+
+**Nota**: Previo a la sesión del taller de cómputo, es necesario que revisen el video de la clase en donde se explica el procedimiento (ver [enlace de videos semanas 6 a 7](https://javier-2712.github.io/Manuales/6.Manual_eco1/videos.clases.html#videos-de-la-semanas-6-a-7)), el día de la sesión, el docente evaluará la revisión que se haya hecho de ese material.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 1. Procedimiento del taller en Ramas Ecolab**
+
+</b>
+
+![*Akcakaya et al. (1999)*](https://pictures.abebooks.com/isbn/9780878930289-es.jpg){alt="Libro de Akcakaya et al. (1999)" fig-align="left" width="133"}
+
+Las pautas resumidas de este taller se encuentran en el siguiente enlace [Enlace al pdf del Taller](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Taller_ramas_ecolab.pdf).
+
+-   <b style='color:#66c2a5;'> **2. SIMULACIONES DE CRECIMIENTO LOGISTICO CON *PARAMECIUM*.** </b>
+
+    A\_ Repita los pasos A-C del ejercicio anterior, con algunas variantes en los valores a tabular.
+
+    -   Replication: 0
+    -   Duration: 2
+
+    B\_ Entrar en \"**Model**\" y hacer click \"**Population**\". Editar los siguientes valores:
+
+    -   Initial abundance: 2
+    -   Growth  rate (R): 1.5
+
+    C\_ En \"**Density dependence**\" hacer click en el modelo \"**Screamble**\", para K utilizar un valor de acuerdo con la Fig. 3.8.  
+
+    ![](paramecium.png){width="243"}
+
+    D\_ Seleccionar \"**Simulation**\" y hacer click en \"**Run**\". Salir de esa ventana.
+
+    E\_ Seleccionar \"**Trajectory summary**\", la cual simulará el crecimiento exponencial.
+
+    -   ¿Cuál será el tamaño final de la población?
+    -   ¿Por qué no se alcanzó la capacidad de carga al día 12?
+    -   ¿Si el K es alcanzado posterior al día 12 quiere decir que R es algo lento?
+    -   ¿Cuál es la velocidad de crecimiento de la población?
+    -   ¿Cómo maximizar la producción de paramecios?
+    -   ¿Cuál será la velocidad máxima de crecimiento de esa población?
+
+    G\_ Cambiar la abundancia inicial a 800 y correr otra simulación. Hacer descripción de la trayectoria generada.
+
+    -   ¿Cuál es la velocidad de crecimiento de la población?
+
+-   <b style='color:#66c2a5;'> **3. ADICIONANDO ESTOCASTICIDAD AL MODELO LOGISTICO.** </b>
+
+    En el experimento desarrollado por Gause con la población *Paramecium*, se adicionará variación por estocasticidad demográfica.
+
+    A\_ Adicionar 100 replicas y activar la casilla \"**demographic stochasticity**\".
+
+    -   Replication: 100
+    -   Duration: 25
+
+    B\_ Si  R=f+S (sobrevivientes + sus crías en t+1).
+
+    -   Para la especie en estudio se asume que toda la reproducción es asexual (por fisión binaria).
+    -   Entonces S=0 y R=f cercana a 2 (por fisión se producen 2 crías/parental).
+    -   Initial abundance: 2
+    -   Growth  rate (R): 2.000
+    -   Survival rate (s): 0.000
+    -   Standard deviation of R: 0.000
+
+    C\_ Correr la simulación y comparar con los resultados experimentales de Fig. 3.8.
+
+---
+
+<b style='color:#fc8d62;'>
+
+### **Paso 2. Procedimiento del taller en RStudio**
+
+</b>
+
+![Programas de R y RStudio](https://bookdown.org/oscar_teach/estadistica_aplicada_con_r/r-rstudio.png){alt="Programas de R y RStudio" fig-align="left" width="151"}
+
+-   <b style='color:#66c2a5;'> **SIMULACIONES DE CRECIMIENTO LOGÍSTICO.** </b>
+    -   El archivo de base para este este taller (extensión quarto - *qmd*) se encuentran en el siguiente enlace ([Enlace_Taller](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Taller4.poblaciones.log.qmd)).
+    -   Seguir las indicaciones del docente, para el siguiente procedimiento.
+
+### <b style='color:#d95f02;'> Modelos de crecimiento logístico </b>
+
+1.  Una población de pasálidos crece de acuerdo a la ecuación logística. Si la población inicial es de 200 individuos, la capacidad de carga es de 500 pasálidos y la tasa de crecimiento es de 0.1 pasálidos/pasálidos x mes, a) ¿cuál es la tasa de crecimiento para la población dN/dt? b) ¿cuál es la tasa máxima de crecimiento para la población dN/dt máx? c) ¿cuál es la tasa de crecimiento para la población dN/dt si se cuenta con 600 individuos? d) Cuál será la densidad de la población en cinco meses, si se inicia con 200 individuos? e) Cuál es el tiempo requerido para alcanzar 400 individuos, partiendo de 200 iniciales?
+
+![Adulto *Odontotaenius disjunctus* (tomado de Wikipedia [enlace](https://es.wikipedia.org/wiki/Passalidae))](https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Beetle-Bessbug.jpg/800px-Beetle-Bessbug.jpg){width="287"}
+
+## 
+
+2.  Una población de bacterias crece de acuerdo a la ecuación logística. Si la población inicial es de 500 bacterias y la capacidad de carga es de 10000 bacterias, y la tasa de crecimiento es de 0.05 bacterias/bacteria x hora, ¿cuál es la tasa de crecimiento para la población dN/dt?
+
+### <b style='color:#d95f02;'> Respuestas </b>
+
+**Pregunta 1**
+
+**a) Datos** No = 200 individuos k = 500 individuos r = 0.1 indv./indv. x mes dN/dt = ?
+
+**Paso 1:** Datos para la ecuación logística
+
+```{r}
+# Cálculo de la tasa o velocidad de crecimiento de la población de pasálidos
+No = 200 
+k  = 500 
+r  = 0.1 
+dN_dt = r * No * (1 - (No/k))
+dN_dt      # Por cada més la población aumenta en 12 individuos
+```
+
+**Paso 2** Base de datos
+
+```{r}
+#
+t = seq(0,100, by=5)
+t
+
+Nt = k/(1 + ((k-No)/No) * exp(-r*t))
+round(Nt)
+
+datos = data.frame(tiempo = t, densidad = round(Nt))
+datos
+```
+
+**Paso 3:** Figura de la proyección logística de la población.
+
+La @fig-fig1, muestra que la población de pasálido alcanza su capacidad de carga de 500 individuos en a los 75 meses.
+
+```{r}
+#| label: fig-fig1
+#| fig-cap: Poyección logística de la población de pasálido, iniciando con 200 individuos (No), hasta alcanzar su capacidad de carga de 500 individuos (K).
+# 
+library(ggplot2)
+t = 75
+
+ggplot(datos, aes(x= tiempo, y= densidad)) +   # Capa de ejes 
+  
+  # Capas de líneas del modelo
+  geom_line(color="blue") +
+  geom_point(color="red", size=2) +
+  geom_vline(xintercept = t, color = "black", linetype = "dashed") +   # Línea de t (75) para N = k
+  geom_hline(yintercept = k, color ="black", linetype = "dashed")   +   # Línea de k (500) 
+  
+  # Capas de texto en la figura
+  geom_text(x = t + 0.5, y = 470, 
+            label = paste("Valor de k\nen", t, "meses"),
+            color = "blue", size = 4, vjust = 0.5) +
+  geom_point(aes(x = t, y = k), color = "blue", size = 4) +
+  
+  # Capas de rotulos de los ejes
+  labs(x= "t (Meses)", y ="Poblacion (Nt)",
+       title= "Proyeccion logistica de la poblacion de Pasalidos") +
+  theme_classic()
+```
+
+<div style="text-align: justify">
+
+**b) Datos** No = 200 individuos k = 500 individuos r = 0.1 indv./indv. x mes `dN/dt max = ?` Máxima capacidad o velocidad de aumento de la población
+
+**Paso 1:** Datos para la ecuación logística
+
+La velocidad de crecimiento k/2 fue de 12 individuos por mes y la velocidad o tasa máxima de aumento de la población es de 12.5 individuos por mes cuando se cuenta con un k/2 de 250 individuos (K=500 individuos)
+
+```{r}
+#
+No = 200 
+k  = 500 
+r  = 0.1 
+k_2 = 500/2
+
+dN_dt.max = r * k_2 * (1-(k_2/k))
+dN_dt.max     # La veloidad máxima de aumento de la población es de 12.5 indv. / t
+
+```
+
+**Paso 2** Base de datos de Nt vs. dN_dt
+
+```{r}
+# 
+No= 1
+t = seq(0,150, by=10)   # Secuencia de tiempos de 0 a 150 meses
+t
+
+Nt = k/(1 + ((k-No)/No) * exp(-r*t))   # Cálculo de Nt para los diferentes tiempos (meses)
+round(Nt)
+
+dN_dt = r * Nt * (1 - (Nt/k))   # Cálculo de tasa dN_dt para los diferentes Nt
+dN_dt
+
+datos = data.frame(densidad_Nt = round(Nt), dN_dt = round(dN_dt))
+datos
+```
+
+<div style="text-align: justify">
+
+**Paso 3:** Figura de la proyección logística de la población.
+
+La @fig-fig2 muestra la relación de la velocidad de aumento `(dN/dt) con el tamaño de la población (Nt)`, definiendo que la máxima tasa de aumento `(dN/dt máx. = 12.5 indv. x meés)` se presenta en un k/2 de 250 pasalidos. Este pstrón puede ser visualizado en la pendiente de la curva de la @fig-fig1.
+
+```{r, message=FALSE}
+#| label: fig-fig2
+#| fig-cap: Patrón unimodal en la relación de la velocidad de aumento (dN/dt) con el tamaño de la población (Nt)
+#
+library(ggplot2)
+
+Nt = 250
+
+# Capas de de los ejes de la figura
+ggplot(datos, aes(x= densidad_Nt, y= dN_dt)) +
+  geom_smooth(color="blue") +
+  geom_point(color="red", size=2) +
+  geom_vline(xintercept = 250, color = "black", linetype = "dashed") +     # Línea de t (75) para N = k
+  geom_hline(yintercept = 12.5, color ="black", linetype = "dashed")   +   # Línea de k (500) 
+  
+  # Capas de texto en la figura
+  geom_text(x = 250, y = 11, 
+            label = paste("Valor de dN/dt.max\nen Nt = 250 indv."),
+            color = "blue", size = 4, vjust = 0.5) +
+  geom_point(aes(x = 250, y = 12.5), color = "blue", size = 4) +
+
+     
+  #
+  labs(x= "Densidad (Nt)", y ="Tasa de Crecimiento (dN/dt)",
+       title= "Proyeccion logistica de la poblacion de Pasalidos") +
+  theme_classic()
+```
+
+## 
+
+<div style="text-align: justify">
+
+c)  ¿cuál es la tasa de crecimiento para la población dN/dt si se cuenta con 600 individuos?
+
+Datos de el ejercicio:
+
+No = 600 individuos k = 500 individuos r = 0.1 indv./indv. x mes dN_dt = ?
+
+**Paso 1.** Datos para la ecuación logística
+
+Si la población incia con 600 individuos, está supera a su capacidad de carga en 100 individuos, presentando una tasa o velocidad de disminución de 12 individuos por mes.
+
+```{r}
+#
+No = 600 
+k  = 500 
+r  = 0.1 
+dN_dt = r * No * (1-(No/k))
+dN_dt
+
+```
+
+**Paso 2.** Base de datos
+
+```{r}
+#
+t = seq(0,100, by= 5)
+t
+Nt = k/(1+((k-No)/No)*exp(-r*t))
+round(Nt)
+# Base de datos (datos)
+datos = data.frame(tiempo=t, densidad=round(Nt))
+head(datos)   # head muestra solo las 6 primeras filas de la tabla.
+```
+
+Paso 3. Figura de la proyección logística
+
+La @fig-fig3 permite visualizar el descenso de la población, debido a que la densidad inicial se encuentra por encima de su capacidad de carga.
+
+```{r, message=FALSE, warning=FALSE}
+#| label: fig-fig3
+#| fig-cap: Poyección de siminución de la población hasta alcanzar su capacidad de carga en 55 meses.
+#
+library(ggplot2)
+t = 55           # Tiempo en que la pob. desciende a su valor de k (500 indv.)
+
+#
+ggplot(datos, aes(x= tiempo, y=densidad)) +
+  
+  geom_line(color="blue", size=1.2) +
+  geom_point(color="red", size= 3)  +
+  
+  geom_hline(yintercept = k, color = "black", linetype = "dashed") +
+  geom_vline(xintercept = t, color = "black", linetype = "dashed") +
+  
+  labs(x= "t (meses)", y= "Población (Nt)",
+       title = "Proyección logística de la población")  +
+  
+  theme_minimal()
+
+```
+
+## 
+
+<div style="text-align: justify">
+
+d)  Cuál será la densidad de la población en cinco meses, si se inicia con 200 individuos?
+
+Datos del ejercicio
+
+No = 200 individuos k = 500 individuos r = 0.1 indv./indv. x mes t = 5 meses N5 = ?
+
+**Paso 1.** Datos para la ecuación logística
+
+```{r}
+No = 200 
+k  = 500 
+r  = 0.1 
+t  = 5 
+
+N5 = k / (1+((k-No)/No) * exp(-r*t))
+round(N5)
+```
+
+## 
+
+<div style="text-align: justify">
+
+e)  Cuál es el tiempo requerido para alcanzar 400 individuos, partiendo de 200 iniciales?
+
+Datos del ejercicio
+
+No = 200 individuos Nt = 400 individuos k = 500 individuos r = 0.1 indv./indv. x mes t = ?
+
+**Paso 1.** Datos para la ecuación logística
+
+```{r}
+No = 200 
+Nt = 400 
+k  = 500 
+r  = 0.1 
+
+t = (log(Nt) - log(k) + log(1+((k-No)/No)))/r
+t
+
+# Prueba debe dar Nt = 500
+Nt = k / (1+((k-No)/No) * exp(-r*6.931472))
+round(Nt)
+  
+```
+
+---
+
+\
+<b style='color:#1f78b4;'>
+
+## Referencias bibliográficas
+
+</b>
+
+<div style="text-align: justify">
+
+1.  **Akçakaya,** H. Resit, Mark A. Burgman, and Lev R. Ginzburg. Applied Population Ecology: Principles and Computer Exercises Using RAMAS EcoLab 2.0. Segunda erdición. Sunderland: Sinauer Associates, 1999. ([enlace del libro](https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/kc5p7o/alma990000155580107076))
+
+    ![Ver Capítulo 1. Population Growth.](https://m.media-amazon.com/images/I/41w-rdJNSCL._SX357_BO1,204,203,200_.jpg){alt="Capítulo 1. Population Growth." fig-align="left" width="15%"}
+
+```{=html}
+<!-- -->
+```
+2.  **Gotelli**, Nicholas J. A Primer of Ecology. Cuarta edición. Massachusetts: Sinauer Associates, 2008. ([enlace del libro](https://unimagdalena.primo.exlibrisgroup.com/permalink/57UMA_INST/1mttj4m/alma990000339950107076))
+
+    ![Ver Capítulo 1. Exponential Population Growth.](https://i.ebayimg.com/images/g/eAAAAOSwRv1jR8ko/s-l500.jpg){alt="Capítulo 1. Exponential Population Growth." fig-align="left" width="15%"}
+
+```{=html}
+<!-- -->
+```
+3.  **Notas de clase de poblaciones**. Javier Rodríguez-Barrios. [Enlace al pdf de las notas de clase](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Notas_clase_poblaciones.pdf)
+
+    ![](https://images.pexels.com/photos/6238030/pexels-photo-6238030.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){width="22%"}
+
+```{=html}
+<!-- -->
+```
+4.  **Ecuaciones requeridas** para las clases de poblaciones. Javier Rodríguez-Barrios. [Enlace al pdf de las ecuaciones](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Ecuaciones_poblaciones_ex_log.pdf)
+
+    ![](https://media.istockphoto.com/id/467782423/es/foto/pizarra.jpg?s=612x612&w=0&k=20&c=qQgX6gxRoi4TYneBKbV8iQyCzKSB8K9hKRyJuK5H8-E=){width="21%"}
+
+```{=html}
+<!-- -->
+```
+5.  **Diapositivas** para las clases de poblaciones. Javier Rodríguez-Barrios. [Enlace al pdf de las diapositivas](https://javier-2712.github.io/Ecologia1/Taller4.poblaciones.exp/Clase4.Poblaciones_Diapositivas.pdf)
+
+    ![](https://media.istockphoto.com/id/1452436256/es/foto/diapositiva-de-control-remoto-de-mano-de-hombre-de-negocios-con-presentaci%C3%B3n-en-pantalla.jpg?s=612x612&w=0&k=20&c=YmUqCtGDSRNLlBO1v_b44o8O1JD6ZXQqKz2KIoIbfiI=){width="21%"}
+
+---
+
+<b style='color:#1f78b4;'>
+
+## Cuestionario de estudio
+
+</b>
+
+![](https://images.pexels.com/photos/5699456/pexels-photo-5699456.jpeg){width="36%"}
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Alex Green](https://www.pexels.com/es-es/@alex-green/) </n>\]
+
+<div style="text-align: justify">
+
+El siguiente cuestionario es tomado de las notas de clase [Enlace](), se requiere resolver las siguientes preguntas, que servirán para realizar un entrenamiento, previo a la evaluación que realizará el docente sobre modelos exponenciales en poblaciones. En la medida de las posibilidades, es necesario que cada ejercicio sea graficado y analizar los resultados obtenidos.
+
+### <b style='color:#d95f02;'> Preguntas sobre modelos de crecimiento Logístico </b>
+
+<div style="text-align: justify">
+
+1.  Una población de bacterias crece de acuerdo a la ecuación logística. Si la población inicial es de 500 bacterias y la capacidad de carga es de 10000 bacterias, y la tasa de crecimiento es de 0.05 bacterias/bacteria x hora, ¿cuál es la tasa de crecimiento para la población dN/dt?
+
+2.  Se tiene una población de plantas que crece de acuerdo a la ecuación logística. Si la población inicial es de 100 plantas y la capacidad de carga es de 400 plantas, y la tasa de crecimiento es de 0.02 plantas/planta x día, ¿cuántas plantas habrá después de 6 meses?
+
+3.  Una población de ratones crece de acuerdo a la ecuación logística. Si la población inicial es de 50 ratones y la capacidad de carga es de 500 ratones, y la tasa de crecimiento es de 0.1 ratones/ratón x semana, ¿en cuántas semanas la población alcanzará el 80% de su capacidad de carga?
+
+4.  Se investiga una población de aves denso-dependiente que tienen las siguientes relaciones para las tasas de nacimiento (b') y mortalidad (d') en función del tamaño poblacional (N): b' = 0.12 + (0.01)N -- (0.0001)N\^2 d' = 0.18 + (0.008)N ¿Cuál es el valor máximo que puede alcanzar la tasa de natalidad en esta población?
+
+5.  Se estudia una población de lagartos denso-dependiente que tienen las siguientes relaciones para las tasas de nacimiento (b') y mortalidad (d') en función del tamaño poblacional (N): b' = 0.06 + (0.03)N -- (0.0004)N\^2 d' = 0.21 + (0.007)N ¿Qué sucedería con la población si se redujera la tasa de mortalidad en un 50%? ¿Afectaría esto a la capacidad de carga de la población?

@@ -1,0 +1,262 @@
+# Taller5. Demog.Humana {.unnumbered}
+
+<b style='color:#d95f02;'>
+
+## **Introducción**
+
+</b>
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/20200101_Life_expectancy_increases_with_age_already_achieved_-_chart.svg/1280px-20200101_Life_expectancy_increases_with_age_already_achieved_-_chart.svg.png){width="406"}
+
+\[Imágen tomada de [RCraig09](https://commons.wikimedia.org/w/index.php?curid=134781849)\]
+
+<div style="text-align: justify">
+
+La **demografía**, la ciencia que se dedica al estudio de las poblaciones humanas, desempeña un papel fundamental en la comprensión de la historia y evolución de nuestra especie, Homo sapiens. Uno de los métodos más fascinantes para analizar la demografía de poblaciones pasadas es el uso de **tablas de vida** estáticas, las cuales proporcionan un vistazo detallado a la mortalidad y la esperanza de vida en un momento particular en la historia.
+
+Las **tablas de vida** son herramientas esenciales para la demografía, desempeñan un papel fundamental en la comprensión de la dinámica de poblaciones y de su calidad de vida. Estas tablas proporcionan un retrato detallado de la mortalidad y la esperanza de vida en diferentes grupos de edad, lo que permite a los investigadores analizar y comparar las características demográficas de poblaciones humanas a lo largo del tiempo y en diversas regiones geográficas.
+
+Como señala *Coale (1972)*, pionero en el campo de la demografía, "las tablas de vida son un registro histórico de la experiencia de una población con respecto a su mortalidad" y, por lo tanto, son una herramienta invaluable para rastrear la evolución de las poblaciones. Además, las tablas de vida estánticas, que se centran en una cohorte específica en un período dado, ofrecen una visión única de la estructura de edad y los patrones de mortalidad en un momento concreto.
+
+Como señala *Wachter (2014)*, "las tablas de vida estáticas son herramientas esenciales en la investigación demográfica, permitiéndonos desentrañar los misterios de cómo las poblaciones humanas han evolucionado a lo largo del tiempo". En palabras de *Carey (2001)* "las tablas de vida estáticas nos brindan una visión instantánea y detallada de cómo las poblaciones están estructuradas por edades y géneros en un momento particular, lo que es fundamental para comprender los desafíos demográficos y sociales que enfrenta una sociedad en un período histórico específico".
+
+El presente taller tiene como **objetivo** elaborar tablas de vida estáticas y analizar su aplicación en el análisis de poblaciones humanas, centrándose en su capacidad para revelar tendencias históricas y diferencias en la esperanza de vida y las tasas de mortalidad, siguiendo los principios definidos por la Sociedad Ecológica de América (ESA) en su enfoque interdisciplinario para la investigación demográfica (*Ellis et al., 2012*). A través de este análisis, se valorará la demografía de *Homo sapiens*, en un período específico en el pasado, en muestras tomadas de cementerios, para brindar información sobre las tasas de mortalidad, la distribución por grupos de edad y la esperanza de vida al nacer.
+
+## 
+
+<b style='color:#d95f02;'>
+
+## **Requerimientos del Informe**
+
+</b>
+
+![](Figuras/Cementerio.PNG){width="341"}
+
+\[Imágen tomada de González et al. (2023)\]
+
+<b style='color:#4daf4a;'>
+
+#### **Paso 1: Resumen, introducción y metodología del informe.**
+
+</b>
+
+-   ***Título del taller.*** Redactar un título, acorde al ejercicio realizdo.
+
+-   ***Resumen***. Resumir en un párrafo, la ubicación de los cementerios evaluados, el objetivo del trabajo, la metodología empleada y los resultados encontrados. Incluir tres palabras clave al final del resumen.
+
+-   ***Introducción.*** Relacionar estudios realizados sobre el tema, a nivel mundial, nacional y local. Finalizar con el objetivo del trabajo (pude incluir las hipótesis a evaluar).
+
+-   **Metodología del informe.** Explicar cómo fue el diseño de muestreo en cada cementerio, así como el análisis de datos realizado. Incluir fotos y un dibujo del croquis realizado en los sitios censados.
+
+<b style='color:#4daf4a;'>
+
+#### **Paso 2: Recopilación de datos del cementerio**
+
+</b>
+
+![](https://jardinesdepazdesantamarta.com/assets/images/dsc-0041-600x400-32.jpg){width="482"}
+
+\[Imágen tomada de [Rafael Barras Rodriguez](https://www.google.com/maps/contrib/101734373420225176745/photos/@28.9255791,-35.9690406,4z/data=!3m1!4b1!4m3!8m2!3m1!1e1?entry=ttu)\]
+
+<div style="text-align: justify">
+
+Se requieren datos de las fechas de nacimiento y defunción, así como el género de las personas censadas. Organizarse en grupos de tres estudiantes, tomar datos de mínimo 200 tumbas seleccionadas al azar. Si es un mausoleo (tumbas familiares), tomar datos de una sola tumba. Tabular los siguientes datos:
+
++----------+-------------------+---------------+----------------+-------------------+---------------+
+| No       | Año de nacimiento | Año de Muerte | Edad de muerte | Sexo              | Observaciones |
+|          |                   |               |                |                   |               |
+|          |                   |               |                | F (Fem), M (Masc) |               |
++==========+===================+===============+================+===================+===============+
+| 1        | 1960              | 1980          | 20             | F                 |               |
++----------+-------------------+---------------+----------------+-------------------+---------------+
+| 2        | 1970              | 2010          | 30             | M                 |               |
++----------+-------------------+---------------+----------------+-------------------+---------------+
+| 3        | 1950              | 2020          | 70             | M                 |               |
++----------+-------------------+---------------+----------------+-------------------+---------------+
+
+Cada grupo debe tabular los datos en el siguiente enlace, posteriormente se debe descargar la tabla en formato *`xlsx`* y anexarla al informe: [Enlace_tabla](https://universidadmag-my.sharepoint.com/:x:/g/personal/jrodriguez_unimagdalena_edu_co/EYwVnNlnz6ZGnMLiNeRMqdMBgSDJdnn9yhOT-LRmCYH8vg?e=2z7R3R)
+
+Diseñar un croquis del cementerio, con la ubicación de las tumbas censadas. Este documento debe ser cargado en la asignación del taller.
+
+![](Figuras/Cementerio1.png){width="373"}
+
+[Ejemplo del diseño de muestreo del cementerio Jardines de Jerusalen de Santa Marta. \[Imágen tomada de González et al. (2023)\]]{.smallcaps}
+
+<b style='color:#4daf4a;'>
+
+#### **Paso 3: Resultados del informe. Estimadores demográficos por cada cementerio (q~x~, l~x~, S~x~, e~x~).**
+
+</b>
+
+<div style="text-align: justify">
+
+Para construir la ***tabla de vida estática***, hay que clasificar a las personas fallecidas en diferentes grupos de edad. Esto puede hacerse en rangos de 10 años. Son tres tablas de vida (tv): (1) tv general, (2) tv de hombres y (3) tv de mujeres. **Ej. para hombres:**
+
+-   Grupo de edad 0-9 años
+
+-   Grupo de edad 10-19 años, hasta 90-99 años
+
++----------------+-----------------------+-------------------+
+| Clase de Edad  | Frecuencia de Hombres | Cohorte Ficticia\ |
+|                |                       | (Número de vivos) |
++================+=======================+===================+
+| 0 - 9          | 10                    | 500               |
++----------------+-----------------------+-------------------+
+| 10 - 19        | 30                    | 500 - 10 = 490    |
++----------------+-----------------------+-------------------+
+| ...            |                       |                   |
++----------------+-----------------------+-------------------+
+| 90 - 99        | 5 (Total: 500)        |                   |
++----------------+-----------------------+-------------------+
+
+Insertar columnas adicionales para calcular los siguientes estimadores:
+
+<b style='color:#1f78b4;'>
+
+-   **Proporción de sobrevivientes (`lx`).**
+
+</b>
+
+<!-- -->
+
+<b style='color:#1f78b4;'>
+
+-   **Probabilidad de sobrevivientes (`Sx`). \</b\>**
+
+</b>
+
+<!-- -->
+
+<b style='color:#1f78b4;'>
+
+-   **Esperanza de vida (`ex`)**
+
+</b>
+
+**Nota:** Para cada cementerio, analizar los siguientes insumos:
+
+-   ***Supervivencia y esperanza de vida de la población total.*** Analizar cómo se presentó la supervivencia y la esperanza de vida, para los sexos combinados. Incluir figuras con sus leyendas (párrafo 1) y la explicación de patrones encontrados (párrafo 2).
+
+-   **Supervivencia y esperanza de vida en hombres y en mujeres.** Hacer lo mismo que lo anterior, pero por cada sexo.
+
+**Graficar** las siguientes curvas de sobrevivencia (`lx`) para:
+
+-   Población total
+
+-   Muestra de Hombres
+
+-   Muestra de Mujeres
+
+Incluir figuras con sus leyendas (párrafo 1) y la explicación de patrones encontrados (párrafo 2). Analizar la gráficas e interpretar las relaciones y las diferencias.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+##### **Proporción de sobrevivientes para cada clase de edad (l~x~).**
+
+</b>
+
+Se calcula dividiendo el número de personas sobrervivientes en su clase de edad, por el número total de personas nacidas en ese grupo. **Ej**: grupo de edad 0-9 y de 10-19 años:
+
+-   Tamaño inicial de la población (**No**)
+
+-   Tamaño de la población en la clase de edad evaluada (**N~x~**)
+
+-   Probabilidad de supervivientes `lx = Nx  / No`
+
+**l~x~(0-9 años) =** N~x~ / No = 500 / 500 = 1 (100%)
+
+**l~x~(10-19 años) =** N~x~ / No = 490 / 500 = 0.98 (98%)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+##### **Probabilidad de supervivencia ara cada clase de edad (S~x~).**
+
+</b>
+
+La probabilidad de sobrevivientes (Sx) hasta una determinada edad se calcula multiplicando las proporciones de sobrevivientes de cada grupo de edad sucesiva. **Ej:** probabilidad de sobrevivir hasta los 10-19 años:
+
+-   Tamaño de la población en la clase de edad evaluada (**N~x~**)
+
+-   Tamaño de la población en la clase siguiente (**N~x+1~**)
+
+-   Probabilidad de superviviencia `Sx = Nx+1 / Nx`
+
+**S~x~(10-19 años) =** Nx~+1~ / N~x~ = 490 / 500 = 0.98
+
+*Otra forma de calcular Sx:*
+
+**S~x~(10-19 años) =**  l~x~(10-19 años) = 1 \* 0.98 = 0.98
+
+## 
+
+<b style='color:#1f78b4;'>
+
+##### **Esperanza de vida al nacer (e~x~):**
+
+</b>
+
+La esperanza de vida al nacer (`ex`) se calcula sumando las probabilidades de sobrevivir a todas las edades y luego invirtiendo el resultado. **Ej:** Supongamos que hemos calculado N~x~ hasta los 100 años.
+
+-   Promedio de individuos de cada clase de edad *x* a la siguiente clase *x +1 (***L~x~**)
+
+-   Sumatoria de los L~x~ (**T~x~**)
+
+-   Esperanza de vida `ex = Tx / Lx`
+
+**L~x~(10-19 años) =** L~x~ = (Nx + Nx+1)/2 = (500 + 490) / 2 = 495
+
+e~x~ = (⅀ L~x~) / L~x~.
+
+## 
+
+<b style='color:#d95f02;'>
+
+## **Discusión de los resultados.**
+
+</b>
+
+![](https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/ea/89/0c/san-miguel-cemetery.jpg?w=1200&h=-1&s=1){width="382"}
+
+\[Imágen tomada de [Andres Acosta](https://www.google.com/maps/contrib/100767267100033862050/photos/@11.2537289,-74.2050285,14z/data=!3m1!4b1!4m3!8m2!3m1!1e1?entry=ttu)\]
+
+Discutir los resultados encontrados, con los de otros estudios locales y en Colombia. De igual forma, la diacusión debe dar respuesta a las siguientes interrogantes y discutirlas con otros interlocutores nacionales o internacionales:
+
+-   ¿Cuál de los dos sexos es más longevo?
+
+-   ¿En cuáles clases de edad hay mayor esperanza de vida?
+
+-   ¿Qué disciplinas complementarias a la ecología analizan estos trabajos y que han encontrado?
+
+-   ¿Qué estrategias sugiere que se pueden inplementar para mejorar la supervivencia y la esperanza de vida en la ciudad?
+
+## 
+
+<b style='color:#d95f02;'>
+
+## **Citas Bibliográficas**
+
+</b>
+
+<div style="text-align: justify">
+
+**Acsádi, G. Y., & Nemeskéri, J. (1970)**. History of human life span. Budapest.
+
+**Bonilla, M. y Guillot, G. (2003)**. Notas de clase: Prácticas de Ecología. Universidad Nacional de Colombia.
+
+**Ellis, E. C., Kaplan, J. O., Fuller, D. Q., Vavrus, S., Klein Goldewijk, K., & Verburg, P. H. (2013)**. Used planet: A global history. Proceedings of the National Academy of Sciences, 110(20), 7978-7985.
+
+**Coale, A. J. (1972).** Growth and Structure of Human Populations: A Mathematical Investigation. Princeton University Press.
+
+**Coale, A. J. (2015).** Growth and structure of human populations: a mathematical investigation (Vol. 1333). Princeton University Press.
+
+**Dong, X., Milholland, B., & Vijg, J. (2016).** Evidence for a limit to human lifespan. Nature, 538(7624), 257-259.
+
+**González-Narváez, S., Peñafiel, L., Ríos, A., Ruíz, J. 2023**. Historia a través de las tablas de vida: Análisis demográfico del Homo sapiens en cementerios de Santa Marta, Colombia. Informe de la asignatura Ecología 1. Programa de Biología. Universidad del Magdalena. 28 p.
+
+**Manton, K. G., Stallard, E., & Tolley, H. D. (1991).** Limits to human life expectancy: evidence, prospects, and implications. Population and Development Review, 603-637.
+
+**Murdock, S. H. (2008).** Applied demography in the 21st century. D. Swanson (Ed.). Netherlands: Springer.

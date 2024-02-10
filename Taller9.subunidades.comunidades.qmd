@@ -1,0 +1,69 @@
+# Taller9. Sub.unidades.comunidades {.unnumbered}
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## **Introducción**
+
+</b>
+
+<div style="text-align: justify">
+
+Uno de los problemas a la hora de realizar estudios con diferentes especies o taxones, consiste en definir la forma en la que limitará la escala ecológica a evaluar. En ese sentido, se han realizado diferentes definiciones, asociadas a comunidades, listados de taxones, ensambles, ensamblajes, gremios y grupos funcionales. En ese sentido, el presente temario, busca generar una reflexión en el aula, que permita tener claridad sobre estos aspectos. El objetivo de la actividad consiste en revisar los artículos que se relacionan a continuación, para preparar la participación a un debate relacionado con los diferentes tipos de subunidades de las comunidades, descritos por los autores en consideración. Los documentos para revisar son:
+
+1.  **Blondel 2003**. Guilds or functional groups, does it matter
+
+2.  **Fauth 1996**. Ensambles y Ensamblajes
+
+![](https://slideplayer.com/slide/6272391/21/images/6/Geography+Resources+Phylogeny+Local+guild+Community+Guild+Assemblage.jpg){width="419"}
+
+1.  **Monge 2015**. Ensambles y Ensamblajes
+
+2.  **Ramírez y Fonseca 2016**. Ensambles y Ensamblajes
+
+3.  **Figura 16.1** de la página 469 en el libro de **Begon et al. (2005)**.
+
+En cada uno de los documentos se debe priorizar en los siguientes aspectos:
+
+• Contexto del tema desarrollado.
+
+Metodología empleada por los autores.
+
+• Principales resultados, incluidas las figuras (en caso de que las haya).
+
+• Cargar las dispositivas en el módulo de Archivos de Teams, en una carpeta con los nombres de los integrantes.
+
+• Cada estudiante debe participar debatiendo sobre la presentación de sus compañeros y dar respuesta a observaciones que hagan de su trabajo.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+### **Enlaces de los artículos y lecturas**
+
+</b>
+
+<div style="text-align: justify">
+
+1.  [**Blondel 2003**](https://universidadmag-my.sharepoint.com/:b:/g/personal/jrodriguez_unimagdalena_edu_co/EbUEUMeS_zRIh3kK4-lPESkBHFftc0pCob85k6l9hJlBpw?e=Y2byrQ). Guilds or functional groups, does it matter\
+
+2.  [**Fauth 1996**](https://www.researchgate.net/publication/201997493_Simplifying_the_Jargon_of_Community_Ecology_A_Conceptual_Approach). Ensambles y Ensamblajes\
+
+3.  [**Monge 2015**](https://www.researchgate.net/publication/283705164_Existen_realmente_los_ensambles_y_ensamblajes_ecologicos). Ensambles y Ensamblajes\
+
+4.  [**Ramírez y Fonseca 2016**](https://www.scielo.sa.cr/scielo.php?script=sci_abstract&pid=S0034-77442016000200817&lng=pt&nrm=iso&tlng=es). Ensambles y Ensamblajes\
+
+5.  [**Figura 16.1**](http://www.esalq.usp.br/lepse/imgs/conteudo_thumb/Ecology-From-Individuals-to-Ecosystems-by-Michael-Begon--2006-.pdf) de la página 469 en el libro de **Begon et al. (2005)**.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+### **Enlaces complementarios a los artículos y lecturas requeridas**
+
+</b>
+
+1.  [**Arias y Pacheco 2019**](http://www.scielo.org.pe/scielo.php?script=sci_arttext&pid=S1727-99332019000200001). Dieta y estructura trófica de un ensamblaje de murciélagos ..., Junín, Perú
+
+2.  [**González-Salazar et al. 2014**](https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S1870-34532014000400022). Clasificación jerárquica de gremios tróficos para aves y mamíferos de Norteamérica.

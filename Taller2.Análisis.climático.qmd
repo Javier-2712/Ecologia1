@@ -1,0 +1,169 @@
+# Taller2. A. Climático {.unnumbered}
+
+![Imagen tomada de [Johannes Plenio](https://www.pexels.com/es-es/@jplenio/)](https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){fig-align="left" width="555"}
+
+<b style='color:#1f78b4;'>
+
+## Introducción
+
+</b>
+
+<div style="text-align: justify">
+
+El ***clima*** puede definirse como el conjunto de parámetros atmosféricos que predominan en un lugar determinado (Ecosistema, Paisaje, Región, etc.). Estos parámetros generan un conjunto de condiciones determinantes para diversos servicios ecosistémicos, como en la ganadería, la recreación o la agricultura. De igual forma, el clima se constituye en el factor del medio físico que más influye en la distribución de los organismos de los ecosistemas. El clima hace que una región geográfica en particular sea una selva tropical, un bosque sub-xerofítico, un páramo, entre otros tipos de ecosistemas.
+
+<b style='color:#fc8d62;'> [**Precipitación**]{.underline}. </b> Corresponde a la cantidad de lluvia expresada en *mm*, en donde un mm de precipitación equivale a un litro de agua/m^2^. Algunos indicadores de este parámetro son [*la precipitación mensual (ppm)*]{.underline} que representa la suma de *precipitaciones promedio diarias*. [*La precipitación media mensual multianual (pmm)*]{.underline} es el resultado de promediar a las precipitaciones mensuales por varios años.
+
+<b style='color:#fc8d62;'> [**Temperatura**]{.underline}. </b> Se considera a la temperatura, como la cantidad de calor que llega a la superficie de la tierra.  [*La temperatura media mensual*]{.underline} es el promedio de las temperaturas medias diarias, y las [*temperaturas máxima media y mínima media*]{.underline} son el promedio de las temperaturas máximas y mínimas diarias.
+
+De forma similar a la precipitación, [*la temperatura media anual*]{.underline} es el promedio de las temperaturas medias mensuales y [*la temperatura media mensual multianual*]{.underline} es el promedio de las temperaturas para el mes en cuestión a lo largo del período de tiempo estudiado.
+
+<b style='color:#1f78b4;'>
+
+## Objetivo del taller
+
+</b>
+
+<div style="text-align: justify">
+
+-   Aprender el manejo de la plataforma [dhime](http://dhime.ideam.gov.co/atencionciudadano/) utilizada por el IDEAM, como repositorio de datos climáticos de nuestro país.
+
+-   Desarrollar destrezas en el procesamiento de datos en Excel, para la tabulación, uso de tablas dinámicas, el el procesamiento eficiente de información climática.
+
+-   Incorporar herramientas de análisis climático como son los climatogramas, índices de aridez, los modelos de balance hídrico, el análisis de biomas y de formaciones vegetales, asociadas a datos climáticos.
+
+-   Desarrollar capacidades para la interpretación y el análisis de datos climáticos en contextos ecológicos y ambientales, para un mejor entendimiento de nuestro contexto ambiental.
+
+<b style='color:#1f78b4;'>
+
+## **Procedimiento del taller**
+
+</b>
+
+<div style="text-align: justify">
+
+**Nota**: Previo a la sesión del taller de cómputo, es necesario que revisen el video de la clase en donde se explica el procedimiento (ver [enlace del video](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EVNEzo8tMXFMubjrlxcgqu4B2OpJWRWCE8pd6iUoy5Erxg?e=XlRunx&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)), el día de la sesión, el docente evaluará la revisión que se haya hecho de ese material. Esta información también se puede consultar en los videos de la semana que están en el repositorio del docente (ver [enlace del repositorio](https://javier-2712.github.io/Manuales/6.Manual_eco1/videos.clases.html)).
+
+<b style='color:#fc8d62;'>
+
+### **Paso 1. Descarga de datos del IDEAM**
+
+</b>
+
+![Figura 1. Plataforma [dhime](http://dhime.ideam.gov.co/atencionciudadano/) del IDEAM, para descarga de datos metereológicos.](dhime.JPG){fig-align="left" width="560"}
+
+<div style="text-align: justify">
+
+Se realizará un entrenamiento en la sala de cómputo, orientado a la descarga de datos de la plataforma [dhime](http://dhime.ideam.gov.co/atencionciudadano/) utilizada por el IDEAM. Las variables a descargar para los periodos de 1993 a 2024 son:
+
+-   **La temperatura máxima media mensual** de tres estaciones que se referencian en la **tabla 1**, las cuales presentan un contraste espacial y altitudinal y que se encuentran en lugares cercanos a Santa Marta.
+-   **La precipitación total mensual** de las mismas estaciones metereológicas.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Cargar la librería "kableExtra" 
+library(kableExtra)
+```
+
+```{r, echo=FALSE}
+# Cargar la base de datos "tabla3.csv" 
+tabla3 = read.csv2("tabla3.csv")
+```
+
+```{r, echo=FALSE}
+tabla3 %>%   
+  kbl(caption = "Tabla 1. Información de las estaciones pluviométricas y climáticas que deben utilizarse en el estudio.") %>%   
+  kable_classic(full_width = F, html_font = "Cambria")
+
+```
+
+*\*Datos promedios totales mensuales, dependiendo de su disponibilidad.*
+
+Los archivos generados (extensión *\*.csv*) serán guardados en una carpeta de trabajo en el escritorio del computador, titulada: "***taller_datos_climáticos_eco1***". Allí debe reposar un formato para la tabulación y procesamiento de los datos, titulado: "formato.datos.xlsx" ([descargar](Manual.eco1/formato.datos.xlsx)), en donde se pegarán los datos de temperatura y de precipitación.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 2. Tabla dinámica**
+
+</b>
+
+<div style="text-align: justify">
+
+A continuación, se construirán dos tablas dinámicas: una para los datos de precipitación y otra para los datos de temperatura. El objetivo será, extraer los promedios mensuales multianuales, para pegarlos en la pestaña del climatográma e índice de aridez de Lang.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 3. Resultado 1 - Climatograma e índice de Lang**
+
+</b>
+
+![*Figura 1. Ejemplo de un climatograma del taller en clase*](Figuras/Climatograma.png){fig-align="left" width="428"}
+
+<div style="text-align: justify">
+
+En esta pestaña se realizará el procedimiento indicado para la construcción del climatograma e índice de aridez de Lang, de cada estación. \*El procedimiento llega hasta la elaboración, pero cada estudiante deberá investigar en qué consiste cada uno de estos insumos y discutir los resultados obtenidos.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 4. Resultado 2. Balance hídrico**
+
+</b>
+
+![*Figura 2. Ejemplo de un modelo de balance hídrico del taller en clase*](Figuras/Balance.hídrico.png){fig-alt="Figura 2. Ejemplo de un modelo de balance hídrico del taller en clase" fig-align="left" width="416"}
+
+<div style="text-align: justify">
+
+Para este procedimiento, se cuenta con una plantilla en donde se requiere incluir los datos de temperatura y de precipitación promedio multianual, utilizadas en el resultado anterior, junto a los datos de brillo solar, que pueden descargarse en google (buscar: *Anexo Promedios mensuales de brillo solar* [descarga](https://www.metrodebogota.gov.co/sites/default/files/Brillo-Solar_Promedios-Mes.pdf)). A partir de ello se construyen los modelos gráficos de balance hídrico, en donde se pueden viasualizar periodos de recargas, deficit, excedentes o uso de reservas de agua en los lugares evaluados.
+
+<b style='color:#fc8d62;'>
+
+### **Paso 5. Resultados 3 y 4. Biomas, pisos térmicos y formaciones vegetales**
+
+</b>
+
+![*Figura 3. Tabla para relacionar datos de los resultados resumidos del taller*](tabla.biomas.JPG)
+
+<div style="text-align: justify">
+
+Con los datos de temperatura, de precipitación promedio multianual y de evapotranspiración real, utilizadas en los resultados anteriores, se asociarán en las tablas referenciadas en el resultado 3, para clasificar las zonas evaluadas a su bioma, piso térmico y formación vegetal correspondiente. Finalmente en el resultado 4, se realizará la tabulación que resume a todos los insumos calculados.
+
+Los pasos 1 a 5, deben revisarse previo a la sesión de cómputo, en el módulo de videos del repositorio ([enlace](https://javier-2712.github.io/Manuales/6.Manual_eco1/videos.clases.html)), especificamente en el video [Organización de los datos climáticos](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EQdo0S8a_GlGl_oHp-9JYRIB6kv5z4iFngJxTFVKWZjRuw?e=XzcKMQ), intentar realizar el ejercicio en casa, para avanzar de forma más eficiente en esta sesión de cómputo. Para las tablas citadas en este paso, se puede reforzar el componente teórico con los referentes bibliográficos de este taller (Espinal (1977), Halffter & Ezcurra (1992), Tamarís-Turizo & López-Salgado (2006)).
+
+<b style='color:#fc8d62;'>
+
+### **Paso 6. Pautas del taller en casa**
+
+</b>
+
+![Imagen tomada de [Nathan Timblin](https://www.pexels.com/es-es/@nathan-timblin-260952/)](https://images.pexels.com/photos/798916/pexels-photo-798916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1){fig-align="left" width="511"}
+
+<div style="text-align: justify">
+
+1.  Para la entrega y socialización (si el tiempo lo permite se socializa) del taller, cada grupo (máximo 4 estudiantes) debe seleccionar 3 estaciones diferentes a las de la sesión de cómputo (preferiblemente que sean diferentes a los otros grupos) y entregar un documento en pdf (máximo 5 páginas) que incluya a los procedimientos (paso a paso) vistos en el taller de cómputo y en el repositorio del docente (videos de este taller). Entregar los cálculos en el formato de Excel, como archivo complementario.
+
+2.  Preparar máximo 5 diapositivas para socializar los resultados (duración de la presentación de máx. 8 minutos).
+
+3.  La valoración de esta actividad ponderará los siguientes aspectos:
+
+    -   Trabajo realizado en la sala de cómputo.
+
+    -   La puntualidad en la entrega del informe y de la sustentación del trabajo (en caso de ser posible).
+
+    -   Todas las tablas y figuras deben tener su leyenda numerada y adicionalmente un párrafo de análisis de los resultados.
+
+    -   Incorporar en el análisis, elementos del contexto de cada localidad evaluada, en cuanto a las condiciones ecológicas y/o ambientales asociadas al clima y resto de aspectos evaluados.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Referencias bibliográficas
+
+</b>
+
+<div style="text-align: justify">
+
+**Espinal, S.** (1977). *Zonas de vida o formaciones vegetales de Colombia: Memoria explicativa sobre el mapa ecológico*. ([enlace](Manual.eco1/Formaciones_vegetales_Espinal_1977.pdf))
+
+**Halffter, G.**, & Ezcurra, E. (1992). *La diversidad biológica de Iberoamérica* (Vol. 1). CYTED-D, Programa Iberoamericano de Ciencia y Tecnologia para el Desarollo, Instituto de Ecologia, AC, Secretaria de Desarrollo Social. ([enlace](https://www.rds.org.co/apc-aa-files/ba03645a7c069b5ed406f13122a61c07/diversidad_biologica_iberoamerica.pdf))
+
+**Tamarís-Turizo, C.** **E.**, & López-Salgado, H. J. (2006). Aproximación a la zonificación climática de la cuenca del río Gaira. Intropica, 69-76. ([enlace](https://revistas.unimagdalena.edu.co/index.php/intropica/article/download/128/112))

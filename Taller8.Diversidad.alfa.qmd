@@ -1,0 +1,679 @@
+# Taller8. Diversidad Alfa {.unnumbered}
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## **Introducción**
+
+</b>
+
+<div style="text-align: justify">
+
+Según Whittaker (1972) la diversidad en las comunidades ecológicas, se divide en componentes *alfa, beta* y *gamma*. La diversidad ***alfa*** se refiere al número de especies obtenidas en una muestra relativamente homogénea, tomada de una comunidad. La diversidad ***beta*** corresponde al grado de recambio o reemplazo de especies entre diferentes comunidades en una escala de paisaje, y la diversidad ***gamma*** se refiere al número de especies de un grupo de comunidades que integran uno o varios paisajes (diversidad regional) y es el resultado de la suma de las diversidades alfa y beta. Para el caso de la diversidad ***alfa***, se pueden estimar tres formas de medirla: (1) la riqueza, (2) la equidad y (3) la diversidad.
+
+\(1\) ***La riqueza*** (S o q=0), corresponde al número de especies en la muestra evaluada de la comunidad.
+
+\(2\) ***La equidad*** (q=1, q=2), corresponde a la variación en las abundancias relativas de las especies, de la muestra tomada de la comunidad. Permite entender cómo se reparten los recursos las especies y por ello la forma en que cada una de ellas aporta individuos a la comunidad. Para este caso, los índices de Shannon-Weaber y de Simpson son los más utilizados. Debido a que este estimador incorpora tanto a los taxones como a su número de individuos, se considera a la equidad, como una medida menos sesgada que la riqueza para valorar (3) ***la diversidad*** en muestras tomadas de una comunidad.
+
+\(3\) ***La diversidad***, tiene diferentes formas de evaluarse y para este taller, será utilizada la propuesta de Chao et al (2020), basada en 4 pasos, a partir de los números efectivos de Hill (q=0, q=1, q=2), teniendo en cuenta la completitud de las muestras tomadas de la comunidad (paso 1), la diversidad asintótica: la estimada (asintótica) y la observada (empírica) (paso 2), la diversidad no asintótica: la interpolada y la extrapolada (paso 3) y el perfil de uniformidad de cada muestra (paso 4).
+
+**1.Estimadores de riqueza o número de especies (S o q=0).** Si bien, es un estimador sencillo de calcular, lo más complejo es alcanzar el valor máximo que represente a la riqueza completa de taxones de la muestra o muestras de una comunidad, por lo cual, es una medida que depende del esfuerzo de muestreo (tamaño mínimo requerido en la muestra evaluada). Esto constituye un reto importante, para asegurar que los muestreos sean comparables en cuanto al número de individuos y de taxones o de especies censadas. La ***rarefacción*** utiliza estrategias de remuestreo, para corregir el número de especies o taxones, tomados de muestras de diferente tamaño.
+
+**2.Estimadores de equidad y de diversidad (q=1 y q=2)**. Para medir la diversidad de especies o de taxones de muestras tomadas de una comunidad, existen modelos *paramétricos* y *no paramétricos*. (1) ***Paramétricos***, valoran el nivel de ajuste entre la riqueza de especies y sus abundancias de individuos, obtenida de las muestras (series logarítmica, log-normal, entre otras). (2) ***no Paramétricos***, son estimadores de especies no detectadas (nuevas especies) a partir de las especies censadas.
+
+Para el cálculo de ***estimadores paramétricos*** de diversidad, se utilizan (1) ***modelos de abundancia de especies***, utilizando diagramas de rangos de abundancia, que relaicionan a las abundancias relativas en escalas logaritmicas (eje y) vs. los rangos de abundancias las especies (eje x) (Whittaker, 1965). Estos estimadores paramétricos se visualizan inicialmente con *`diagramas de rango-abundancia de Whittaker`* y su ajuste a modelos se evalúa con el comando `radfit` la librería `vegan`, que contiene algunos patrónes de diversidad como el *`Broken stick`* (vara quebrada), *`Preemtion`*, *`Log-normal`*, *`Zipf`* y *`Zipf-Mandelbrot`*.
+
+\(2\) Los ***estimadores no paramétricos*** de diversidad se evaluarán con un análisis de completitud, asintóticos y no asintóticos, utilizando la librería `iNEXT`. Esto se basa en la propuesta de *Chao et al. (2020)*, con la valoración de la diversidad de ensamblajes o muestras de comunidades, a partir de un procedimiento en cuatro (4) pasos y de los estimadores de Hill: q=0, q=1 y q=2.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+**Objetivo del taller**.
+
+</b>
+
+<div style="text-align: justify">
+
+Valoración de la diversidad de tres muestras (tramos) tomadas de del río Gaira - Santa Marta, correspondientes a tramos alto (A), medio (B) y bajo (C), mediante (1) ***estimadores paramétricos*** (diagramas y modelos de abundancia) y (2) de ***estimadores no paramétricos*** (números de Hill q=0, q=1 y q=2; curvas de completitud, asintóticas, no asintóticas y de uniformidad).
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Referentes bibliográficos
+
+</b>
+
+# 
+
+<b style='color:#fc8d62;'>
+
+## Referentes bibliográficos de estimadores paramétricos
+
+</b>
+
+1.  [A Minimal Book Example (2019)](https://ciespinosa.github.io/AlphaDiversidad/) Contiene información sobre estimadores de riqueza, de equidad y de diversidad de comunidades, con estimadores paramétricos y no paramétricos.
+
+2.  [Laboratorio de Ecología de Comunidades: Biodiversidad (2019)](https://rpubs.com/dsfernandez/468964) Describe a paquetes y funciones de R para el análisis básico de la biodiversidad.
+
+3.  [An extensive comparison of species-abundance distribution models - Baldridge et al. (2016)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5183127/) Comparativo en los modelos de distribución de abundancia de especies (SAD).
+
+4.  [Herpetofaunal Species Abundance - Crane et al. (2018)](https://www.herpconbio.org/Volume_13/Issue_3/Crane_etal_2018.pdf) Describe Modelos de rango - riqueza - abundancia (RAD), incluyendo curvas de Whittaker y análisis no asintóticos para anfibios y reptiles.
+
+# 
+
+<b style='color:#fc8d62;'>
+
+## Referentes bibliográficos de estimadores no paramétricos (iNEXT)
+
+</b>
+
+1.  [Quantifying sample completeness and comparing diversities among assemblages - Chao et al. (2020)](https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102) Describe el protocolo para la valoración de la diversidad verdadera (true diversity) en cuatro pasos.
+
+2.  [Estimating diversity and entropy profiles via discovery rates of new species - Chao y Jost (2015)](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12349) Valoración de la diversidad por perfiles de entropía y estimación de especies no detectadas.
+
+3.  [A Quick Introduction to iNEXT via Examples - Hsieh et al (2022)](https://cran.r-project.org/web/packages/iNEXT/vignettes/Introduction.pdf)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## Ejercicio 1. Base de datos de macroinvertebrados acuáticos, tomados del río Gaira (2020)
+
+</b>
+
+<div style="text-align: justify">
+
+![Imágen tomada de phototrip](https://media.istockphoto.com/id/1125894116/es/foto/escarabajo-menor-de-buceo.jpg?s=612x612&w=0&k=20&c=UqFM-ONfGyzMQf-ReW7ADiZE020f6MJEK5QosmoizdU=){width="60%"}
+
+Escarabajo buceador (*Acilius sulcatus*)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## 1. **Valoración de diversidad a partir de estimadores paramétricos.**
+
+</b>
+
+<b style='color:#fc8d62;'>
+
+### 1.1 Diagramas de rangos de abundancia de Whittaker.
+
+</b>
+
+<div style="text-align: justify">
+
+Para propósitos de este ejercicio se realizarán los diagramas con los diez (10) taxones de macroinvertebrados acuáticos más abundantes. Este diagrama permite hacer una exploración de los patrones de abundancia de los principales taxones de las muestras en comparación, como complemento a los modelos paraétricos a realizar.
+
+<b style='color:#4daf4a;'>
+
+#### **Cargar las librerías**
+
+</b>
+
+```{r, warning=FALSE, message=FALSE}
+# Librerías para el tema 1 (perfil de diversidad)
+# Aplicar el siguiente comando, en caso de no contar con las librerías instaladas
+# install.packages(c("tidyverse","ggplot2","ggrepel","dplyr"))
+
+library(tidyverse)
+library(ggplot2)   
+library(ggrepel)
+library(dplyr)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 1. Cargar la base de datos "datos.csv"
+
+</b>
+
+<div style="text-align: justify">
+
+La base de datos es entregada por el docente y a continuación se muestra el procedimiento para cargarla en RStudio y visualizar las seis primeras filas de las 107 en total, con el comando `head(datos)`.
+
+```{r}
+# Cargar la base de datos y asignarla como "datos"
+datos <- read.csv2("datos.csv") 
+# print.Date(datos)   # Muestra a toda la base de datos
+head(datos) # head permite mostrar solo 6 filas de la base de datos (datos).
+# View(datos)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 2. Cargar la base de datos alargada "datos1"
+
+</b>
+
+<div style="text-align: justify">
+
+El formato alargado se genera con la librería tidyverse. En los pasos posteriores se insertarán las columnas de rangos de abundancias (eje x) y de abundancias relativas (eje y).
+
+```{r}
+# Datos en formato alargado (gather)
+datos1 <- datos %>% 
+  gather(key = Tramos, value = Abundancia, -TAXA)
+
+# Rotulos de las columnas
+colnames(datos1) <- c("Taxones", "Tramos", "Abundancia") 
+
+# seis primeras filas de la base de datos
+head(datos1)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 3. Insertar una columna de "rangos" de abundancia - eje x
+
+</b>
+
+<div style="text-align: justify">
+
+Los rangos de abundancia son requeridos para definir el eje x del diagrama a graficar.
+
+```{r}
+# Rango de las especies para cada tramo (eje x de la figura)
+# se inserta una columna "rango" que ranquea a las abundancias de c/spp
+datos1$Rango <- ave(datos1$Abundancia, datos1$Tramos, 
+                    FUN = rank, ties.method = "min")
+head(datos1)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 4. Insertar una columna de "abundancias relativas" - eje y
+
+</b>
+
+```{r}
+# Abundancia relativa (Abundancia_rel) de los taxones para cada tramo
+datos1$Abundancia_rel <- datos1$Abundancia / sum(datos1$Abundancia)
+
+# Redondeo a tres decimales para resumir los valores de esta variable
+datos1$Abundancia_rel <- round(datos1$Abundancia_rel,3)
+
+# Filtrado de los datos de manera descendente por cada rango de abundancia
+datos1 <- datos1[order(datos1$Rango, decreasing = TRUE), ]
+head(datos1)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 5. Filtrado de los 10 taxones más abundantes
+
+</b>
+
+<div style="text-align: justify">
+
+En datos de diversidad como este que cuenta con más de 100 taxones, es recomendable resumirlos con algún criterio, para que el diagrama de ragos de abundancia sea facil de interpretar, para lo cual se realiza a continuación un filtrado de los 10 taxones más abundantes. En caso de que se quiera graficar a todos los taxones, se puede omitir este paso.
+
+```{r}
+# Nombre de los 10 principales taxones por sus abundancias relativas
+principales_taxones <- head(unique(datos1$Taxones), 10)
+
+# Base de datos con 10 taxones de mayor abundancia relativa
+datos_filtrados <- datos1 %>% filter(Taxones %in% principales_taxones)
+head(datos_filtrados)  # Tabla resumen de las 6 primeras filas
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 6. Figura de los 10 taxones más abundantes para cada tramo evaluado
+
+</b>
+
+```{r, warning=FALSE, message=FALSE}
+ggplot(datos_filtrados, 
+       aes(x = Rango, y = Abundancia_rel, color = Taxones, label = Taxones)) +
+  geom_point(size = 3) +
+  geom_text_repel(aes(label = Taxones), hjust = 1, vjust = 1.5, size = 3,
+                  box.padding = 0.5, point.padding = 0.2, segment.color = NA) +
+  geom_line(color = "blue") +
+  scale_x_reverse() +
+  scale_y_log10() +
+  labs(x = "Rango de las especies", 
+       y = "log10(Abundancia relativa)", 
+       color = "Taxones") +
+  facet_wrap(~Tramos, nrow = 1) +
+  theme_bw()
+```
+
+## 
+
+<b style='color:#fc8d62;'>
+
+### 1.2 Modelos de rango - riqueza - abundancia (RAD)
+
+</b>
+
+<div style="text-align: justify">
+
+Son cuatro los modelos en los que se diagnostican los patrones de diversidad de cada muestra: `nulo` o de `vara quebrada` (brokenstick), `geométrico` o de preferencia (premption), `log-normal`, y los modelos `lineales generalizados` (glm) de taxones abundantes o dominantes son: los `modelos logarítmicos o Zipf` y `Zipf-Mandelbrot`.
+
+<b style='color:#4daf4a;'>
+
+#### **Cargar las librerías**
+
+</b>
+
+```{r, warning=FALSE, message=FALSE}
+# Librerías para el tema 1 (perfil de diversidad)
+library(vegan)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 1. Cargar la base de datos "datos.csv"
+
+</b>
+
+<div style="text-align: justify">
+
+La base de datos es entregada por el docente y a continuación se muestra el procedimiento para cargarla en RStudio y visualizar las seis primeras filas de las 107 en total, con el comando `head(datos)`.
+
+```{r}
+# Cargar la base de datos y asignarla como "datos"
+datos <- read.csv2("datos.csv", row.names=1) 
+# print.Date(datos)   # Muestra a toda la base de datos
+head(datos) # head permite mostrar solo 6 filas de la base de datos (datos).
+# View(datos)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Paso 2. modelos paramétricos
+
+</b>
+
+<div style="text-align: justify">
+
+**Modelos del tramo Alto - A**. El comando `radfit` (ajuste de Modelos de rango - riqueza - abundancia - RAD), compara los modelos: Nulo (vara quebrada), Preemption, log-normal, Zipf y Mandelbrot. definiendo el mejor ajuste, utilizando los criterios de información de Akaike (`AIC`) y los Bayesianos o de Schwartz (`BIC`). Los modelos RAD que se ajustan mejor a los datos, son los que presenten **menor AIC y BIC**.
+
+```{r, warning=FALSE}
+# Modelos paramétricos de rango - abndancia RAD
+
+# Tramo Alto - A
+mod.A  <- radfit(datos[,1])
+mod.A
+
+# Tramo medio - B
+mod.B  <- radfit(datos[,2])
+mod.B
+
+# Tramo bajo - C
+mod.C  <- radfit(datos[,3])
+mod.C
+```
+
+<div style="text-align: justify">
+
+Los menores valores de los criterios AIC y BIC, definen al modelo **lognormal** como el que mejor se ajusta a los tramos A y C (modelo asociado a altos niveles de diversidad de taxones). De acuerdo a [Ibañez et al. (2006)](https://www.madrimasd.org/blogs/universo/2006/01/07/11693), las distribuciones lognormales, aplican a comuniadades estables (sin perturbaciones) y/o a oportunistas.
+
+Por su parte, el tramo B se ajusta mejor al modelo lineal generalizado (glm) **Mandelbrot**. De acuerdo a [Alanís-Rodríguez et al. (2020)](https://cienciasforestales.inifap.gob.mx/index.php/forestales/article/view/591/2056), el ajuste *Mandelbrot,* se asocia a comunidades con algunos taxones que dominan por sus mayores densidades de indiviuos, especialmente en etapas iniciales de las sucesiones. Hay que tener en cuenta este aspecto del tramo B, porque si bien, se ajusta a un modelo con cierta dominancia de especies, es el lugar con mayor diversidad, en terminos de su mayor cobertura, equidad y uniformidad (ver a continuación: **2. Valoración de diversidad a partir de estimadores no paramétricos**).
+
+<b style='color:#4daf4a;'>
+
+#### Paso 3. Figuras de los modelos paramétricos
+
+</b>
+
+```{r}
+
+par(mfcol=c(1,3))
+
+plot(mod.A, main="Tramo A", ylab= "log10(Ab. relativa)", xlab="Rangos")
+plot(mod.B, main="Tramo B", ylab= "log10(Ab. relativa)", xlab="Rangos")
+plot(mod.C, main="Tramo C", ylab= "log10(Ab. relativa)", xlab="Rangos")
+
+```
+
+<div style="text-align: justify">
+
+La línea de mayor grosor es la que representa al modelo de mayor ajuste para cada tramo evaluado. A continuación se grafican los diagramas de mayor ajuste.
+
+```{r}
+par(mfcol=c(1,3))
+
+plot(mod.A$models$Lognormal, 
+     main="Tramo A - log-normal", ylab= "log10(Ab. relativa)", xlab="Rangos")
+plot(mod.B$models$Preemption, 
+     main="Tramo B - Mandelbrot", ylab= "log10(Ab. relativa)", xlab="Rangos")
+plot(mod.C$models$Lognormal, 
+     main="Tramo C - log-normal", ylab= "log10(Ab. relativa)", xlab="Rangos")
+
+```
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## 2. **Valoración de diversidad a partir de estimadores no paramétricos.**
+
+</b>
+
+<div style="text-align: justify">
+
+**3.Valoración de la diversidad en cuatro pasos, propuesta por Chao et al. (2020).** Este ejercicio, tiene por objeto, aprender a utilizar la plataforma iNEXT de cuatro pasos `iNEXT.4steps`, el cual consiste en la valoración de la diversidad en localidades o muestras. Este procedimiento permite calcular los siguientes cuatro insumos: **(1) la completitud o integridad de la muestra**, **(2) la diversidad asintótica**, **(3) la diversidad no asintótica** y **(4) la uniformidad de las abundancias** ([Chao et al. 2020](https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102)).
+
+Hay una plataforma generada por Chao y colaboradores [Enlace de la Plataforma](https://chao.shinyapps.io/iNEXT_4steps/), pero en este caso se trabajará con los comandos de R con el paquete `iNEXT.4steps`, para calcular los estimadores de diversidad [Enlace de los comandos de R](https://github.com/KaiHsiangHu/iNEXT.4steps).
+
+**¿Qué es iNEXT?** Herramienta que infiere sobre la diversidad esperada de uno o más lugares, a partir de `datos observados` (tabulados de campo), por medio de `interpolación` (iN) y de `extrapolación` (EXT) de los datos de cada muestra tomada en campo. Los detalles se muestran en el artículo de Chao et al. 2020 ([enlace](https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102)), especialmente la **tabla 2** y la plataforma de iNEXT en 4 pasos ([enlace](https://chao.shinyapps.io/iNEXT_4steps/)), que aplica a lo mencionado en el artículo.
+
+A continuación se describen los cuatro pasos para valorar la diversidad de una o varias muestras tomadas de comunidades:
+
+• **Paso 1: Perfil de completitud**. Muestra que tan completa es la muestra evaluada dependiendo de que la pendiente de la curva (eje y) se aproxime a cero para los tres órdenes de diversidad (eje x). Normalmente esa pendiente se estabiliza en los órdenes q= 1 (especies frecuentes o dominantes registradas) y q= 2 (especies muy frecuentes). No sucede lo mismo con el orden q= 0 (número de especies) donde la pendiente es mayor lo cual indica que el esfuerzo debe aumentar.
+
+• **Paso 2: Rarefacción y extrapolación y perfil asintótico de diversidad**. El primero hace relación a la proyección de los órdenes q= 0, q= 1 y q= 2 (línea punteada), hasta el doble de los individuos observados (eje x). Normalmente en q=0 la curva punteada no alcanza a estabilizarse (pendiente =0), lo cual impide una estimación precisa de la diversidad verdadera. En caso de que lo anterior se estime con precisión, el perfil asintótico permitirá reportar la diversidad no detectada (perfil estimado - empírico u observado), de lo contrario se debe analizar el siguiente paso.
+
+• **Paso 3. Perfil no asintótico**. Se aplica estandarizando coberturas, para muestras en las que no se puede estimar la diversidad con precisión. Se extrae una fracción de la muestra de forma aleatoria. Entonces se analiza el nivel de diversidad (eje y), para una cobertura máxima que tienda a 1 (eje x).
+
+• **Paso 4. Perfil de uniformidad**. Permite evaluar la uniformidad en las abundancias de las especies registradas por las muestras comparadas para una cobertura máxima. Allí se sugiere a la plataforma iNEXT en 4 pasos (enlace) para ejecutar todo el análisis.
+
+------------------------------------------------------------------------
+
+**Objetivo** Realizar los cuatro pasos para la valoración de la diversidad de taxones presentes en los tres sitios en comparación (A: Tramo alto, B: Tramo Medio, C: Tramo Bajo del río). Para más detalles de esta base de datos, se puede consultar a [Rodríguez-Barrios et. al (2011)](https://www.scielo.sa.cr/scielo.php?script=sci_arttext&pid=S0034-77442011000400009)
+
+<b style='color:#4daf4a;'>
+
+#### Cargar librerías
+
+</b>
+
+Para poder ejecutar estas librerías, es recomendable utilizar la plataforma [posit.cloud](https://posit.cloud/), debido a que el programa R instalado en el computador, puede presentar errores de instalación de estos complementos. Se requiere crear una cuenta en la página en mención.
+
+```{r, message=FALSE, warning=FALSE}
+## install the latest version from github
+# install.packages('devtools')
+library(devtools)
+
+# install_github('AnneChao/iNEXT.3D')
+library(iNEXT.3D)
+
+# install_github('AnneChao/iNEXT.4steps')
+library(iNEXT.4steps)
+
+library(ggplot2)
+```
+
+<b style='color:#4daf4a;'>
+
+#### Cargar la base de datos "datos.csv"
+
+</b>
+
+<div style="text-align: justify">
+
+Esta base de datos será entregada por el docente, en el material correspondiente a la actividad de cómputo. El presente video muestra de una manera resumida, la forma de iniciar el trabajo en esta plataforma **posit.cloud** (anteriormente *rstudio.clod*) [ver video](https://www.yresultube.com/watch?v=QZZztojF9X0). Realizar los pasos para cargar la base de datos, que para este caso es: `datos.csv` (entregada por el docente).
+
+```{r}
+# Cargar la base de datos y asignarla como "datos"
+datos <- read.csv2("datos.csv", row.names=1) 
+head(datos)   # head permite mostrar solo 6 filas de la base de datos (datos).
+
+```
+
+La base de datos, también se puede cargar desde el icono "`Import Dataset`" ubicado a la derecha del panel de `posit.cloud` y seleccionar "`From text (base)`"
+
+Con el siguiente resumen estadístico se definen las abundancias para cada sitio evaluado (`Max.`)
+
+```{r}
+# Comparación de estadísticos de las muestras evaluadas (A, B y C)
+summary(datos)
+```
+
+## 
+
+<b style='color:#fc8d62;'>
+
+### 2.1 Cuatro pasos para valorar la diversidad de los sitios en comparación
+
+</b>
+
+<b style='color:#4daf4a;'>
+
+#### Resumen tabular de los cuatro pasos
+
+</b>
+
+<div style="text-align: justify">
+
+A continuación se calcula la diversidad alfa en 4 pasos, de acuerdo a la propuesta de `Chao et al. (2020)`. Este procedimiento puede tardar algunos minutos y dependerá de la velocidad de conexión a internet y al tamaño de la base de datos evaluada. `diversity = "TD"` corresponde a la diversidad taxonómica calculada. El comando `names(result1)`, muestra a los diferentes insumos del análisis.
+
+-   **Resultados resumidos**. El comando `result1$summary`, permite mostrar a todos los insumos tabulares de los 4 pasos del análisis de divversidad.
+
+```{r}
+# Insumos tabulares de la diversidad en 4 pasos
+library(iNEXT.4steps)
+
+result1 <- iNEXT4steps(data = datos, diversity = "TD", datatype = "abundance")
+result1$summary
+```
+
+<div style="text-align: justify">
+
+Los cuatro pasos de este análisis se detallan a continuación.
+
+<b style='color:#4daf4a;'>
+
+#### Paso 1. Perfil de completitud
+
+</b>
+
+\$`STEP1. Sample completeness profiles`, Perfil de completitud. Muestra que tan completa es cada muestra evaluada para los órdenes `q= 0` (riqueza), `q= 1` (especies frecuentes o abundantes), `q= 2` (especies muy frecuentes o dominantes). Normalmente `q=0` es de menor completitud (muestra insuficiente) debido a los `f1` (cantidad de singletons), entre otros factores.
+
+```{r}
+# Paso 1. Perfil de completitud
+result1$summary$"STEP1. Sample completeness profiles"
+```
+
+Para este caso, solo `q = 0` presenta una proporción \< 1, los cual puede indicar que si se aumenta el esfuerzo de muestreo o el tamaño de la muestra, pueden encontrarse nuevos taxones.
+
+<b style='color:#4daf4a;'>
+
+#### Paso 2. Perfil asintótico
+
+</b>
+
+\$`STEP2. Asymptotic analysis`, Perfil asintótico. Diversidad proyectada (*estimada*) asumiendo que las muestras tienen tamaño suficiente (coberturas superiores a 0.9), `q= 0` (riqueza), `q= 1` (especies frecuentes o diversidad de Shannon), `q= 2` (especies muy frecuentes o diversidad de Simpson).
+
+```{r}
+# Paso 2. Perfil Asintótico
+result1$summary$"STEP2. Asymptotic analysis"
+```
+
+<div style="text-align: justify">
+
+La diferencia entre la diversidad estimada y la observada define al número de especies o taxones faltantes (no detectados). `s.e.` y `LCL`, son los errores estándar y los límites de confianza, respectivamente, para las proyecciones gráficas que se definen a continuación.
+
+<b style='color:#4daf4a;'>
+
+#### Paso 3. Perfil no asintótico basado en interpolación y extrapolación
+
+</b>
+
+\$`STEP3. Non-asymptotic coverage-based rarefaction and extrapolation analysis,` Perfil no asintótico basado en interpolación y extrapolación. Cobertura (`eje x`) obtenida de una muestra aleatoria, extrapolada para aumentar su representación (`Cmax`).Este paso es apropiado cuando hay demasiados tazones no detectados o faltantes y la diversidad no se puede calcular con precisión.
+
+```{r}
+# Paso 3. Perfil no asintótico basado en interpolación y extrapolación
+result1$summary$"STEP3. Non-asymptotic coverage-based rarefaction and extrapolation analysis"
+```
+
+Para este caso, el número de taxones de la muestra aleatoria `q = 0`, está entre 72 y 92. El número de taxones frecuentes `q = 1` se encuentra entre 14 y 25 y el número de taxones muy frecuentes `q = 2`, está entre 7 y 16.
+
+<b style='color:#4daf4a;'>
+
+#### Paso 4. Perfil de uniformidad
+
+</b>
+
+\$`STEP4. Evenness among species abundances` `Perfil de uniformidad`. Permite evaluar la uniformidad en las abundancias de los taxones por las muestras comparadas para una cobertura máxima. Sirve para comprar entre el patrón de uniformidad en las abundancias de los taxones para los dos lugares evaluados.
+
+La Uniformidad (Evenness) se calcula mediante el índice de `Piellou (J’)`, donde: `J' = H/log(S)`, donde `H` denota la diversidad de Shannon y `S` es el número de taxones de la muestra.
+
+```{r}
+# Paso 4. Perfil de uniformidad
+result1$summary$"STEP4. Evenness among species abundances"
+```
+
+El anterior insumo indica que la uniformidad `J'` se mueve entre 58% y 64% (muestras poco uniformes en las abundancias de los taxones).
+
+## 
+
+<b style='color:#4daf4a;'>
+
+#### Insumos gráficos de los cuatro pasos
+
+</b>
+
+<div style="text-align: justify">
+
+El comando `figure[[6]]` relaciona a las seis figuras que resumen el proceso de los cuatro pasos para valorar la diversidad de los tres sitios evaluados, descritos por [Chao et al. 2020](https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102).
+
+```{r}
+# Figuras generadas por los cuatro pasos de la valoración de la diversidad.
+result1$figure[[6]]
+```
+
+Las figuras generadas se describen de forma individual en los siguientes comandos, permitiendo a su vez, editar los rótulos de sus ejes y los titulos de cada una, mejorando de esta forma su interpretación y presentación.
+
+<b style='color:#4daf4a;'>
+
+#### Figura del Paso 1. Completitud de las muestras
+
+</b>
+
+<div style="text-align: justify">
+
+El comando `Completeness`, se utiliza para graficar la integridad de cada muestra (tramos a, B y C), a través del perfil de completitud. Para este caso se observa Que la muestra más completa es la del tramo medio (B), debido a que presenta menos pendiente en q = 0 que el resto. Entonces, a mayor pendiente, menos completitud de las muestras. Al analizar el eje X (q = 0, 1 y 2) se observa que la menor completitud se presenta en el orden q = 0, lo cual indica que hay taxones no detectados en las tres muestras evaluadas. Para eliminar el titulo de la figura, se puede colocar el siguiente comando `title = ""`.
+
+```{r}
+# Figura del paso 1. Completitud de las muestras.
+p <- result1$figure[[1]]
+p+labs(x="Orden q", y="Completitud de la muestra", 
+       title = "Paso 1. \nPerfil de Completitud")
+```
+
+Otra forma de hallar el perfil de completitud es mediante el comando `Completeness`. La siguiente figura del paso 2, se obtiene con el comando `ggCompleteness` descrito en el repositorio GitHub de **iNEXT.4steps (R package)**
+
+```{r}
+# Perfil de completitud de las muestras
+# result2 <- Completeness(data = datos, datatype = "abundance")
+
+# Figura del perfil de completitud
+# p <- ggCompleteness(result2)
+# p+labs(x="Orden q", y="Completitud de la muestra", 
+#        title = "Paso 1. \nPerfil de Completitud")
+```
+
+<b style='color:#4daf4a;'>
+
+#### Figura del Paso 2. Perfil asintótico
+
+</b>
+
+<div style="text-align: justify">
+
+**Paso 2.1** El comando `result1$figure[[2]]`, permite graficar la "Diversidad asintótica" basada en rarefacción y extrapolación (paso 2.1). En este sentido la *asintota de las curvas*, se obtiene cuando por más que aumente la abundancia de individuos, no aumenta la diversidad (la curva se vuelve asintótica o con pendiente = 0). Estos perfiles son útiles para comparar la diversidad de muestras de diferentes tamaños y preferiblemente que sean grandes, lo cual no es el caso del presente ejercicio.
+
+```{r}
+# Paso 2.1. Figura del tamaño basado en rarefacción / extrapolación
+p <- result1$figure[[2]]
+p + labs(x="Número de Individuos", y="Diversidad de taxones", 
+       title = "Paso 2.1. \nTamaño basado en rarefacción/extrapolación") +
+  scale_linetype_manual("",values =  c(1,2),labels=c("Empírica","Asintótica")) 
+
+```
+
+<div style="text-align: justify">
+
+Para este caso, se observa que q = 0 (riqueza de taxones) no alcanza la asintota en ninguno de los tramos (líneas sólidas), tampoco al extrapolar la abundancia al doble de lo registrado (líneas punteadas), lo cual indica que se requiere aumentar el esfuerzo de muestreo o que los lugares tienen una elevada diversidad esperada. Otro aspecto es el solapamiento de las bandas de colores, que representan los valores de los límites de confianza, lo cual puede indicar que entre los tramos A y B no se esperan diferencias significativas de la riqueza de taxones (solapamiento importante de la bandas).
+
+Con la librería `iNEXT` de R, también se puede realizar la figura anterior. Para mayores detalles de esta opción, se puede consultar al [Manual_iNEXT](https://cran.r-project.org/web/packages/iNEXT/vignettes/Introduction.pdf) y el procedimiento en esa plataforma se describe a continuación.
+
+```{r}
+# library(iNEXT)
+# out=iNEXT(datos,q=c(0,1,2),datatype="abundance")
+# datos_plot = ggiNEXT(out, type=3, facet.var="Order.q")
+# datos_plot + labs(x = "Cobertura de la muestra", y = "Diversidad")
+```
+
+**Paso 2.2** El comando `result1$figure[[3]]`, permite graficar la *"Diversidad asintótica"* basada en el comparativo entre la diversidad estimada (asintótica) y la onservada (empírica) de los tramos en comparación (paso 2.2). En la Figura, se muestra que entre más se aproximen estas curvas, se tendrá una mayor aproximación a la diversidad esperada. Al analizar la intersección de los ejes x, y, se observa que en el orden q = 0 (riqueza de taxones) es donde se alejan las curvas, lo cual se complementa con la figura anterior, para este estimador.
+
+```{r}
+# Paso 2.2. Figura del perfil asintótico y empírico
+p <- result1$figure[[3]]
+p+labs(x="Orden q", y="Diversidad Taxonómica", 
+       title = "Paso 2.2. \nPerfil de diversidad asintótico y empírico") +
+  scale_linetype_manual("",values =  c(1,2),labels=c("Empírica","Asintótica"))
+```
+
+<b style='color:#4daf4a;'>
+
+#### Figura del Paso 3. Perfil no asintótico basado en interpolación y extrapolación
+
+</b>
+
+<div style="text-align: justify">
+
+El comando `result1$figure[[3]]`, permite graficar la "Diversidad no asintótica" basada en curvas de rarefacción y de extrapolación, asumiendo tamaños de muestra insuficiente o de muestras pequeñas, mediante la extracción de una submuestra del total evaluado (Cmax). En la Figura, todas las curvas alcanzan la cobbertuura esperada (Cobertura = 1), lo cual vuelve consistente su comparación. Para este caso se observa que la mayor riqueza de taxones se presenta en el tramo medio o B (panel q =0) seguido de los tramos B y C, respectivamente. Para el caso de los taxones abundantes (q = 1) y muy abundantes (q = 2), la mayor diversidad se presenta en el tramo B.
+
+```{r}
+# Paso 3. Figura del perfil no asintótico basado en rarefacción/extrapolación
+p <- result1$figure[[4]]
+p+labs(x="Cobertura de la muestra", y="Diversidad Taxonómica", 
+       title = "Paso 3. \nPerfil de cobertura basada en rarefacción/extrapolación") +
+  scale_linetype_manual("",values =  c(1,2),labels=c("Empírica","Asintótica"))
+```
+
+<b style='color:#4daf4a;'>
+
+#### Figura del Paso 4. Uniformidad de las muestras (tramos evaluados)
+
+</b>
+
+<div style="text-align: justify">
+
+Este perfil, permite realizar un comparativo en la uniformidad de las muestras comparadas (tramos A, B y C), en los tres órdenes de diversidad (q = 0, 1 y 2), lo cual permite valorar la proporcionalidad de las abundancias para los diferentes taxones encontrados en cada lugar. Para este caso, a excepción del estimador q = 0 (en donde las tres curvas se unen), la mayor uniformidad se presenta en el tramo medio o B (curva de mayor magnitud y bandas de sus límites de confianza no se solapan con el resto), seguido de los tramos C y A, respectivamente.
+
+```{r}
+# Paso 4. Figura del perfil de uniformidad
+p <- result1$figure[[5]]
+p+labs(x="Orden q", y="Uniformidad", 
+       title = "Paso 4. \nPerfil de Uniformidad") 
+```
+
+Otra forma de calcular el perfil de uniformidad se realiza con el comando Evenness (Figura 6), de la librería iNEXT.4steps, en el cual, se relacionan cinco modelos de uniformidad (E1 a E5), desarrollados y descritos por [Chao y Ricotta (2019)](https://www.jstor.org/stable/pdf/26853666.pdf). Ver tabla 1 y figura 2 del artículo.
+
+```{r}
+# Cálculo de los cinco modelos de uniformidad
+result3 <- Evenness(data = datos, datatype = "abundance")
+
+```
+
+```{r}
+# Figura con los cinco modelos de uniformidad
+p <- ggEvenness(result3)
+
+p+labs(x="Orden q", y="Uniformidad", 
+       title = "Paso 4. \nCinco Perfiles de Uniformidad") 
+```
+
+<div style="text-align: justify">
+
+En la Figura se observa que para los cinco modelos de uniformidad, el tramo A es el que presenta mayor uniformidad, seguido del C y el B, respectivamente. La mayor uniformidad del tramo A se presenta especialmente para los taxones dominantes (q = 1) y muy dominantes (q = 2) (ver los órdenes de diversidad en el eje x). En el modelo E4, los valores de uniformidad son casi iguales para los taxones dominantes y muy dominantes (q = 0, 1 y 2).
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## **Fuente de los cálculos**
+
+</b>
+
+<div style="text-align: justify">
+
+Chao, A., Y. Kubota, D. Zelený, C.-H. Chiu, C.-F. Li, B. Kusumoto, M. Yasuhara, S. Thorn, C.-L. Wei, M. J. Costello, and R. K. Colwell (2020). Quantifying sample completeness and comparing diversities among assemblages. Ecological Research, 35, 292-314.

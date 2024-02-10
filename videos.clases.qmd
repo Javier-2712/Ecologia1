@@ -1,0 +1,371 @@
+<b style='color:#1f78b4;'>
+
+# Videos clases {.unnumbered}
+
+</b>
+
+<img src="https://images.pexels.com/photos/827209/pexels-photo-827209.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" width="43%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [Saeid Anvar](https://www.pexels.com/es-es/@indeedsaeed/) </n>\]
+
+Los videos que se presentan a continuación, son el resultado de sesiones realizadas a partir del 2020 hasta la fecha y se encuentran alojadas en el repositorio de videos "Stream" de la universidad.
+
+## 
+
+<b style='color:#1f78b4;'>
+
+# Videos de las semanas 1 - 2
+
+</b>
+
+<b style='color:#d95f02;'>
+
+## 1. Análisis Climático de ecosistemas
+
+</b>
+
+<img src="https://t3.ftcdn.net/jpg/05/78/65/98/240_F_578659816_v2ZJMwlpFisEE66gWt6h3POodHeLYseI.jpg" width="46%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [CYB3RUSS](https://stock.adobe.com/co/images/earth-day-concept-on-white-background-world-environment-day-generative-ai/578659816) </n>\]
+
+<n style='color:#fc8d62;'> (2023-II) Análisis climático - Climatogramas, balance hídrico y otros </n>
+
+<div style="text-align: justify">
+
+**Nota**: Para estos y el resto de videos de Stream, sugiero colocarlos en velocidad 1.5x, para que el avance sea más eficiente.
+
+-   [Semana 1. Organización de los datos y construcción del climatograma](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EQdo0S8a_GlGl_oHp-9JYRIB6kv5z4iFngJxTFVKWZjRuw?e=XzcKMQ)
+-   [Semana 2. Organización de datos, climatográma y resto de resultados](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EVNEzo8tMXFMubjrlxcgqu4B2OpJWRWCE8pd6iUoy5Erxg?e=MuM3Ct)
+-   [Semana 2. Otros. Organización de datos de zona bananera](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EX8eEGGSjbdPng82n_RCUccBEAkaCrzrn0doaZotgAJCQw?e=KcnHIS)
+
+<n style='color:#fc8d62;'> (2024-I) Análisis climático - Climatogramas, balance hídrico y otros</n>
+
+-   [Videos pendientes de grabar 2024-I](https://)
+
+--
+
+---
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 5 a 6
+
+</b>
+
+<b style='color:#d95f02;'>
+
+## 1. Manejo de programas Ramas y RStudio para modelos exponenciales (parte 1)
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/Exponencial.png){width="302"}
+
+<n style='color:#fc8d62;'> (2023-II) Modelos exponenciales en Ramas Ecolab y RStudio </n>
+
+<div style="text-align: justify">
+
+Para estos videos, sugiero instalar previamente el ***`Ramas Ecolab`***, ***`RStudio`*** y ***`R`***, siguiendo las indicaciones de las pautas entregadas por el docente en el repositorio - taller 4.1 ([enlace a las pautas del taller](https://javier-2712.github.io/Manuales/6.Manual_eco1/Taller4.1.Poblaciones.exp.html)).
+
+-   [Semana 4. Taller de modelos exponenciales en Ecolab y RStudio (parte 1)](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EdmD7bP93N1KquocL5F-LW8BXv3GA7zxKZnTmbM6d6i96A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xPA2Rs)
+
+-   [Semana 4. Taller complementario (parte 1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/ESf3KTrP11tJheiGUk26Bs0B1NQtkSxnoNa_0ERXIKdDGA?e=JcsO5M)
+
+-   [Semana 5. ](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EZrMvmYqrOJFsDKt53FSRy8BSsBjrPgp0uf94LkzDLjBZw?e=WGNe6L)[Taller de modelos exponenciales en RStudio (parte 2)](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EdmD7bP93N1KquocL5F-LW8BXv3GA7zxKZnTmbM6d6i96A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=xPA2Rs)
+
+--
+
+---
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 6 a 7
+
+</b>
+
+<b style='color:#d95f02;'>
+
+## 1. Manejo de RStudio para modelos logísticos
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/logistico2.png){width="339"}
+
+<n style='color:#fc8d62;'> (2023-II) Modelos exponenciales en Ramas Ecolab y RStudio </n>
+
+<div style="text-align: justify">
+
+Para estos videos, sugiero instalar previamente el ***`RStudio`*** y ***`R`***, siguiendo las indicaciones de las pautas entregadas por el docente en el repositorio - taller 4.2 ([enlace a las pautas del taller](http://localhost:4556/Taller4.2.Poblaciones.log.html)).
+
+-   [Semana 6. Taller de modelos logísticos RStudio](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EbauaF72qu9HumOtGf4gdMcBnioWsh1mPbo_ogZtNBdENw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=vIZ3xO)
+
+-   [Semana 6. Complemento al taller de modelos logísticos RStudio](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EezPUXgFPJ5KqdSB6502-CcBnpRITDnGlW6HAEIoXM6GQg?e=UhNvou)
+
+--
+
+---
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 8 y 9
+
+</b>
+
+<b style='color:#d95f02;'>
+
+## 1. Tablas de vida y modelos matriciales de poblaciones
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/mod.edad.JPG){width="539"}
+
+<n style='color:#fc8d62;'> **Grupo 1** </n>
+
+[Semana 9. Taller de computo tablas de vida y matrices (parte 1) 2023-II](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/Eci8r2vNlRRGp2WnDsx2yXsBXH454aXHoomnB2bdxkOSjg?e=12RNzZ)
+
+[Semana 11. Taller de computo tablas de vida y matrices (parte 2) 2023-II](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EWhV8FPAIlxOrvbjZIfZkdYBDmNchqQoak2Mt0dy34Vyxg?e=aUhhsY)
+
+[Semana 8. Sesión 1 - Ejercicio en clase con Pizarra Virtual - Tablas de vida (parte 1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EVNEzo8tMXFMubjrlxcgqu4B2OpJWRWCE8pd6iUoy5Erxg?e=ssSyYd)
+
+##### <n style='color:#2ca25f;'> **Teoría Tablas de vida** </n>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/tabla.vida1.PNG){width="464"}
+
+##### [Semana 8. Sesión 1 - Tablas de vida y Modelos de estado en poblaciones](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/ERwmwgwNWitCtQZt6wRXSO0BN2C2gXIaoA85fVpAbVhG4A?e=Yda5pI)
+
+[Semana 8. Sesión 2 - Modelos de estado en poblaciones](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EdGH5tPkx0xFusi5cjY5DkUBM3-bJ-x0isWI979cKx9TcA?e=wcOcTe)
+
+##### <n style='color:#2ca25f;'> **Taller pizarra - modelo de estado** </n>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/taller.modelo.estado.PNG){width="482"}
+
+[Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 1](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EVEpfssKZfNPm9H0qsC03k0BGlHmJy_K9K9_P0JqhtVqkg?e=KlVUlV)
+
+[Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 2](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EeKXqr7WstNDtWOmf0XLtggByqXiYtBW7rRKPJAwmnXdMw?e=3qUp7j)
+
+[Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 3](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EURnZTdS4whNmMbTcpHEkC8BQRU0n0sbZbk2EvunpDvkuw?e=BV9Hy7)
+
+[Semana 11. Tablas de vida y modelos de edad y de estado - poblaciones-Teoría](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EbFbi-oh5K9Frx74-HZ0078BWGCKcYdeo96Dn8lvsRUYmA?e=XDwg1u)
+
+## 
+
+<n style='color:#fc8d62;'> **Grupo 2** </n>
+
+[Semana 9. Taller de computo tablas de vida y matrices (parte 1) 2023-II](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/EQQhdJY3c69MupjFoGTEkRABKl5PPGH3bsrW4Yu_yB9qWw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&e=KiVZH0)
+
+[Semana 9. Taller de computo tablas de vida y matrices (parte 2) 2023-II](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/Efl2GIJyulBIlecAovzA9jkBqfCUgCwqFClrf6BbHywsTQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&e=7BNFAi)
+
+##### <n style='color:#2ca25f;'> **Teoría Tablas de vida** </n>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/tabla.vida1.PNG){width="505"}
+
+##### [Semana 8. Sesión 1 - Tablas de vida y Modelos de estado en poblaciones](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/ERDAZvnuqNBLqhb5kN9jCIABnj3g5aAJjUuXFgIIDRtwjw?e=noXLHB)
+
+[Semana 8. Sesión 2 - Modelos de estado en poblaciones](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/ESMUuMKIEkxMmvY6aCjgAu0BA0v2qDW16I6k8xARkwu04Q?e=fvUFc7)
+
+##### <n style='color:#2ca25f;'> **Taller pizarra - modelo de estado** </n>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/taller.modelo.estado.PNG){width="502"}
+
+##### [Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 1](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EbwzJ_WbFdpJg1GVDTFNfeYB3SWcuQfKowatCHnb1WPlmA?e=qyEe4J)
+
+[Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 2](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EZRNizVTgylCvsC4bwPoxoYB6GD9e1XG8hXfgz-0n3-ClA?e=vIoUt8)
+
+[Semana 9. Sesión 3 -- Ejercicio en la pizarra -- Modelos de estado -- parte 3](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/ERnNi_NUIaBDsr3LBm6G8uAB99DD3dcIGYUq5AJwOS_Y6A?e=IPtN2N)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 10 y 11
+
+</b>
+
+<b style='color:#d95f02;'>
+
+## 1. Tablas de vida y modelos matriciales de *Calotropis*
+
+</b>
+
+![](/Figuras/calotropis1.jpg){width="477"}
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 1** </n>
+
+[Semana 11. Pautas del taller de Calotropis en la Granja](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EWUpaw0rb-ZNmX9tFUwjTYgBroHnTXxg6hgxO3C6mrU7nA?e=e48MZk)
+
+[Semana 11. Taller de cómputo. *Calotropis* (parte 1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EVcd395zmJZNuSaIc2JNVroBsiv29Pdr1k4NRUYDcnmKNQ?e=HAd4N8)
+
+[Semana 11. Taller de cómputo. *Calotropis* (parte 2)](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EWhV8FPAIlxOrvbjZIfZkdYBDmNchqQoak2Mt0dy34Vyxg?e=3Bileq)
+
+------------------------------------------------------------------------
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 2** </n>
+
+[Semana 10. Taller de cómputo. *Calotropis* (parte 1)](https://universidadmag-my.sharepoint.com/:v:/g/personal/jrodriguez_unimagdalena_edu_co/ER19hXjFSilEptWwLO_SqisBV0i5-2LPFVbtXmuPP3hgvw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&e=d4xM2e)
+
+[Semana 11. Taller de cómputo. *Calotropis* (parte 2)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EUaIbGbSOuVDiJRsTXHMCLUBJbzWdftyupaqZYvK1SbgDw?e=mIzYAG)
+
+## 
+
+<b style='color:#d95f02;'>
+
+## 2. Tabulación de datos - salida de campo
+
+</b>
+
+![](/Fotos.campo/imagen16.jpg){width="498"}
+
+[Semana 10. Tabulación\_ Datos de campo-Batimetría](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EVzR0x1bu5xLoeJp81syh1wB7nSbBva7ADgAtmLwTEizmQ?e=eiDokt)
+
+[Semana 10. Tabulación\_ Datos de campo - Hidrología (parte 1) Objeto flotador](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EdxOwu01jJpAmglRvGPICFMBMQKtUJQeWwY4EKcYtny_UA?e=b8kcD1)
+
+[Semana 10. Tabulación\_ Datos de campo - Hidrología (parte 2) Objeto flotador](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EU_drKmPQpFMpTg-2qHXDLQBFX_DMKdIXxHlX32ttyctaw?e=gqBCu1)
+
+[Semana 10. Tabulación\_ Datos de campo - Hidrología (parte 3) Trazador con sal](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EYCU2tbyeDFLtf6KdhSseQIBx3ITb9thZSsmYCxleJxI-g?e=JdRO9o)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 12 y 13
+
+</b>
+
+![](Figuras/calotropis3.jpg){width="556"}
+
+<b style='color:#d95f02;'>
+
+## 1. Teoría patrones de distribución de poblaciones
+
+</b>
+
+[Teoría - Distribución de poblaciones (parte 1)](https://youtu.be/wnhYWn4Nook)
+
+[Teoría - Distribución de poblaciones (parte 2)](https://youtu.be/5l5-i26MA6g)
+
+# 
+
+<b style='color:#d95f02;'>
+
+## 2. Ejemplos patrones de distribución aleatoria
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/distrib.%20poisson.png){width="460"}
+
+[1. Ejemplo - Distribución aleatoria de poblaciones (parte 1)](https://youtu.be/Zvixu1C2vwM)
+
+[2. Ejemplo - Distribución aleatoria de poblaciones (parte 2)](https://youtu.be/NHSXw2golb4)
+
+[3. Ejemplo - Distribución aleatoria de poblaciones (parte 3)](https://youtu.be/YEJVWntc0iw)
+
+# 
+
+<b style='color:#d95f02;'>
+
+## 3. Ejemplos patrones de distribución agrupada
+
+</b>
+
+![](https://javier-2712.github.io/Ecologia1/Figuras/distrib.%20binomial.png){width="491"}
+
+[1. Ejemplo - Distribución Binomial negativa de poblaciones (parte 1)](https://youtu.be/IofWdfs149g)
+
+[2. Ejemplo - Distribución Binomial negativa de poblaciones (parte 2)](https://youtu.be/1PW4v5QV070)
+
+[3. Ejemplo - Distribución Binomial negativa de poblaciones (parte 3)](https://youtu.be/YEJVWntc0iw)
+
+# 
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 1** </n>
+
+[Semana 13. Pautas para la tabulación y cálculos de distribución de Calotropis en la granja Unimagdalena (2023-II)](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EQGGGMhdSlFLq5lggxqls-wBWCj_wonDVlYMFs8t5QqNVg?e=LuTFb1)
+
+[Semana 13. Ejercicio en clase (2023-II). Distribuciones aleatoria y agrupada](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/Eelu3Ygso6dIozJlHAOUh78BXIMTV2o1vl4eyk351_Drlg?e=j6EQBE)
+
+# 
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 2** </n>
+
+[Semana 13. Pautas para la tabulación y cálculos de distribución de Calotropis en la granja Unimagdalena (2023-II)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EQiDqd7C_jFGrx-9gkW2AbEBRLzjpph6aGPUSIgIE4hmxQ?e=h057AQ)
+
+[Semana 13. Ejercicio en clase (2023-II). Distribuciones aleatoria y agrupada](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EdQHMDk_bERCtzv6PAyWerMBYsLtSox1l4EbEftjWUZKkw?e=jqOypf)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+# Videos de la semanas 14 a 15
+
+</b>
+
+<img src="https://as1.ftcdn.net/v2/jpg/01/00/52/60/1000_F_100526045_MvUWojA5GiDfAgdXvMcDTeH6NFncWn2j.jpg" width="60%"/>
+
+\[<n style='color:#1f78b4;'> Imágen tomada de [vlad61_61](https://stock.adobe.com/co/contributor/202079861/vlad61-61?load_type=author&prev_url=detail) </n>\]
+
+## <b style='color:#d95f02;'> 1. Introducción a la Ecología de Comunidades </b>
+
+<n style='color:#fc8d62;'> **Teoría de comunidades** </n>
+
+-   [Clase de 2020 - Introducción al módulo de Communidades(parte 1)](https://youtu.be/3ohV2e-6kZo)
+
+-   [Clase de 2020 - Introducción al módulo de Communidades(parte 2)](https://youtu.be/yOwmVx7oSmo)
+
+-   [Clase de 2020 - Introducción al módulo de Communidades(parte 3)](https://youtu.be/uSQPtCgtpUY)
+
+--
+
+-   [Clase de 2021 - Introducción al módulo de Communidades(1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-II/EeXi6vvXgjJIiw8HNGrIpaUB4Y9W8IwPf6-ptDrzzMRajA?e=R3zCgQ)
+
+-   [Clase de 2021 - Introducción al módulo de Communidades(2)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-II/ETZzraLp2FJMt0m8XfD2SdMB2L_MgtMWcM6RVa5UzfFPeQ?e=uVjPLZ)
+
+## <b style='color:#d95f02;'> 2. Taller de computo Ecología de Comunidades </b>
+
+![](https://javier-2712.github.io/Ecologia1/Taller7.diversidad.macroinv/taller7.macroinv_files/figure-html/fig-figura3-1.png){width="410"}
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 1** </n>
+
+-   [Semana 14. Taller visto en clase de 2023-II - Taller comunidades - PAST](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EZUcb75lcd9AqkfMJt846joBSC7Lxt2VV8SvFUqYAc2fkw?e=uAkZ3b)
+
+-   [Semana 14. Taller visto en clase de 2023-II - Taller comunidades - vegan e iNEXT](https://universidadmag.sharepoint.com/:v:/s/Ecologa_G1_2023-II/EZKrZBeRyi1JlPxL4sC0kKgBfg5mFsCT4aWuBnZx_MWF8Q?e=BZeeEb)
+
+--
+
+-   [Taller visto en clase de 2021-II - Taller comunidades - PAST e iNEXT](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-II/ESPTJyZ6utpHlKHTOyh1POgBsKgZaBOdT0jxiYqf7CxxjA?e=h9xUTO)
+
+-   [Taller visto en clase de 2021-I - Taller comunidades - PAST (parte 1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-I/EfES0kH_w75KjQqlKewC5XQBW06B4wwgE8bTJrAysxtqWw?e=q6e0cd)
+
+-   [Taller visto en clase de 2021-I - Taller comunidades - iNEXT (parte 2)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-I/Ec6cwXDZoglFhHWEHjFi2g8Bn3w9q5d2XV4SSOOmbjKr1g?e=gIFcB2)
+
+<n style='color:#fc8d62;'> **Taller de computo - Grupo 2** </n>
+
+-   [Semana 14. Taller visto en clase de 2023-II - Taller comunidades - PAST](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/EUslA-EZLkBFhM50a56AKQEBQtnCveNPvJ44F0tsUPpd6Q?e=1h4Z3H)
+
+-   [Semana 14. Taller visto en clase de 2023-II - Taller comunidades - vegan e iNEXT](https://universidadmag.sharepoint.com/:v:/s/Ecologa1_G2_2023-II/ESzFvqfkiHJFqq1_Fmru75oBD3JWNq43QStagC0qS0rs5A?e=wnQR7S)
+
+--
+
+-   [Taller visto en clase de 2021-II - Taller comunidades - PAST e iNEXT](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-II/ESPTJyZ6utpHlKHTOyh1POgBsKgZaBOdT0jxiYqf7CxxjA?e=h9xUTO)
+
+-   [Taller visto en clase de 2021-I - Taller comunidades - PAST (parte 1)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-I/EfES0kH_w75KjQqlKewC5XQBW06B4wwgE8bTJrAysxtqWw?e=q6e0cd)
+
+-   [Taller visto en clase de 2021-I - Taller comunidades - iNEXT (parte 2)](https://universidadmag.sharepoint.com/:v:/s/Ecologa1-2021-I/Ec6cwXDZoglFhHWEHjFi2g8Bn3w9q5d2XV4SSOOmbjKr1g?e=gIFcB2)
+
+## 
+
+<b style='color:#1f78b4;'>
+
+### Bibliografía recomendada de la Biblioteca Virtual:
+
+</b>
+
+[Ecología (Diana Fernández, 2017)](https://www-ebooks7-24-com.biblioteca.unimagdalena.edu.co/?il=7286&pg=66) Módulo de diversidad, abundancia y estratificación
+
+![<n style='color:#1f78b4;'> *\[Ecología (Diana Fernández, 2017)\]* </n>](Figuras/Diana.jpg){width="40%"}
+
+[Elementos de Ecología (Thomas Smith, 2015)](https://www-ebooks7-24-com.biblioteca.unimagdalena.edu.co/?il=6804&pg=354) Módulo de Estructura de la Comunidad.
+
+![<n style='color:#1f78b4;'> *\[Elementos de Ecología (Thomas Smith, 2015)\]* </n>](https://m.media-amazon.com/images/I/41a2pM-QSeL.jpg){width="40%"}
+
+[Ecología (Manuel Moles, 2019)](https://www-ebooks7-24-com.biblioteca.unimagdalena.edu.co/?il=9960&pg=366) Módulo de especies, abundancia y diversidad.
+
+![<n style='color:#1f78b4;'> *\[Ecología (Manuel Moles, 2019)\]* </n>](https://www.ingebook.com/ib/pimg/Ingebook/00100_0000002660_4145.png){width="40%"}

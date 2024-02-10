@@ -1,0 +1,23 @@
+# Taller7. Calotropis {.unnumbered}
+
+<b style='color:#1f78b4;'>
+
+## Pautas del taller en casa
+
+</b>
+
+![](Figuras/calotropis1.jpg){width="504"}
+
+## 
+
+En el siguiente enlace se encuentran las pautas en pdf, de la asignación: **7. Taller de Calotripis procera (modelación y distribución)** ([Enlace_taller](Talleres_pdf/Taller7.Distribución-modelación-poblaciones.pdf)), pendientes de ser elaboradas en un `html`.
+
+![Otro enlace:[Taller de modelación y distribución de Calotropis Procera en Unimagdalena 2023-II](Talleres_pdf/Taller7.Distribución-modelación-poblaciones.pdf)](Talleres_pdf/Taller7.Distribución-modelación-poblaciones.pdf)
+
+## 
+
+![Ejemplo de proyección matricial por estados: *Calotropis procera* en Unimagdalena 2023-II](Figuras/Calotropis.proyección.png){fig-alt="[Ejemplo de proyección matricial por estados:[Calotropis Procera en Unimagdalena 2023-II]]" fig-align="left" width="482"}
+
+## 
+
+![](Figuras/Calotropis.parcela.PNG){width="569"}

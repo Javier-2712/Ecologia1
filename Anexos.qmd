@@ -1,0 +1,29 @@
+# Anexos {.unnumbered}
+
+## 
+
+<b style='color:#1f78b4;'>
+
+## **Bases de datos requeridas en algunos talleres**
+
+</b>
+
+## 
+
+<b style='color:#d95f02;'>
+
+## Taller 6. Modelación Matricial
+
+</b>
+
+1.  ([matriz1.csv](matriz1.csv)) Matriz de Leslie (L) requerida para el **Ejemplo 1.** Para descargar estos archivos hay que hacer **clic derecho** sobre este y "`Guardar enlace como`"
+
+## 
+
+<b style='color:#d95f02;'>
+
+## Taller 8. Diversidad alfa de macroinvertabrados acuáticos
+
+</b>
+
+1.  ([datos.csv](datos.csv)) Base de datos requerida para el ejercicio de macroinvertebrados acuáticos presentes en tres tramos del Río Gaira, Santa Marta.
