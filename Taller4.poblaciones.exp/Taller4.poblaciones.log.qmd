@@ -1,0 +1,30 @@
+---
+title: "Modelos logisticos de poblaciones"
+output:
+  word_document: default
+  html_document: default
+---
+<b style='color:#1f78b4;'>
+
+## Objetivo de la actividad
+
+</b>
+
+
+Entrenamiento de procedimientos básicos para el análisis de modelos logísticos en poblaciones silvestres, con la aplicación del programa RStudio. 
+
+
+
+### <b style='color:#d95f02;'> Modelos de crecimiento logístico </b> 
+
+1. Una población de pasálidos crece de acuerdo a la ecuación logística. Si la población inicial es de 200 individuos, la capacidad de carga es de 500 pasálidos y la tasa de crecimiento es de 0.1 pasálidos/pasálidos x mes, a) ¿cuál es la tasa de crecimiento para la población dN/dt? b) ¿cuál es la tasa máxima de crecimiento para la población dN/dt máx? c) ¿cuál es la tasa de crecimiento para la población dN/dt si se cuenta con 600 individuos? d) Cuál será la densidad de la población en cinco meses, si se inicia con 200 individuos? e) Cuál es el tiempo requerido para alcanzar 400 individuos, partiendo de 200 iniciales?
+
+2. Una población de bacterias crece de acuerdo a la ecuación logística. Si la población inicial es de 500 bacterias y la capacidad de carga es de 10000 bacterias, y la tasa de crecimiento es de 0.05 bacterias/bacteria x hora, ¿cuál es la tasa de crecimiento para la población dN/dt?
+
+### <b style='color:#d95f02;'> Respuestas </b> 
+
+
+
+
+
+
