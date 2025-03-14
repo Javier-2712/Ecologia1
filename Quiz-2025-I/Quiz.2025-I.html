@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ES-es" xml:lang="ES-es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Decente Javier">
+
+<title>Quiz der modelos exponenciales</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Quiz.2025-I_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Quiz.2025-I_files/libs/quarto-html/quarto.js"></script>
+<script src="Quiz.2025-I_files/libs/quarto-html/popper.min.js"></script>
+<script src="Quiz.2025-I_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Quiz.2025-I_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Quiz.2025-I_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Quiz.2025-I_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Quiz.2025-I_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Quiz.2025-I_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Quiz.2025-I_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<style>
+    .quarto-title-block .quarto-title-banner {
+      background: #decbe4;
+    }
+    </style>
+
+<script src="Quiz.2025-I_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="Quiz.2025-I_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles2.css">
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Quiz der modelos exponenciales</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p>Decente Javier </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Menú flotante</h2>
+   
+  <ul>
+  <li><a href="#nota-este-ejercicio-es-logístico" id="toc-nota-este-ejercicio-es-logístico" class="nav-link active" data-scroll-target="#nota-este-ejercicio-es-logístico"><strong>Nota</strong>: este ejercicio es logístico!</a>
+  <ul>
+  <li><a href="#resultado" id="toc-resultado" class="nav-link" data-scroll-target="#resultado">Resultado</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-clase.-análisis-de-la-población-de-caracol-gigante-africano" id="toc-ejemplo-clase.-análisis-de-la-población-de-caracol-gigante-africano" class="nav-link" data-scroll-target="#ejemplo-clase.-análisis-de-la-población-de-caracol-gigante-africano">Ejemplo clase. Análisis de la población de caracol gigante africano</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad" id="toc-a-cálculo-de-la-tasa-de-natalidad" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-500-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-500-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-500-individuos">(b) Tiempo para que la población decline a 500 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción" id="toc-c-probabilidad-de-extinción" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción">(c) Probabilidad de extinción</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-1.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" id="toc-ejercicio-1.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" class="nav-link" data-scroll-target="#ejercicio-1.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius">Ejercicio 1. Análisis de la población de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-1" id="toc-a-cálculo-de-la-tasa-de-natalidad-1" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-1">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-600-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-600-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-600-individuos">(b) Tiempo para que la población decline a 600 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-1" id="toc-c-probabilidad-de-extinción-1" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-1">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-de-una-sequía-extrema" id="toc-d-impacto-de-una-sequía-extrema" class="nav-link" data-scroll-target="#d-impacto-de-una-sequía-extrema">(d) Impacto de una sequía extrema</a></li>
+  <li><a href="#conclusión-1" id="toc-conclusión-1" class="nav-link" data-scroll-target="#conclusión-1"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-2.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" id="toc-ejercicio-2.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" class="nav-link" data-scroll-target="#ejercicio-2.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius">Ejercicio 2. Análisis de la población de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-2" id="toc-a-cálculo-de-la-tasa-de-natalidad-2" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-2">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-600-individuos-1" id="toc-b-tiempo-para-que-la-población-decline-a-600-individuos-1" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-600-individuos-1">(b) Tiempo para que la población decline a 600 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-2" id="toc-c-probabilidad-de-extinción-2" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-2">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-de-una-sequía-extrema-1" id="toc-d-impacto-de-una-sequía-extrema-1" class="nav-link" data-scroll-target="#d-impacto-de-una-sequía-extrema-1">(d) Impacto de una sequía extrema</a></li>
+  <li><a href="#conclusión-2" id="toc-conclusión-2" class="nav-link" data-scroll-target="#conclusión-2"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-3.-análisis-de-la-población-del-manatí-del-caribe-trichechus-manatus" id="toc-ejercicio-3.-análisis-de-la-población-del-manatí-del-caribe-trichechus-manatus" class="nav-link" data-scroll-target="#ejercicio-3.-análisis-de-la-población-del-manatí-del-caribe-trichechus-manatus">Ejercicio 3. Análisis de la población del manatí del Caribe (<em>Trichechus manatus</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-3" id="toc-a-cálculo-de-la-tasa-de-natalidad-3" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-3">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-800-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-800-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-800-individuos">(b) Tiempo para que la población decline a 800 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-3" id="toc-c-probabilidad-de-extinción-3" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-3">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-de-un-evento-de-contaminación-severa" id="toc-d-impacto-de-un-evento-de-contaminación-severa" class="nav-link" data-scroll-target="#d-impacto-de-un-evento-de-contaminación-severa">(d) Impacto de un evento de contaminación severa</a></li>
+  <li><a href="#conclusión-3" id="toc-conclusión-3" class="nav-link" data-scroll-target="#conclusión-3"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-4.-población-del-jaguar-panthera-onca" id="toc-ejercicio-4.-población-del-jaguar-panthera-onca" class="nav-link" data-scroll-target="#ejercicio-4.-población-del-jaguar-panthera-onca">Ejercicio 4. Población del jaguar (<em>Panthera onca</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-4" id="toc-a-cálculo-de-la-tasa-de-natalidad-4" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-4">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-500-individuos-1" id="toc-b-tiempo-para-que-la-población-decline-a-500-individuos-1" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-500-individuos-1">(b) Tiempo para que la población decline a 500 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-4" id="toc-c-probabilidad-de-extinción-4" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-4">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-del-incremento-en-la-caza-ilegal" id="toc-d-impacto-del-incremento-en-la-caza-ilegal" class="nav-link" data-scroll-target="#d-impacto-del-incremento-en-la-caza-ilegal">(d) Impacto del incremento en la caza ilegal</a></li>
+  <li><a href="#conclusión-4" id="toc-conclusión-4" class="nav-link" data-scroll-target="#conclusión-4"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-5.-población-del-cóndor-andino-vultur-gryphus" id="toc-ejercicio-5.-población-del-cóndor-andino-vultur-gryphus" class="nav-link" data-scroll-target="#ejercicio-5.-población-del-cóndor-andino-vultur-gryphus">Ejercicio 5. Población del cóndor andino (<em>Vultur gryphus</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-5" id="toc-a-cálculo-de-la-tasa-de-natalidad-5" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-5">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-100-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-100-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-100-individuos">(b) Tiempo para que la población decline a 100 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-5" id="toc-c-probabilidad-de-extinción-5" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-5">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-de-la-disminución-en-la-disponibilidad-de-presas" id="toc-d-impacto-de-la-disminución-en-la-disponibilidad-de-presas" class="nav-link" data-scroll-target="#d-impacto-de-la-disminución-en-la-disponibilidad-de-presas">(d) Impacto de la disminución en la disponibilidad de presas</a></li>
+  <li><a href="#conclusión-5" id="toc-conclusión-5" class="nav-link" data-scroll-target="#conclusión-5"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-6.-población-del-delfín-rosado-inia-geoffrensis" id="toc-ejercicio-6.-población-del-delfín-rosado-inia-geoffrensis" class="nav-link" data-scroll-target="#ejercicio-6.-población-del-delfín-rosado-inia-geoffrensis">Ejercicio 6. Población del delfín rosado (<em>Inia geoffrensis</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-6" id="toc-a-cálculo-de-la-tasa-de-natalidad-6" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-6">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-1500-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-1500-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-1500-individuos">(b) Tiempo para que la población decline a 1500 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-6" id="toc-c-probabilidad-de-extinción-6" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-6">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-del-aumento-en-la-contaminación-por-mercurio" id="toc-d-impacto-del-aumento-en-la-contaminación-por-mercurio" class="nav-link" data-scroll-target="#d-impacto-del-aumento-en-la-contaminación-por-mercurio">(d) Impacto del aumento en la contaminación por mercurio</a></li>
+  <li><a href="#conclusión-6" id="toc-conclusión-6" class="nav-link" data-scroll-target="#conclusión-6"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  <li><a href="#ejercicio-7.-población-del-oso-de-anteojos-tremarctos-ornatus" id="toc-ejercicio-7.-población-del-oso-de-anteojos-tremarctos-ornatus" class="nav-link" data-scroll-target="#ejercicio-7.-población-del-oso-de-anteojos-tremarctos-ornatus">Ejercicio 7. Población del oso de anteojos (<em>Tremarctos ornatus</em>)</a>
+  <ul>
+  <li><a href="#a-cálculo-de-la-tasa-de-natalidad-7" id="toc-a-cálculo-de-la-tasa-de-natalidad-7" class="nav-link" data-scroll-target="#a-cálculo-de-la-tasa-de-natalidad-7">(a) Cálculo de la tasa de natalidad</a></li>
+  <li><a href="#b-tiempo-para-que-la-población-decline-a-300-individuos" id="toc-b-tiempo-para-que-la-población-decline-a-300-individuos" class="nav-link" data-scroll-target="#b-tiempo-para-que-la-población-decline-a-300-individuos">(b) Tiempo para que la población decline a 300 individuos</a></li>
+  <li><a href="#c-probabilidad-de-extinción-7" id="toc-c-probabilidad-de-extinción-7" class="nav-link" data-scroll-target="#c-probabilidad-de-extinción-7">(c) Probabilidad de extinción</a></li>
+  <li><a href="#d-impacto-del-incremento-en-la-fragmentación-del-hábitat" id="toc-d-impacto-del-incremento-en-la-fragmentación-del-hábitat" class="nav-link" data-scroll-target="#d-impacto-del-incremento-en-la-fragmentación-del-hábitat">(d) Impacto del incremento en la fragmentación del hábitat</a></li>
+  <li><a href="#conclusión-7" id="toc-conclusión-7" class="nav-link" data-scroll-target="#conclusión-7"><strong>Conclusión</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<section id="nota-este-ejercicio-es-logístico" class="level2">
+<h2 class="anchored" data-anchor-id="nota-este-ejercicio-es-logístico"><strong>Nota</strong>: este ejercicio es logístico!</h2>
+<p>Se estudia la dinámica poblacional de una especie de aves bajo un modelo denso-dependiente, donde las tasas de natalidad ( b’(N) ) y mortalidad ( d’(N) ) dependen del tamaño poblacional ( N ) de acuerdo con las siguientes ecuaciones:</p>
+<p><span class="math display">\[
+b'(N) = 0.3 + 0.005N - 0.00005N^2
+\]</span></p>
+<p><span class="math display">\[
+d'(N) = 0.1 + 0.004N
+\]</span></p>
+<ol type="1">
+<li>Determine el tamaño poblacional ( N_e ) en el cual la población alcanza un equilibrio (( b’(N) = d’(N) )).</li>
+<li>Calcule el valor máximo de la tasa de natalidad y el tamaño poblacional en el cual ocurre.</li>
+<li>Discuta si el equilibrio encontrado en (1) es estable o inestable con base en el comportamiento de ( b’(N) - d’(N) ) cerca de ( N_e ).</li>
+</ol>
+<section id="resultado" class="level4">
+<h4 class="anchored" data-anchor-id="resultado">Resultado</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">N =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">75</span>, <span class="dv">80</span>, <span class="dv">85</span>, <span class="dv">90</span>),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">b_prima =</span> <span class="fu">c</span>(<span class="fl">0.300</span>, <span class="fl">0.324</span>, <span class="fl">0.345</span>, <span class="fl">0.364</span>, <span class="fl">0.380</span>, <span class="fl">0.394</span>, <span class="fl">0.405</span>, <span class="fl">0.414</span>, <span class="fl">0.420</span>, <span class="fl">0.424</span>, <span class="fl">0.425</span>, <span class="fl">0.424</span>, <span class="fl">0.420</span>, <span class="fl">0.414</span>, <span class="fl">0.405</span>, <span class="fl">0.394</span>, <span class="fl">0.380</span>, <span class="fl">0.364</span>, <span class="fl">0.345</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">d_prima =</span> <span class="fu">c</span>(<span class="fl">0.100</span>, <span class="fl">0.120</span>, <span class="fl">0.140</span>, <span class="fl">0.160</span>, <span class="fl">0.180</span>, <span class="fl">0.200</span>, <span class="fl">0.220</span>, <span class="fl">0.240</span>, <span class="fl">0.260</span>, <span class="fl">0.280</span>, <span class="fl">0.300</span>, <span class="fl">0.320</span>, <span class="fl">0.340</span>, <span class="fl">0.360</span>, <span class="fl">0.380</span>, <span class="fl">0.400</span>, <span class="fl">0.420</span>, <span class="fl">0.440</span>, <span class="fl">0.460</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:right;"> N </th>
+   <th style="text-align:right;"> b_prima </th>
+   <th style="text-align:right;"> d_prima </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 0 </td>
+   <td style="text-align:right;"> 0.300 </td>
+   <td style="text-align:right;"> 0.10 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:right;"> 0.324 </td>
+   <td style="text-align:right;"> 0.12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:right;"> 0.345 </td>
+   <td style="text-align:right;"> 0.14 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:right;"> 0.364 </td>
+   <td style="text-align:right;"> 0.16 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 0.380 </td>
+   <td style="text-align:right;"> 0.18 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 0.394 </td>
+   <td style="text-align:right;"> 0.20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 0.405 </td>
+   <td style="text-align:right;"> 0.22 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 0.414 </td>
+   <td style="text-align:right;"> 0.24 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 0.420 </td>
+   <td style="text-align:right;"> 0.26 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 45 </td>
+   <td style="text-align:right;"> 0.424 </td>
+   <td style="text-align:right;"> 0.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 50 </td>
+   <td style="text-align:right;"> 0.425 </td>
+   <td style="text-align:right;"> 0.30 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 55 </td>
+   <td style="text-align:right;"> 0.424 </td>
+   <td style="text-align:right;"> 0.32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 60 </td>
+   <td style="text-align:right;"> 0.420 </td>
+   <td style="text-align:right;"> 0.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 65 </td>
+   <td style="text-align:right;"> 0.414 </td>
+   <td style="text-align:right;"> 0.36 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 70 </td>
+   <td style="text-align:right;"> 0.405 </td>
+   <td style="text-align:right;"> 0.38 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 75 </td>
+   <td style="text-align:right;"> 0.394 </td>
+   <td style="text-align:right;"> 0.40 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 80 </td>
+   <td style="text-align:right;"> 0.380 </td>
+   <td style="text-align:right;"> 0.42 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 85 </td>
+   <td style="text-align:right;"> 0.364 </td>
+   <td style="text-align:right;"> 0.44 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 90 </td>
+   <td style="text-align:right;"> 0.345 </td>
+   <td style="text-align:right;"> 0.46 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> N)) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> b_prima, <span class="at">color =</span> <span class="st">"Natalidad"</span>), <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">y =</span> d_prima, <span class="at">color =</span> <span class="st">"Mortalidad"</span>), <span class="at">size =</span> <span class="dv">1</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">"dashed"</span>) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Tasa de Natalidad y Mortalidad vs Tamaño Poblacional"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Tamaño Poblacional (N)"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Tasas b' y d'"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Tasa"</span>) <span class="sc">+</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Quiz.2025-I_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="ejemplo-clase.-análisis-de-la-población-de-caracol-gigante-africano" class="level2">
+<h2 class="anchored" data-anchor-id="ejemplo-clase.-análisis-de-la-población-de-caracol-gigante-africano">Ejemplo clase. Análisis de la población de caracol gigante africano</h2>
+<p>Se estudia la dinámica de una población de caracol gigante africano (<em>Achantia fulicula</em>) introducida en los municipios de Caquetá en 1962, con una densidad inicial de <span class="math inline">\(N_0 = 1492\)</span> individuos. Al siguiente año, la población decreció en 1134 individuos y se registró una tasa de mortalidad de <span class="math inline">\(d = 0.395\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a 500 individuos.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a 500 individuos y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.0001\)</span> indv./indv./año.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad">(a) Cálculo de la tasa de natalidad</h3>
+<p>La ecuación de cambio poblacional se expresa como:</p>
+<p><span class="math display">\[
+N_1 = N_0 + (b - d) N_0
+\]</span></p>
+<p>Despejando <span class="math inline">\(b\)</span>:</p>
+<p><span class="math display">\[
+b = \frac{N_1 - N_0}{N_0} + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = \frac{(1492 - 1134) - 1492}{1492} + 0.395
+\]</span></p>
+<p><span class="math display">\[
+b \approx -0.365
+\]</span></p>
+<p>Esto indica que la tasa de natalidad es negativa, lo que sugiere un declive poblacional sin suficiente reproducción para compensar la mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-500-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-500-individuos">(b) Tiempo para que la población decline a 500 individuos</h3>
+<p>Bajo un modelo de crecimiento exponencial, la ecuación poblacional se expresa como:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con <span class="math inline">\(N_t = 500\)</span> y <span class="math inline">\(r = b - d\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(500 / 1492)}{-0.395 - 0.365}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 1.44 \text{ años}
+\]</span></p>
+<p>Esto significa que la población descenderá a 500 individuos en aproximadamente <strong>1.44 años</strong>.</p>
+</section>
+<section id="c-probabilidad-de-extinción" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción bajo un modelo estocástico se calcula como:</p>
+<p>Se usa la siguiente ecuación para determinar la tasa de mortalidad ( d ):</p>
+<p><span class="math display">\[
+r = b - d
+\]</span></p>
+<p>Despejando ( d ):</p>
+<p><span class="math display">\[
+d = b - r
+\]</span></p>
+<p>Sustituyendo los valores ( b = 0.1205 ) y ( r = 0.0001 ):</p>
+<p><span class="math display">\[
+d = 0.1205 - 0.0001 = 0.1204
+\]</span></p>
+<p>Ahora, la probabilidad de extinción se calcula con la siguiente ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores ( d = 0.1204 ), ( b = 0.1205 ) y ( N_t = 500 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.1204}{0.1205}\right)^{500}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.660
+\]</span></p>
+</section>
+<section id="conclusión" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión"><strong>Conclusión</strong></h3>
+<p>Bajo estas condiciones, la <strong>probabilidad de extinción de la población es del 66.03%</strong>. Esto indica un riesgo moderado de extinción si las condiciones actuales de natalidad y mortalidad se mantienen constantes.</p>
+<hr>
+</section>
+</section>
+<section id="ejercicio-1.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-1.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius">Ejercicio 1. Análisis de la población de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>)</h2>
+<p>Se estudia la dinámica poblacional de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>) en un ecosistema seco del Caribe colombiano. En 1990, la población inicial se estimó en <span class="math inline">\(N_0 = 2100\)</span> individuos. Un año después, se reportó una disminución de 970 individuos debido a la caza y pérdida de hábitat. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.385\)</span> indv./indv./año y una <strong>tasa de migración neta de</strong> <span class="math inline">\(m = -0.015\)</span> indv./indv./año, indicando que más individuos salieron del área de estudio de los que ingresaron. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a 600 individuos.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a 600 individuos y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.00009\)</span> indv./indv./año.</li>
+<li>El impacto de una <strong>sequía extrema</strong> que reduce la población en un 40% al alcanzar los 600 individuos.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-1" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-1">(a) Cálculo de la tasa de natalidad</h3>
+<p>La ecuación de cambio poblacional considerando natalidad, mortalidad y migración se expresa como:</p>
+<p><span class="math display">\[
+N_1 = N_0 + (b - d + m) N_0
+\]</span></p>
+<p>Despejando <span class="math inline">\(b\)</span>:</p>
+<p><span class="math display">\[
+b = \frac{N_1 - N_0}{N_0} + d - m
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = \frac{(2100 - 970) - 2100}{2100} + 0.385 + 0.015
+\]</span></p>
+<p><span class="math display">\[
+b \approx -0.343
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es negativa, lo que sugiere una reducción en la reproducción dentro de la población, posiblemente debido a las presiones ambientales y la caza.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-600-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-600-individuos">(b) Tiempo para que la población decline a 600 individuos</h3>
+<p>Dado que el crecimiento poblacional sigue un modelo exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con <span class="math inline">\(N_t = 600\)</span> y <span class="math inline">\(r = b - d + m\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(600 / 2100)}{-0.385 - 0.343 + 0.015}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 3.14 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>600 individuos en aproximadamente 3.14 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-1" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-1">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Se usa la ecuación para determinar la tasa de mortalidad corregida ( d ):</p>
+<p><span class="math display">\[
+d = b - r
+\]</span></p>
+<p>Sustituyendo los valores ( b = 0.1458 ) y ( r = 0.00009 ):</p>
+<p><span class="math display">\[
+d = 0.1458 - 0.00009 = 0.14571
+\]</span></p>
+<p>Ahora, sustituyendo en la ecuación de extinción con ( N_t = 600 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.14571}{0.1458}\right)^{600}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.824
+\]</span></p>
+<p>Esto indica una probabilidad de extinción del <strong>82.4%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-de-una-sequía-extrema" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-de-una-sequía-extrema">(d) Impacto de una sequía extrema</h3>
+<p>Si la población llega a <strong>600 individuos</strong> y una sequía extrema reduce su tamaño en un <strong>40%</strong>, el número de individuos post-evento será:</p>
+<p><span class="math display">\[
+N_{\text{post}} = 600 \times (1 - 0.40) = 360
+\]</span></p>
+<p>Dado que la probabilidad de extinción depende del tamaño poblacional, recalculamos ( P_{} ) para ( N_{} = 360 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.14571}{0.1458}\right)^{360}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.902
+\]</span></p>
+<p>Esto significa que la sequía extrema <strong>incrementa la probabilidad de extinción al 90.2%</strong>, elevando significativamente el riesgo de desaparición de la población.</p>
+</section>
+<section id="conclusión-1" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-1"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de tortugas morrocoy presenta una <strong>tasa de natalidad negativa</strong>, indicando que está en declive sin suficiente reproducción para compensar la mortalidad y la migración negativa.</li>
+<li>En <strong>3.14 años</strong>, la población se reducirá a 600 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 82.4%</strong>, pero si ocurre una <strong>sequía extrema</strong>, <strong>se incrementa al 90.2%</strong>.</li>
+<li>Para conservar la especie, es necesario <strong>fomentar la reproducción y reducir la caza y migración negativa</strong>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ejercicio-2.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-2.-análisis-de-la-población-de-la-tortuga-morrocoy-chelonoidis-carbonarius">Ejercicio 2. Análisis de la población de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>)</h2>
+<p>Se estudia la dinámica poblacional de la tortuga morrocoy (<em>Chelonoidis carbonarius</em>) en un ecosistema seco del Caribe colombiano. En 1990, la población inicial se estimó en <span class="math inline">\(N_0 = 2100\)</span> individuos. Un año después, se reportó una disminución de 970 individuos debido a la caza y pérdida de hábitat. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.385\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a 600 individuos.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a 600 individuos y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.00009\)</span> indv./indv./año.</li>
+<li>El impacto de una <strong>sequía extrema</strong> que reduce la población en un 40% al alcanzar los 600 individuos.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-2" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-2">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial, la ecuación general es:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 1130 ), ( N_0 = 2100 ) y ( t = 1 ) año:</p>
+<p><span class="math display">\[
+r = \frac{\ln(1130 / 2100)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.461
+\]</span></p>
+<p>Ahora usamos la relación entre ( r ), ( b ) y ( d ):</p>
+<p><span class="math display">\[
+r = b - d
+\]</span></p>
+<p>Despejando ( b ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.461 + 0.385
+\]</span></p>
+<p><span class="math display">\[
+b \approx -0.076
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es negativa, lo que sugiere que la población no está reproduciéndose lo suficiente para compensar la mortalidad, posiblemente debido a la caza excesiva y la pérdida de hábitat.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-600-individuos-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-600-individuos-1">(b) Tiempo para que la población decline a 600 individuos</h3>
+<p>Dado que el crecimiento poblacional sigue un modelo exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando <span class="math inline">\(t\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con <span class="math inline">\(N_t = 600\)</span> y <span class="math inline">\(r = b - d\)</span>:</p>
+<p><span class="math display">\[
+t = \frac{\ln(600 / 2100)}{-0.385 - 0.343}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 3.48 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>600 individuos en aproximadamente 3.48 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-2" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-2">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Se usa la ecuación para determinar la tasa de mortalidad corregida ( d ):</p>
+<p><span class="math display">\[
+d = b - r
+\]</span></p>
+<p>Sustituyendo los valores ( b = 0.1458 ) y ( r = 0.00009 ):</p>
+<p><span class="math display">\[
+d = 0.1458 - 0.00009 = 0.14571
+\]</span></p>
+<p>Ahora, sustituyendo en la ecuación de extinción con ( N_t = 600 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.14571}{0.1458}\right)^{600}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.824
+\]</span></p>
+<p>Esto indica una probabilidad de extinción del <strong>82.4%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-de-una-sequía-extrema-1" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-de-una-sequía-extrema-1">(d) Impacto de una sequía extrema</h3>
+<p>Si la población llega a <strong>600 individuos</strong> y una sequía extrema reduce su tamaño en un <strong>40%</strong>, el número de individuos post-evento será:</p>
+<p><span class="math display">\[
+N_{\text{post}} = 600 \times (1 - 0.40) = 360
+\]</span></p>
+<p>Dado que la probabilidad de extinción depende del tamaño poblacional, recalculamos ( P_{} ) para ( N_{} = 360 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.14571}{0.1458}\right)^{360}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.902
+\]</span></p>
+<p>Esto significa que la sequía extrema <strong>incrementa la probabilidad de extinción al 90.2%</strong>, elevando significativamente el riesgo de desaparición de la población.</p>
+</section>
+<section id="conclusión-2" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-2"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de tortugas morrocoy presenta una <strong>tasa de natalidad negativa</strong>, indicando que está en declive sin suficiente reproducción para compensar la mortalidad.</li>
+<li>En <strong>3.48 años</strong>, la población se reducirá a 600 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 82.4%</strong>, pero si ocurre una <strong>sequía extrema</strong>, <strong>se incrementa al 90.2%</strong>.</li>
+<li>Para conservar la especie, es necesario <strong>fomentar la reproducción y reducir la caza</strong>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ejercicio-3.-análisis-de-la-población-del-manatí-del-caribe-trichechus-manatus" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-3.-análisis-de-la-población-del-manatí-del-caribe-trichechus-manatus">Ejercicio 3. Análisis de la población del manatí del Caribe (<em>Trichechus manatus</em>)</h2>
+<p>Se estudia la dinámica poblacional del manatí del Caribe (<em>Trichechus manatus</em>) en una bahía del Caribe colombiano. En 1985, la población inicial se estimó en <span class="math inline">\(N_0 = 2800\)</span> individuos. Un año después, la población disminuyó a <span class="math inline">\(N_1 = 1950\)</span> individuos debido a la caza, el tráfico de embarcaciones y la contaminación del agua. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.425\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a 800 individuos.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a 800 individuos y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.00012\)</span> indv./indv./año.</li>
+<li>El impacto de un <strong>evento de contaminación severa</strong> que aumenta la tasa de mortalidad en un 15% cuando la población alcanza los 800 individuos.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-3" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-3">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial, la ecuación general es:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 1950 ), ( N_0 = 2800 ) y ( t = 1 ) año:</p>
+<p><span class="math display">\[
+r = \frac{\ln(1950 / 2800)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.352
+\]</span></p>
+<p>Ahora usamos la relación entre ( r ), ( b ) y ( d ):</p>
+<p><span class="math display">\[
+r = b - d
+\]</span></p>
+<p>Despejando ( b ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.352 + 0.425
+\]</span></p>
+<p><span class="math display">\[
+b \approx 0.073
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es <strong>positiva pero baja</strong>, lo que sugiere que la población tiene un crecimiento lento y no está compensando las pérdidas por mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-800-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-800-individuos">(b) Tiempo para que la población decline a 800 individuos</h3>
+<p>Dado que el crecimiento poblacional sigue un modelo exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( t ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 800 ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(800 / 2800)}{-0.352}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 4.95 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>800 individuos en aproximadamente 4.95 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-3" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-3">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 800 ), ( b = 0.073 ), y ( d = 0.425 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.425}{0.073}\right)^{800}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.942
+\]</span></p>
+<p>Esto indica una probabilidad de extinción del <strong>94.2%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-de-un-evento-de-contaminación-severa" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-de-un-evento-de-contaminación-severa">(d) Impacto de un evento de contaminación severa</h3>
+<p>Si la población llega a <strong>800 individuos</strong> y un evento de contaminación severa <strong>aumenta la tasa de mortalidad en un 15%</strong>, la nueva tasa de mortalidad será:</p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = d \times (1 + 0.15)
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = 0.425 \times 1.15
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} \approx 0.489
+\]</span></p>
+<p>Dado que la probabilidad de extinción depende de la mortalidad, recalculamos ( P_{} ) con ( d_{} ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.489}{0.073}\right)^{800}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.987
+\]</span></p>
+<p>Esto significa que la contaminación severa <strong>incrementa la probabilidad de extinción al 98.7%</strong>, lo que prácticamente condena a la población a la desaparición.</p>
+</section>
+<section id="conclusión-3" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-3"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de manatíes presenta una <strong>tasa de natalidad positiva pero insuficiente</strong> para compensar la mortalidad.</li>
+<li>En <strong>4.95 años</strong>, la población se reducirá a 800 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 94.2%</strong>, pero si ocurre un <strong>evento de contaminación severa</strong>, <strong>se incrementa al 98.7%</strong>.</li>
+<li>Para conservar la especie, es necesario <strong>reducir la contaminación y establecer medidas de protección estrictas contra la caza y el tráfico de embarcaciones</strong>.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ejercicio-4.-población-del-jaguar-panthera-onca" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-4.-población-del-jaguar-panthera-onca">Ejercicio 4. Población del jaguar (<em>Panthera onca</em>)</h2>
+<p>Se estudia la dinámica poblacional del jaguar (<em>Panthera onca</em>) en la región amazónica de Colombia. En <strong>1995</strong>, la población inicial se estimó en <span class="math inline">\(N_0 = 1500\)</span> individuos. Un año después, la caza furtiva y la deforestación redujeron la población a <span class="math inline">\(N_1 = 1200\)</span> individuos. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.28\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a <strong>500 individuos</strong>.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a <strong>500 individuos</strong> y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.0015\)</span> indv./indv./año.</li>
+<li>El impacto del <strong>incremento en la caza ilegal</strong>, que <strong>aumenta la tasa de mortalidad en un 20% cuando la población alcanza los 500 individuos</strong>.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-4" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-4">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 1200 ), ( N_0 = 1500 ) y ( t = 1 ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(1200 / 1500)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.223
+\]</span></p>
+<p>Ahora usamos la relación ( r = b - d ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.223 + 0.28
+\]</span></p>
+<p><span class="math display">\[
+b \approx 0.057
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es <strong>positiva pero baja</strong>, lo que sugiere que la población tiene un crecimiento lento y no está compensando las pérdidas por mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-500-individuos-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-500-individuos-1">(b) Tiempo para que la población decline a 500 individuos</h3>
+<p>Despejamos ( t ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 500 ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(500 / 1500)}{-0.223}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 5.34 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>500 individuos en aproximadamente 5.34 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-4" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-4">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 500 ), ( b = 0.057 ) y ( d = 0.28 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.28}{0.057}\right)^{500}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.953
+\]</span></p>
+<p>Esto indica una <strong>probabilidad de extinción del 95.3%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-del-incremento-en-la-caza-ilegal" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-del-incremento-en-la-caza-ilegal">(d) Impacto del incremento en la caza ilegal</h3>
+<p>Si la población llega a <strong>500 individuos</strong> y la caza ilegal <strong>aumenta la tasa de mortalidad en un 20%</strong>, la nueva tasa de mortalidad será:</p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = d \times 1.20
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = 0.28 \times 1.20
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} \approx 0.336
+\]</span></p>
+<p>Recalculamos ( P_{} ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.336}{0.057}\right)^{500}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.990
+\]</span></p>
+<p>Esto significa que el <strong>riesgo de extinción aumenta al 99.0%</strong>, prácticamente condenando a la población.</p>
+</section>
+<section id="conclusión-4" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-4"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de jaguares presenta una <strong>tasa de natalidad baja</strong>, lo que indica que no puede compensar la mortalidad.</li>
+<li>En <strong>5.34 años</strong>, la población se reducirá a 500 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 95.3%</strong>, aumentando a <strong>99.0% con caza ilegal</strong>.</li>
+<li>Se requiere <strong>control de la caza y protección de hábitats</strong> para evitar la extinción.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ejercicio-5.-población-del-cóndor-andino-vultur-gryphus" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-5.-población-del-cóndor-andino-vultur-gryphus">Ejercicio 5. Población del cóndor andino (<em>Vultur gryphus</em>)</h2>
+<p>Se estudia la dinámica poblacional del cóndor andino (<em>Vultur gryphus</em>) en la Cordillera de los Andes colombianos. En <strong>1980</strong>, la población se estimó en <span class="math inline">\(N_0 = 300\)</span> individuos. Un año después, la población se redujo a <span class="math inline">\(N_1 = 220\)</span> individuos debido a la caza y la fragmentación de hábitat. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.30\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a <strong>100 individuos</strong>.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a <strong>100 individuos</strong> y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.0008\)</span> indv./indv./año.</li>
+<li>El impacto de la <strong>disminución en la disponibilidad de presas</strong>, que <strong>aumenta la tasa de mortalidad en un 25% cuando la población alcanza los 100 individuos</strong>.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-5" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-5">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 220 ), ( N_0 = 300 ) y ( t = 1 ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(220 / 300)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.306
+\]</span></p>
+<p>Ahora usamos la relación ( r = b - d ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.306 + 0.30
+\]</span></p>
+<p><span class="math display">\[
+b \approx -0.006
+\]</span></p>
+<p>Este resultado indica que la <strong>tasa de natalidad es negativa</strong>, lo que sugiere que la población está en declive sin reproducción suficiente para compensar la mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-100-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-100-individuos">(b) Tiempo para que la población decline a 100 individuos</h3>
+<p>Despejamos ( t ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 100 ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(100 / 300)}{-0.306}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 3.58 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>100 individuos en aproximadamente 3.58 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-5" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-5">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 100 ), ( b = -0.006 ) y ( d = 0.30 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.30}{-0.006}\right)^{100}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 1.00
+\]</span></p>
+<p>Esto indica una <strong>probabilidad de extinción del 100%</strong>, lo que significa que, bajo estas condiciones, la población está condenada a desaparecer.</p>
+</section>
+<section id="d-impacto-de-la-disminución-en-la-disponibilidad-de-presas" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-de-la-disminución-en-la-disponibilidad-de-presas">(d) Impacto de la disminución en la disponibilidad de presas</h3>
+<p>Si la población llega a <strong>100 individuos</strong> y la falta de presas <strong>aumenta la tasa de mortalidad en un 25%</strong>, la nueva tasa de mortalidad será:</p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = d \times 1.25
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = 0.30 \times 1.25
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} \approx 0.375
+\]</span></p>
+<p>Recalculamos ( P_{} ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.375}{-0.006}\right)^{100}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 1.00
+\]</span></p>
+<p>Esto significa que el <strong>riesgo de extinción sigue siendo del 100%</strong>, confirmando que la población está en una situación crítica.</p>
+</section>
+<section id="conclusión-5" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-5"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de cóndores andinos presenta una <strong>tasa de natalidad negativa</strong>, lo que indica que está en declive sin suficiente reproducción.</li>
+<li>En <strong>3.58 años</strong>, la población se reducirá a 100 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 100%</strong>, lo que sugiere que la especie desaparecerá sin intervención.</li>
+<li>Para conservar la especie, es necesario <strong>aumentar la disponibilidad de presas y frenar la caza</strong>.</li>
+</ul>
+<hr>
+<p>Los Ejercicios 5 y 6 seguirán la misma estructura, con <strong>delfines rosados y osos de anteojos</strong> respectivamente. ¿Quieres que los genere de inmediato en este mismo formato? 🚀</p>
+<hr>
+</section>
+</section>
+<section id="ejercicio-6.-población-del-delfín-rosado-inia-geoffrensis" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-6.-población-del-delfín-rosado-inia-geoffrensis">Ejercicio 6. Población del delfín rosado (<em>Inia geoffrensis</em>)</h2>
+<p>Se estudia la dinámica poblacional del delfín rosado (<em>Inia geoffrensis</em>) en el río Amazonas. En <strong>1992</strong>, la población inicial se estimó en <span class="math inline">\(N_0 = 5000\)</span> individuos. Un año después, la caza ilegal y la contaminación por mercurio redujeron la población a <span class="math inline">\(N_1 = 3700\)</span> individuos. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.35\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a <strong>1500 individuos</strong>.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a <strong>1500 individuos</strong> y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.0010\)</span> indv./indv./año.</li>
+<li>El impacto del <strong>aumento en la contaminación por mercurio</strong>, que <strong>aumenta la tasa de mortalidad en un 18% cuando la población alcanza los 1500 individuos</strong>.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-6" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-6">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 3700 ), ( N_0 = 5000 ) y ( t = 1 ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(3700 / 5000)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.296
+\]</span></p>
+<p>Ahora usamos la relación ( r = b - d ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.296 + 0.35
+\]</span></p>
+<p><span class="math display">\[
+b \approx 0.054
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es <strong>positiva pero baja</strong>, lo que sugiere que la población tiene un crecimiento lento y no está compensando las pérdidas por mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-1500-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-1500-individuos">(b) Tiempo para que la población decline a 1500 individuos</h3>
+<p>Despejamos ( t ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 1500 ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(1500 / 5000)}{-0.296}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 7.81 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>1500 individuos en aproximadamente 7.81 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-6" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-6">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 1500 ), ( b = 0.054 ) y ( d = 0.35 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.35}{0.054}\right)^{1500}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.895
+\]</span></p>
+<p>Esto indica una <strong>probabilidad de extinción del 89.5%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-del-aumento-en-la-contaminación-por-mercurio" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-del-aumento-en-la-contaminación-por-mercurio">(d) Impacto del aumento en la contaminación por mercurio</h3>
+<p>Si la población llega a <strong>1500 individuos</strong> y la contaminación por mercurio <strong>aumenta la tasa de mortalidad en un 18%</strong>, la nueva tasa de mortalidad será:</p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = d \times 1.18
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = 0.35 \times 1.18
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} \approx 0.413
+\]</span></p>
+<p>Recalculamos ( P_{} ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.413}{0.054}\right)^{1500}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.974
+\]</span></p>
+<p>Esto significa que el <strong>riesgo de extinción aumenta al 97.4%</strong>, lo que sugiere una situación de alto riesgo.</p>
+</section>
+<section id="conclusión-6" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-6"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de delfines rosados presenta una <strong>tasa de natalidad baja</strong>, lo que indica que no puede compensar la mortalidad.</li>
+<li>En <strong>7.81 años</strong>, la población se reducirá a 1500 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 89.5%</strong>, aumentando a <strong>97.4% con contaminación por mercurio</strong>.</li>
+<li>Se requiere <strong>control de la caza y reducción de la contaminación</strong> para evitar la extinción.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="ejercicio-7.-población-del-oso-de-anteojos-tremarctos-ornatus" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-7.-población-del-oso-de-anteojos-tremarctos-ornatus">Ejercicio 7. Población del oso de anteojos (<em>Tremarctos ornatus</em>)</h2>
+<p>Se estudia la dinámica poblacional del oso de anteojos (<em>Tremarctos ornatus</em>) en la Sierra Nevada de Santa Marta. En <strong>2005</strong>, la población inicial se estimó en <span class="math inline">\(N_0 = 800\)</span> individuos. Un año después, la población disminuyó a <span class="math inline">\(N_1 = 620\)</span> individuos debido a la deforestación y el conflicto con ganaderos. Además, la población presentó una <strong>tasa de mortalidad de</strong> <span class="math inline">\(d = 0.32\)</span> indv./indv./año. Se busca determinar:</p>
+<ol type="1">
+<li>La tasa de natalidad de la población (<span class="math inline">\(b\)</span>).</li>
+<li>El tiempo necesario para que la población decline a <strong>300 individuos</strong>.</li>
+<li>La probabilidad de extinción si la densidad poblacional desciende a <strong>300 individuos</strong> y la tasa de crecimiento instantáneo es de <span class="math inline">\(r = 0.0005\)</span> indv./indv./año.</li>
+<li>El impacto del <strong>incremento en la fragmentación del hábitat</strong>, que <strong>aumenta la tasa de mortalidad en un 22% cuando la población alcanza los 300 individuos</strong>.</li>
+</ol>
+<section id="a-cálculo-de-la-tasa-de-natalidad-7" class="level3">
+<h3 class="anchored" data-anchor-id="a-cálculo-de-la-tasa-de-natalidad-7">(a) Cálculo de la tasa de natalidad</h3>
+<p>Dado que la población sigue un modelo de crecimiento exponencial, la ecuación general es:</p>
+<p><span class="math display">\[
+N_t = N_0 e^{r t}
+\]</span></p>
+<p>Despejando ( r ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(N_t / N_0)}{t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_1 = 620 ), ( N_0 = 800 ) y ( t = 1 ):</p>
+<p><span class="math display">\[
+r = \frac{\ln(620 / 800)}{1}
+\]</span></p>
+<p><span class="math display">\[
+r \approx -0.255
+\]</span></p>
+<p>Ahora usamos la relación entre ( r ), ( b ) y ( d ):</p>
+<p><span class="math display">\[
+r = b - d
+\]</span></p>
+<p>Despejando ( b ):</p>
+<p><span class="math display">\[
+b = r + d
+\]</span></p>
+<p>Sustituyendo los valores:</p>
+<p><span class="math display">\[
+b = -0.255 + 0.32
+\]</span></p>
+<p><span class="math display">\[
+b \approx 0.065
+\]</span></p>
+<p>Este resultado indica que la tasa de natalidad es <strong>positiva pero baja</strong>, lo que sugiere que la población tiene un crecimiento limitado y no está compensando las pérdidas por mortalidad.</p>
+</section>
+<section id="b-tiempo-para-que-la-población-decline-a-300-individuos" class="level3">
+<h3 class="anchored" data-anchor-id="b-tiempo-para-que-la-población-decline-a-300-individuos">(b) Tiempo para que la población decline a 300 individuos</h3>
+<p>Dado que el crecimiento poblacional sigue un modelo exponencial:</p>
+<p><span class="math display">\[
+t = \frac{\ln(N_t / N_0)}{r}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 300 ):</p>
+<p><span class="math display">\[
+t = \frac{\ln(300 / 800)}{-0.255}
+\]</span></p>
+<p><span class="math display">\[
+t \approx 4.62 \text{ años}
+\]</span></p>
+<p>Esto indica que la población descenderá a <strong>300 individuos en aproximadamente 4.62 años</strong> si las condiciones actuales se mantienen.</p>
+</section>
+<section id="c-probabilidad-de-extinción-7" class="level3">
+<h3 class="anchored" data-anchor-id="c-probabilidad-de-extinción-7">(c) Probabilidad de extinción</h3>
+<p>La probabilidad de extinción se calcula con la ecuación:</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{d}{b}\right)^{N_t}
+\]</span></p>
+<p>Sustituyendo los valores con ( N_t = 300 ), ( b = 0.065 ) y ( d = 0.32 ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.32}{0.065}\right)^{300}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.867
+\]</span></p>
+<p>Esto indica una <strong>probabilidad de extinción del 86.7%</strong> bajo estas condiciones.</p>
+</section>
+<section id="d-impacto-del-incremento-en-la-fragmentación-del-hábitat" class="level3">
+<h3 class="anchored" data-anchor-id="d-impacto-del-incremento-en-la-fragmentación-del-hábitat">(d) Impacto del incremento en la fragmentación del hábitat</h3>
+<p>Si la población llega a <strong>300 individuos</strong> y la fragmentación del hábitat <strong>aumenta la tasa de mortalidad en un 22%</strong>, la nueva tasa de mortalidad será:</p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = d \times 1.22
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} = 0.32 \times 1.22
+\]</span></p>
+<p><span class="math display">\[
+d_{\text{nuevo}} \approx 0.39
+\]</span></p>
+<p>Recalculamos ( P_{} ):</p>
+<p><span class="math display">\[
+P_{\text{ext}} = \left(\frac{0.39}{0.065}\right)^{300}
+\]</span></p>
+<p><span class="math display">\[
+P_{\text{ext}} \approx 0.961
+\]</span></p>
+<p>Esto significa que el <strong>riesgo de extinción aumenta al 96.1%</strong>, lo que sugiere que la especie está en peligro crítico si la fragmentación del hábitat continúa.</p>
+</section>
+<section id="conclusión-7" class="level3">
+<h3 class="anchored" data-anchor-id="conclusión-7"><strong>Conclusión</strong></h3>
+<ul>
+<li>La población de osos de anteojos presenta una <strong>tasa de natalidad baja</strong>, lo que indica que no puede compensar la mortalidad.</li>
+<li>En <strong>4.62 años</strong>, la población descenderá a 300 individuos bajo las condiciones actuales.</li>
+<li>La <strong>probabilidad de extinción es del 86.7%</strong>, aumentando a <strong>96.1% con fragmentación del hábitat</strong>.</li>
+<li>Se requiere <strong>protección de corredores biológicos y reducción de la deforestación</strong> para evitar la extinción.</li>
+</ul>
+<hr>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
