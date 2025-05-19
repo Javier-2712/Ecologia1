@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ES-es" xml:lang="ES-es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Nombre del estudiante">
+<meta name="description" content="Taller para la exploración grafica y de diversidad alfa en diferentes tributarios del sector medio del río Gaira - Santa Marta.">
 
-<title>taller9.diversidad.alfa</title>
+<title>Taller 9. Análisis de diversidad alfa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -67,41 +69,128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="Taller9.Diversidad.alfa_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="Taller9.Diversidad.alfa_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="Taller9.Diversidad.alfa_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner {
+        background: #decbe4;
+      }
+</style>
 <script src="Taller9.Diversidad.alfa_files/libs/kePrint-0.0.1/kePrint.js"></script>
 
 <link href="Taller9.Diversidad.alfa_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 
+<link rel="stylesheet" href="styles2.css">
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Taller 9. Análisis de diversidad alfa</h1>
+            <p class="subtitle lead">Diversidad alfa con datos de abundancia y ambientales de tres sitios en el río Gaira, sector de Minca, santa Marta</p>
+                  <div>
+        <div class="description">
+          Taller para la exploración grafica y de diversidad alfa en diferentes tributarios del sector medio del río Gaira - Santa Marta.
+        </div>
+      </div>
+                </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
 
-<main class="content" id="quarto-document-content">
+      <div>
+      <div class="quarto-title-meta-heading">Autor/a</div>
+      <div class="quarto-title-meta-contents">
+               <p><a href="https://www.unimagdalena.edu.co/">Nombre del estudiante</a> </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Fecha de publicación</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">19 de mayo de 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Menú flotante</h2>
+   
+  <ul>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link active" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales." id="toc-paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales." class="nav-link" data-scroll-target="#paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales.">Paso a paso para la organización de los datos de los taxones y ambientales.</a>
+  <ul>
+  <li><a href="#paso-1.-cargar-librerías" id="toc-paso-1.-cargar-librerías" class="nav-link" data-scroll-target="#paso-1.-cargar-librerías">Paso 1. Cargar Librerías</a></li>
+  <li><a href="#paso-2.-base-de-datos-de-los-taxones" id="toc-paso-2.-base-de-datos-de-los-taxones" class="nav-link" data-scroll-target="#paso-2.-base-de-datos-de-los-taxones">Paso 2. Base de datos de los taxones</a>
+  <ul>
+  <li><a href="#abreviación-de-los-nombres-de-los-taxones-biol1." id="toc-abreviación-de-los-nombres-de-los-taxones-biol1." class="nav-link" data-scroll-target="#abreviación-de-los-nombres-de-los-taxones-biol1."><strong>2.1 Abreviación de los nombres de los taxones (biol1)</strong>.</a></li>
+  <li><a href="#taxones-más-abundantes-con-nombres-abreviados-biol2." id="toc-taxones-más-abundantes-con-nombres-abreviados-biol2." class="nav-link" data-scroll-target="#taxones-más-abundantes-con-nombres-abreviados-biol2."><strong>2.2 Taxones más abundantes con nombres abreviados (biol2)</strong>.</a></li>
+  <li><a href="#promedios-de-los-15-taxones-más-abundantes-biol3." id="toc-promedios-de-los-15-taxones-más-abundantes-biol3." class="nav-link" data-scroll-target="#promedios-de-los-15-taxones-más-abundantes-biol3."><strong>2.3 Promedios de los 15 taxones más abundantes (biol3)</strong>.</a></li>
+  </ul></li>
+  <li><a href="#paso-3.-base-de-datos-ambiental" id="toc-paso-3.-base-de-datos-ambiental" class="nav-link" data-scroll-target="#paso-3.-base-de-datos-ambiental">Paso 3. Base de datos ambiental</a>
+  <ul>
+  <li><a href="#promedios-de-las-variables-ambientales-amb1." id="toc-promedios-de-las-variables-ambientales-amb1." class="nav-link" data-scroll-target="#promedios-de-las-variables-ambientales-amb1."><strong>3.1 Promedios de las variables ambientales (amb1).</strong></a></li>
+  </ul></li>
+  <li><a href="#paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones." id="toc-paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones." class="nav-link" data-scroll-target="#paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones.">Paso 4. Exploración gráfica de relaciones y de variaciones.</a>
+  <ul>
+  <li><a href="#relaciones-entre-todos-los-taxones." id="toc-relaciones-entre-todos-los-taxones." class="nav-link" data-scroll-target="#relaciones-entre-todos-los-taxones.">4.1 Relaciones entre todos los taxones.</a></li>
+  <li><a href="#relaciones-entre-los-15-taxones-más-abundantes." id="toc-relaciones-entre-los-15-taxones-más-abundantes." class="nav-link" data-scroll-target="#relaciones-entre-los-15-taxones-más-abundantes.">4.2 Relaciones entre los 15 taxones más abundantes.</a></li>
+  <li><a href="#relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales." id="toc-relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales." class="nav-link" data-scroll-target="#relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales.">4.3 Relaciones entre los promedios de los 15 taxones más abundantes y las variables ambientales.</a></li>
+  <li><a href="#relaciones-entre-todos-los-taxones-y-las-variables-ambientales." id="toc-relaciones-entre-todos-los-taxones-y-las-variables-ambientales." class="nav-link" data-scroll-target="#relaciones-entre-todos-los-taxones-y-las-variables-ambientales.">4.4 Relaciones entre todos los taxones y las variables ambientales.</a>
+  <ul>
+  <li><a href="#por-niveles-de-oxigeno" id="toc-por-niveles-de-oxigeno" class="nav-link" data-scroll-target="#por-niveles-de-oxigeno">Por niveles de Oxigeno</a></li>
+  <li><a href="#por-niveles-de-amonio" id="toc-por-niveles-de-amonio" class="nav-link" data-scroll-target="#por-niveles-de-amonio">Por niveles de Amonio</a></li>
+  <li><a href="#por-niveles-de-profundidad-media" id="toc-por-niveles-de-profundidad-media" class="nav-link" data-scroll-target="#por-niveles-de-profundidad-media">Por niveles de Profundidad Media</a></li>
+  </ul></li>
+  <li><a href="#diferencias-entre-los-taxones-por-sitios-y-por-microhábitats." id="toc-diferencias-entre-los-taxones-por-sitios-y-por-microhábitats." class="nav-link" data-scroll-target="#diferencias-entre-los-taxones-por-sitios-y-por-microhábitats.">4.5 Diferencias entre los taxones por sitios y por microhábitats.</a></li>
+  </ul></li>
+  <li><a href="#paso-5.-diversidad-alfa" id="toc-paso-5.-diversidad-alfa" class="nav-link" data-scroll-target="#paso-5.-diversidad-alfa"><strong>Paso 5. Diversidad alfa</strong></a>
+  <ul>
+  <li><a href="#estimadores-clásicos" id="toc-estimadores-clásicos" class="nav-link" data-scroll-target="#estimadores-clásicos"><strong>5.1 Estimadores clásicos</strong></a></li>
+  <li><a href="#curvas-rad-localidades-y-microhábitats" id="toc-curvas-rad-localidades-y-microhábitats" class="nav-link" data-scroll-target="#curvas-rad-localidades-y-microhábitats"><strong>5.2 Curvas RAD (Localidades y Microhábitats)</strong></a></li>
+  <li><a href="#diversidad-en-4-pasos.-chao-et-al.-2020." id="toc-diversidad-en-4-pasos.-chao-et-al.-2020." class="nav-link" data-scroll-target="#diversidad-en-4-pasos.-chao-et-al.-2020.">5.3 Diversidad en 4 Pasos. Chao <em>et al</em>. (2020).</a></li>
+  <li><a href="#cuatro-pasos-por-sitios" id="toc-cuatro-pasos-por-sitios" class="nav-link" data-scroll-target="#cuatro-pasos-por-sitios">5.3.1 Cuatro pasos por Sitios</a>
+  <ul>
+  <li><a href="#a.-paso-1.-perfil-de-completitud" id="toc-a.-paso-1.-perfil-de-completitud" class="nav-link" data-scroll-target="#a.-paso-1.-perfil-de-completitud">a. Paso 1. Perfil de completitud</a></li>
+  <li><a href="#b.-paso-2.-perfil-asintótico" id="toc-b.-paso-2.-perfil-asintótico" class="nav-link" data-scroll-target="#b.-paso-2.-perfil-asintótico">b. Paso 2. Perfil asintótico</a></li>
+  <li><a href="#c.-paso-3.-perfil-no-asintótico" id="toc-c.-paso-3.-perfil-no-asintótico" class="nav-link" data-scroll-target="#c.-paso-3.-perfil-no-asintótico">c.&nbsp;Paso 3. Perfil no asintótico</a></li>
+  <li><a href="#d.-paso-4.-uniformidad" id="toc-d.-paso-4.-uniformidad" class="nav-link" data-scroll-target="#d.-paso-4.-uniformidad">d.&nbsp;Paso 4. Uniformidad</a></li>
+  <li><a href="#figuras-del-perfil-asintótico-paso-1" id="toc-figuras-del-perfil-asintótico-paso-1" class="nav-link" data-scroll-target="#figuras-del-perfil-asintótico-paso-1">1. Figuras del perfil asintótico (paso 1)</a></li>
+  <li><a href="#figuras-del-perfil-asintótico-paso-2" id="toc-figuras-del-perfil-asintótico-paso-2" class="nav-link" data-scroll-target="#figuras-del-perfil-asintótico-paso-2">2. Figuras del perfil asintótico (paso 2)</a></li>
+  <li><a href="#figuras-del-perfil-no-asintótico-paso-3" id="toc-figuras-del-perfil-no-asintótico-paso-3" class="nav-link" data-scroll-target="#figuras-del-perfil-no-asintótico-paso-3">3. Figuras del perfil no asintótico (paso 3)</a></li>
+  <li><a href="#figuras-del-perfil-de-uniformidad-paso-4" id="toc-figuras-del-perfil-de-uniformidad-paso-4" class="nav-link" data-scroll-target="#figuras-del-perfil-de-uniformidad-paso-4">4. Figuras del perfil de uniformidad (paso 4)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#taller-para-la-casa" id="toc-taller-para-la-casa" class="nav-link" data-scroll-target="#taller-para-la-casa">Taller para la casa</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-<section id="taller9.-diversidad-alfa" class="level1 unnumbered">
-<h1 class="unnumbered">Taller9. Diversidad alfa</h1>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b><section id="resumen" class="level2"><b style="color:#1f78b4;">
+
+<section id="resumen" class="level2">
 <h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
-</b><p><b style="color:#1f78b4;"></b></p>
 <p>El presente ejercicio consiste en el procesamiento inicial de los datos de la salida de campo realizada por los estudiantes de ecología 1, del programa de Biología en el semestre 2023-II.</p>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b><section id="paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales." class="level2"><b style="color:#1f78b4;">
+</section>
+<section id="paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales." class="level2">
 <h2 class="anchored" data-anchor-id="paso-a-paso-para-la-organización-de-los-datos-de-los-taxones-y-ambientales.">Paso a paso para la organización de los datos de los taxones y ambientales.</h2>
-</b><p><b style="color:#1f78b4;"></b></p>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b><section id="paso-1.-cargar-librerías" class="level3"><b style="color:#1f78b4;">
+<section id="paso-1.-cargar-librerías" class="level3">
 <h3 class="anchored" data-anchor-id="paso-1.-cargar-librerías">Paso 1. Cargar Librerías</h3>
-</b><p><b style="color:#1f78b4;"></b></p>
 <p><strong>Elaborar un fragmento</strong>: CTRL+ALT+I, <strong>Correr el fragmento</strong>: CTRL+SHIFT+ENTER, <strong>Correr una línea</strong>: CTRL+ENTER</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)    <span class="co"># Para diferentes operaciones</span></span>
@@ -117,15 +206,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github('AnneChao/iNEXT.3D')</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT<span class="fl">.3</span>D)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#install_github('AnneChao/iNEXT.4steps')</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT<span class="fl">.4</span>steps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iNEXT<span class="fl">.4</span>steps)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b><section id="paso-2.-base-de-datos-de-los-taxones" class="level3"><b style="color:#1f78b4;">
+</section>
+<section id="paso-2.-base-de-datos-de-los-taxones" class="level3">
 <h3 class="anchored" data-anchor-id="paso-2.-base-de-datos-de-los-taxones">Paso 2. Base de datos de los taxones</h3>
-</b><p><b style="color:#1f78b4;"></b></p>
-<p>La base de datos con los 40 taxones se llamará <strong>biol</strong>. La base con con las 18 variables ambientales se llamará <strong>amb</strong> y se cargará más adelante (<a href="#tbl-tbl1" class="quarto-xref">Table&nbsp;1</a>).</p>
+<p>La base de datos con los 40 taxones se llamará <strong>biol</strong>. La base con con las 18 variables ambientales se llamará <strong>amb</strong> y se cargará más adelante (<a href="#tbl-tbl1" class="quarto-xref">Tabla&nbsp;1</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lectura de la base de datos xlsx</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>biol <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"datos.gral.xlsx"</span>, <span class="st">"Taxones1"</span>)</span>
@@ -136,11 +223,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla con los datos</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>biol <span class="sc">%&gt;%</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;1: Base de datos biológicos
+Tabla&nbsp;1: Base de datos biológicos
 </figcaption>
 <div aria-describedby="tbl-tbl1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -518,11 +605,9 @@ Table&nbsp;1: Base de datos biológicos
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b><section id="abreviación-de-los-nombres-de-los-taxones-biol1." class="level4"><b style="color:#fc8d62;">
+<section id="abreviación-de-los-nombres-de-los-taxones-biol1." class="level4">
 <h4 class="anchored" data-anchor-id="abreviación-de-los-nombres-de-los-taxones-biol1."><strong>2.1 Abreviación de los nombres de los taxones (biol1)</strong>.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>Si los nombres de los taxones son demasiado largos, se pueden abreviar con el número de letras que se requiera (ej: minlength = 4), esto para que las figuras que incluyan a los taxones, no queden tan saturadas de texto (<a href="#tbl-tbl2" class="quarto-xref">Table&nbsp;2</a>). La base de datos <strong>biol.r</strong>, incluye a los los nombres abreviados de los taxones.</p>
+<p>Si los nombres de los taxones son demasiado largos, se pueden abreviar con el número de letras que se requiera (ej: minlength = 4), esto para que las figuras que incluyan a los taxones, no queden tan saturadas de texto (<a href="#tbl-tbl2" class="quarto-xref">Tabla&nbsp;2</a>). La base de datos <strong>biol.r</strong>, incluye a los los nombres abreviados de los taxones.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombres abreviados de los taxones</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>biol1 <span class="ot">&lt;-</span> </span>
@@ -532,11 +617,11 @@ Table&nbsp;1: Base de datos biológicos
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla con los datos</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>biol1 <span class="sc">%&gt;%</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl2" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;2: Base de datos biológicos con nombres abreviados
+Tabla&nbsp;2: Base de datos biológicos con nombres abreviados
 </figcaption>
 <div aria-describedby="tbl-tbl2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -894,12 +979,10 @@ Table&nbsp;2: Base de datos biológicos con nombres abreviados
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="taxones-más-abundantes-con-nombres-abreviados-biol2." class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="taxones-más-abundantes-con-nombres-abreviados-biol2." class="level4">
 <h4 class="anchored" data-anchor-id="taxones-más-abundantes-con-nombres-abreviados-biol2."><strong>2.2 Taxones más abundantes con nombres abreviados (biol2)</strong>.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>El siguiente procedimiento es para cuando tenemos demasiados taxones y requerimos extraer un subgrupo (ej. los más abundantes o los de mayor promedio), para explorar sus patrones de relaciones o diferencias. La base de datos <strong>biol1</strong> es la que se construyó anteriormente con los nombres abreviados de todos los taxones. La base de datos <strong>biol2</strong> contiene a los 15 taxones de mayor abundancia (<a href="#tbl-tbl3" class="quarto-xref">Table&nbsp;3</a>).</p>
+<p>El siguiente procedimiento es para cuando tenemos demasiados taxones y requerimos extraer un subgrupo (ej. los más abundantes o los de mayor promedio), para explorar sus patrones de relaciones o diferencias. La base de datos <strong>biol1</strong> es la que se construyó anteriormente con los nombres abreviados de todos los taxones. La base de datos <strong>biol2</strong> contiene a los 15 taxones de mayor abundancia (<a href="#tbl-tbl3" class="quarto-xref">Tabla&nbsp;3</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Extraer los promedios de las abundancias</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>prom <span class="ot">&lt;-</span> <span class="fu">colMeans</span>(biol1[,<span class="dv">1</span><span class="sc">:</span><span class="dv">31</span>])   <span class="co"># Columna 32 se excluye por ser el total de ab.</span></span>
@@ -912,11 +995,11 @@ Table&nbsp;2: Base de datos biológicos con nombres abreviados
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>biol2 <span class="sc">%&gt;%</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl3" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;3: Base de datos con los taxones más abundantes con nombres abreviados
+Tabla&nbsp;3: Base de datos con los taxones más abundantes con nombres abreviados
 </figcaption>
 <div aria-describedby="tbl-tbl3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1115,12 +1198,10 @@ Table&nbsp;3: Base de datos con los taxones más abundantes con nombres abreviad
 </div>
 <p><strong>Nota:</strong> A partir de aquí se organizan los datos de abundancia, extrayendo un dato <strong>promedio por cada sitio</strong>, para que sean acoplables a los datos promedio de las variables ambientales por cada tramo.</p>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="promedios-de-los-15-taxones-más-abundantes-biol3." class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="promedios-de-los-15-taxones-más-abundantes-biol3." class="level4">
 <h4 class="anchored" data-anchor-id="promedios-de-los-15-taxones-más-abundantes-biol3."><strong>2.3 Promedios de los 15 taxones más abundantes (biol3)</strong>.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>La base <strong>biol3</strong> contiene a los promedios por cada sitio evaluado. Esto se realiza para que esta base sea acoplable con la de promedios de variables ambientales (<strong>amb1</strong>) y se puedan relacionar en el componente gráfico. Se excluye a la columna <strong>Microh</strong>, debido a que es categorica y no se le puede extraer el promedio (<a href="#tbl-tbl4" class="quarto-xref">Table&nbsp;4</a>).</p>
+<p>La base <strong>biol3</strong> contiene a los promedios por cada sitio evaluado. Esto se realiza para que esta base sea acoplable con la de promedios de variables ambientales (<strong>amb1</strong>) y se puedan relacionar en el componente gráfico. Se excluye a la columna <strong>Microh</strong>, debido a que es categorica y no se le puede extraer el promedio (<a href="#tbl-tbl4" class="quarto-xref">Tabla&nbsp;4</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Promedios de abundancia de los taxones</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>biol3 <span class="ot">&lt;-</span></span>
@@ -1132,11 +1213,11 @@ Table&nbsp;3: Base de datos con los taxones más abundantes con nombres abreviad
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>biol3 <span class="sc">%&gt;%</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Complemento opcional al script "summarise" na.rm = TRUE, .names = "{.col}"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Complemento opcional al script "summarise" na.rm = TRUE, .names = "{.col}"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl4" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;4: Base de datos con los promedios de los taxones más abundantes y con nombres abreviados
+Tabla&nbsp;4: Base de datos con los promedios de los taxones más abundantes y con nombres abreviados
 </figcaption>
 <div aria-describedby="tbl-tbl4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1226,13 +1307,11 @@ Table&nbsp;4: Base de datos con los promedios de los taxones más abundantes y c
 </div>
 </div>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b><section id="paso-3.-base-de-datos-ambiental" class="level3"><b style="color:#1f78b4;">
+</section>
+</section>
+<section id="paso-3.-base-de-datos-ambiental" class="level3">
 <h3 class="anchored" data-anchor-id="paso-3.-base-de-datos-ambiental">Paso 3. Base de datos ambiental</h3>
-</b><p><b style="color:#1f78b4;"></b></p>
-<p>La base de datos <strong>amb</strong>, contiene a los valores de las variables ambientales tabuladas (<a href="#tbl-tbl5" class="quarto-xref">Table&nbsp;5</a>).</p>
+<p>La base de datos <strong>amb</strong>, contiene a los valores de las variables ambientales tabuladas (<a href="#tbl-tbl5" class="quarto-xref">Tabla&nbsp;5</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>amb <span class="ot">&lt;-</span> <span class="fu">read_xlsx</span>(<span class="st">"datos.gral.xlsx"</span>, <span class="st">"fquímicos"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>amb <span class="ot">=</span> amb[,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">13</span>,<span class="sc">-</span><span class="dv">15</span>,<span class="sc">-</span><span class="dv">16</span>,<span class="sc">-</span><span class="dv">17</span>)]</span>
@@ -1242,11 +1321,11 @@ Table&nbsp;4: Base de datos con los promedios de los taxones más abundantes y c
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># View(amb)</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># str(amb) # ambientales 3:26</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># str(amb) # ambientales 3:26</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl5" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;5: Base de datos con las variables ambientales tabuladas, incluidas las replicas para cada sitio
+Tabla&nbsp;5: Base de datos con las variables ambientales tabuladas, incluidas las replicas para cada sitio
 </figcaption>
 <div aria-describedby="tbl-tbl5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1504,11 +1583,9 @@ Table&nbsp;5: Base de datos con las variables ambientales tabuladas, incluidas l
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b><section id="promedios-de-las-variables-ambientales-amb1." class="level4"><b style="color:#fc8d62;">
+<section id="promedios-de-las-variables-ambientales-amb1." class="level4">
 <h4 class="anchored" data-anchor-id="promedios-de-las-variables-ambientales-amb1."><strong>3.1 Promedios de las variables ambientales (amb1).</strong></h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>Similar a lo realizado con la base <strong>biol1</strong>, la base <strong>amb1</strong> contiene a los <strong>promedios</strong> de las variables ambientales por cada sitio evaluado (<a href="#tbl-tbl6" class="quarto-xref">Table&nbsp;6</a>). Esto se realiza para que esta base sea acoplable con la de <strong>promedios</strong> de variables biológicas (<strong>biol3</strong> <a href="#tbl-tbl3" class="quarto-xref">Table&nbsp;3</a>) y se puedan relacionar en el componente gráfico. Se excluye a la columna <strong>Replica</strong>, debido a que es categorica y no se le puede extraer el promedio .</p>
+<p>Similar a lo realizado con la base <strong>biol1</strong>, la base <strong>amb1</strong> contiene a los <strong>promedios</strong> de las variables ambientales por cada sitio evaluado (<a href="#tbl-tbl6" class="quarto-xref">Tabla&nbsp;6</a>). Esto se realiza para que esta base sea acoplable con la de <strong>promedios</strong> de variables biológicas (<strong>biol3</strong> <a href="#tbl-tbl3" class="quarto-xref">Tabla&nbsp;3</a>) y se puedan relacionar en el componente gráfico. Se excluye a la columna <strong>Replica</strong>, debido a que es categorica y no se le puede extraer el promedio .</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Promedios de variables ambientales</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>amb1 <span class="ot">&lt;-</span></span>
@@ -1522,11 +1599,11 @@ Table&nbsp;5: Base de datos con las variables ambientales tabuladas, incluidas l
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># print(amb1)</span></span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># View(amb1)</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># str(amb1)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># str(amb1)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl6" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Base de datos con los promedios las variables ambientales tabuladas, para cada sitio
+Tabla&nbsp;6: Base de datos con los promedios las variables ambientales tabuladas, para cada sitio
 </figcaption>
 <div aria-describedby="tbl-tbl6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -1636,24 +1713,20 @@ Table&nbsp;6: Base de datos con los promedios las variables ambientales tabulada
 </div>
 </div>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b><section id="paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones." class="level3"><b style="color:#1f78b4;">
+</section>
+</section>
+<section id="paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones." class="level3">
 <h3 class="anchored" data-anchor-id="paso-4.-exploración-gráfica-de-relaciones-y-de-variaciones.">Paso 4. Exploración gráfica de relaciones y de variaciones.</h3>
-</b><p><b style="color:#1f78b4;"></b></p>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b><section id="relaciones-entre-todos-los-taxones." class="level4"><b style="color:#fc8d62;">
+<section id="relaciones-entre-todos-los-taxones." class="level4">
 <h4 class="anchored" data-anchor-id="relaciones-entre-todos-los-taxones.">4.1 Relaciones entre todos los taxones.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>La siguiente figura se realiza con todos los taxones (cuando no son muchos) y pueden viasualizarse los patrones de sus relaciones entre parejas. Se excluye a las columnas 1 y 2 (<strong>[,c(-1,-2)]</strong>) por ser categóricas (sitios y microhábitats) (<a href="#fig-fig1" class="quarto-xref">Figure&nbsp;1</a>).</p>
+<p>La siguiente figura se realiza con todos los taxones (cuando no son muchos) y pueden viasualizarse los patrones de sus relaciones entre parejas. Se excluye a las columnas 1 y 2 (<strong>[,c(-1,-2)]</strong>) por ser categóricas (sitios y microhábitats) (<a href="#fig-fig1" class="quarto-xref">Figura&nbsp;1</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de correlación </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cor</span>(biol1)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura de correlaciones</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1661,26 +1734,24 @@ Table&nbsp;6: Base de datos con los promedios las variables ambientales tabulada
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig1-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Relaciones de parejas de taxones. Las elipses azules y rojas muestran las relaciones lineales positivas y negativas respectivamente, entre las parejas de taxones comparadas.
+Figura&nbsp;1: Relaciones de parejas de taxones. Las elipses azules y rojas muestran las relaciones lineales positivas y negativas respectivamente, entre las parejas de taxones comparadas.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="relaciones-entre-los-15-taxones-más-abundantes." class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="relaciones-entre-los-15-taxones-más-abundantes." class="level4">
 <h4 class="anchored" data-anchor-id="relaciones-entre-los-15-taxones-más-abundantes.">4.2 Relaciones entre los 15 taxones más abundantes.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
 <p>Se sugiere tener una tabla al inicio del informe, que relacione a los nombres completos con sus abreviaturas al frente, para que el lector pueda orientarse mejor. Nota: se puede mejorar la linealización con transformaciones de las variables (ej. Hellinger, log10).</p>
-<p>La <a href="#fig-fig2" class="quarto-xref">Figure&nbsp;2</a>, muestra las relaciones entre las parejas de los quince taxones más abundantes. También se pueden incluir complementos como <code>addCoef.col ="black", number.cex = 0.5, order="AOE", type="upper"</code>. En los siguientes enlaces se encuentra información complementaria para estas elipses: <a href="#0" style="font-size: 11pt;">corrplot</a>, <a href="#0" style="font-size: 11pt;">corrplot</a>.</p>
+<p>La <a href="#fig-fig2" class="quarto-xref">Figura&nbsp;2</a>, muestra las relaciones entre las parejas de los quince taxones más abundantes. También se pueden incluir complementos como <code>addCoef.col ="black", number.cex = 0.5, order="AOE", type="upper"</code>. En los siguientes enlaces se encuentra información complementaria para estas elipses: <a href="#0" style="font-size: 11pt;">corrplot</a>, <a href="#0" style="font-size: 11pt;">corrplot</a>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de correlación </span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>M1 <span class="ot">=</span> <span class="fu">cor</span>(biol2[,<span class="sc">-</span><span class="dv">1</span>])</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura de correlaciones</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M1, <span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M1, <span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1688,16 +1759,16 @@ Figure&nbsp;1: Relaciones de parejas de taxones. Las elipses azules y rojas mues
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig2-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: Relaciones de parejas de los 15 taxones más abundantes. Las elipses azules y rojas muestran las relaciones lineales positivas y negativas respectivamente, entre las parejas de taxones comparadas.
+Figura&nbsp;2: Relaciones de parejas de los 15 taxones más abundantes. Las elipses azules y rojas muestran las relaciones lineales positivas y negativas respectivamente, entre las parejas de taxones comparadas.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Otra opción que se puede probar es: <code>corrplot.mixed(M, upper="ellipse")</code> (<a href="#fig-fig3" class="quarto-xref">Figure&nbsp;3</a>).</p>
+<p>Otra opción que se puede probar es: <code>corrplot.mixed(M, upper="ellipse")</code> (<a href="#fig-fig3" class="quarto-xref">Figura&nbsp;3</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura de correlaciones</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(M1, <span class="at">upper=</span><span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>, <span class="at">number.cex =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot.mixed</span>(M1, <span class="at">upper=</span><span class="st">"ellipse"</span>, <span class="at">order=</span> <span class="st">"AOE"</span>, <span class="at">number.cex =</span> <span class="fl">0.7</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1705,25 +1776,23 @@ Figure&nbsp;2: Relaciones de parejas de los 15 taxones más abundantes. Las elip
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig3-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Relaciones de parejas de los 15 taxones más abundantes, con los coeficientes de correlación de Pearson.
+Figura&nbsp;3: Relaciones de parejas de los 15 taxones más abundantes, con los coeficientes de correlación de Pearson.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales." class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales." class="level4">
 <h4 class="anchored" data-anchor-id="relaciones-entre-los-promedios-de-los-15-taxones-más-abundantes-y-las-variables-ambientales.">4.3 Relaciones entre los promedios de los 15 taxones más abundantes y las variables ambientales.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>A continuación se utilizan opciones gráficas para relacionar a las variables biológicas (columnas) a las ambientales (filas), con sus valores promedio por cada sitio (<a href="#fig-fig4" class="quarto-xref">Figure&nbsp;4</a>). Las elipses azules y rojas muestran las relaciones lineales positivas y negativas entre las parejas de taxones comparadas.</p>
+<p>A continuación se utilizan opciones gráficas para relacionar a las variables biológicas (columnas) a las ambientales (filas), con sus valores promedio por cada sitio (<a href="#fig-fig4" class="quarto-xref">Figura&nbsp;4</a>). Las elipses azules y rojas muestran las relaciones lineales positivas y negativas entre las parejas de taxones comparadas.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de correlación </span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cor</span>(amb1[,<span class="sc">-</span><span class="dv">1</span>],biol3[,<span class="sc">-</span><span class="dv">1</span>])</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura de correlaciones</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig4" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1731,20 +1800,20 @@ Figure&nbsp;3: Relaciones de parejas de los 15 taxones más abundantes, con los 
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig4-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;4: Relaciones de parejas de las variables ambientales (en filas) los 15 taxones más abundantes (en columnas).
+Figura&nbsp;4: Relaciones de parejas de las variables ambientales (en filas) los 15 taxones más abundantes (en columnas).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <hr>
-<p>La <a href="#fig-fig5" class="quarto-xref">Figure&nbsp;5</a> permite evaluar la relación entre las variables ambientales y todos los taxones, sirviendo de soporte para las figuras de burbujas que se realizarán a continuación, debido a que permite identificar las variables ambientales con mejores relaciones lineales (positivas o negativas), para ser seleccionadas. Para este caso se seleccionará al oxígeno, a la profundidad media (relación negativa) y al amonio (relación positiva), debido a que presentan buenas relaciones con los taxones evaluados (<a href="#fig-fig5" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<p>La <a href="#fig-fig5" class="quarto-xref">Figura&nbsp;5</a> permite evaluar la relación entre las variables ambientales y todos los taxones, sirviendo de soporte para las figuras de burbujas que se realizarán a continuación, debido a que permite identificar las variables ambientales con mejores relaciones lineales (positivas o negativas), para ser seleccionadas. Para este caso se seleccionará al oxígeno, a la profundidad media (relación negativa) y al amonio (relación positiva), debido a que presentan buenas relaciones con los taxones evaluados (<a href="#fig-fig5" class="quarto-xref">Figura&nbsp;5</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matriz de correlación </span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>M <span class="ot">=</span> <span class="fu">cor</span>(amb[,<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="sc">-</span><span class="dv">2</span>)],biol1)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura de correlaciones</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="st">"ellipse"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig5" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1752,18 +1821,16 @@ Figure&nbsp;4: Relaciones de parejas de las variables ambientales (en filas) los
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig5-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig5-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) todos los taxones más abundantes (en columnas).
+Figura&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) todos los taxones más abundantes (en columnas).
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <hr>
-<p><b style="color:#e78ac3;"></b></p><b style="color:#e78ac3;">
-</b></section><b style="color:#e78ac3;">
-</b><section id="relaciones-entre-todos-los-taxones-y-las-variables-ambientales." class="level4"><b style="color:#e78ac3;">
+</section>
+<section id="relaciones-entre-todos-los-taxones-y-las-variables-ambientales." class="level4">
 <h4 class="anchored" data-anchor-id="relaciones-entre-todos-los-taxones-y-las-variables-ambientales.">4.4 Relaciones entre todos los taxones y las variables ambientales.</h4>
-</b><p><b style="color:#e78ac3;"></b></p>
 <p>Se relaciona a las especies de peces (eje y), variables ambientales (eje x), colores de las burbujas (fases lunares) y tamaños de las burbujas (abundancias).</p>
 <p><strong>Nota:</strong> Solo se hará con fases lunares, pero se puede hacer con el resto de factores (horarios y zonas).</p>
 <div class="cell">
@@ -1799,11 +1866,11 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 <span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Taxas)</span>
 <span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Ordenar taxones de menor a mayor abundancia</span></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>datos1a<span class="sc">$</span>Taxas <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos1a<span class="sc">$</span>Taxas, <span class="at">levels =</span> Abundancia_order1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>datos1a<span class="sc">$</span>Taxas <span class="ot">&lt;-</span> <span class="fu">factor</span>(datos1a<span class="sc">$</span>Taxas, <span class="at">levels =</span> Abundancia_order1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen estadístico de las variables ambientales seleccionadas</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">14</span><span class="sc">:</span><span class="dv">53</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(datos[,<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">14</span><span class="sc">:</span><span class="dv">53</span>)])</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Oxigeno          Amonio          Prof.Media    
  Min.   :4.820   Min.   :0.00010   Min.   :0.1912  
@@ -1814,10 +1881,8 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
  Max.   :5.850   Max.   :0.05000   Max.   :0.3377  </code></pre>
 </div>
 </div>
-<p><b style="color:#66c2a5;"></b></p><b style="color:#66c2a5;">
-</b><section id="por-niveles-de-oxigeno" class="level6"><b style="color:#66c2a5;">
+<section id="por-niveles-de-oxigeno" class="level6">
 <h6 class="anchored" data-anchor-id="por-niveles-de-oxigeno">Por niveles de Oxigeno</h6>
-</b><p><b style="color:#66c2a5;"></b></p>
 <p>Se observa la mayor concentración de taxones abundantes y la mayor riqueza en <strong>Oxigeno</strong> entre 7.5 y 8 unidades.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span>
@@ -1849,7 +1914,7 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>                               <span class="at">stroke =</span> <span class="fl">1.2</span>)),  <span class="co"># Grosor de los círculos </span></span>
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>,</span>
 <span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">5</span>))  <span class="co"># Elimina el título de la leyenda</span></span>
-<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1858,11 +1923,9 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 </div>
 </div>
 </div>
-<p><b style="color:#66c2a5;"></b></p><b style="color:#66c2a5;">
-</b></section><b style="color:#66c2a5;">
-</b><section id="por-niveles-de-amonio" class="level6"><b style="color:#66c2a5;">
+</section>
+<section id="por-niveles-de-amonio" class="level6">
 <h6 class="anchored" data-anchor-id="por-niveles-de-amonio">Por niveles de Amonio</h6>
-</b><p><b style="color:#66c2a5;"></b></p>
 <p>Se observa la mayor concentración de taxones abundantes y la mayor riqueza en <strong>Amonio</strong> entre 0.0001 y 0.05.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico mejorado con eje Y ordenado por Salinidad (más abundante en la parte superior)</span></span>
@@ -1894,7 +1957,7 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 <span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>                               <span class="at">stroke =</span> <span class="fl">1.2</span>)),  <span class="co"># Grosor de los círculos </span></span>
 <span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>,</span>
 <span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>            <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">5</span>))  <span class="co"># Elimina el título de la leyenda</span></span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1903,11 +1966,9 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 </div>
 </div>
 </div>
-<p><b style="color:#66c2a5;"></b></p><b style="color:#66c2a5;">
-</b></section><b style="color:#66c2a5;">
-</b><section id="por-niveles-de-profundidad-media" class="level6"><b style="color:#66c2a5;">
+</section>
+<section id="por-niveles-de-profundidad-media" class="level6">
 <h6 class="anchored" data-anchor-id="por-niveles-de-profundidad-media">Por niveles de Profundidad Media</h6>
-</b><p><b style="color:#66c2a5;"></b></p>
 <p>Se observa la mayor concentración de taxones abundantes y la mayor riqueza en <strong>Profundidad Media</strong> entre 0.19 y 0.34.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico mejorado con eje Y ordenado por Salinidad (más abundante en la parte superior)</span></span>
@@ -1938,7 +1999,7 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 <span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>                               <span class="at">stroke =</span> <span class="fl">1.2</span>)),  <span class="co"># Grosor de los círculos </span></span>
 <span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="cn">NULL</span>,</span>
 <span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>            <span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size =</span> <span class="dv">5</span>))  <span class="co"># Elimina el título de la leyenda</span></span>
-<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1948,13 +2009,11 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 </div>
 </div>
 <hr>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="diferencias-entre-los-taxones-por-sitios-y-por-microhábitats." class="level4"><b style="color:#fc8d62;">
+</section>
+</section>
+<section id="diferencias-entre-los-taxones-por-sitios-y-por-microhábitats." class="level4">
 <h4 class="anchored" data-anchor-id="diferencias-entre-los-taxones-por-sitios-y-por-microhábitats.">4.5 Diferencias entre los taxones por sitios y por microhábitats.</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>Para este caso se requiere contar con variables agrupadoras (contar replicas por cada grupo) como los sitios o los microhábitats (<a href="#tbl-tbl7" class="quarto-xref">Table&nbsp;7</a>). La bae <strong>biol.dif</strong> utiliza al comando <strong><em>gather</em></strong>, organiza a los datos de los taxones en una columna con sus valores de abundancias al frente.</p>
+<p>Para este caso se requiere contar con variables agrupadoras (contar replicas por cada grupo) como los sitios o los microhábitats (<a href="#tbl-tbl7" class="quarto-xref">Tabla&nbsp;7</a>). La bae <strong>biol.dif</strong> utiliza al comando <strong><em>gather</em></strong>, organiza a los datos de los taxones en una columna con sus valores de abundancias al frente.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># View(biol)</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>biol.dif <span class="ot">&lt;-</span></span>
@@ -1964,11 +2023,11 @@ Figure&nbsp;5: Relaciones de parejas de las variables ambientales (en filas) tod
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla con los seis (6) primeros datos (filas)</span></span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(biol.dif) <span class="sc">%&gt;%</span></span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl7" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;7: Base de datos con frmato alargado relacionando a la abundancia de individuos por cada sitio, microhábitat y taxón identificado
+Tabla&nbsp;7: Base de datos con frmato alargado relacionando a la abundancia de individuos por cada sitio, microhábitat y taxón identificado
 </figcaption>
 <div aria-describedby="tbl-tbl7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2027,7 +2086,7 @@ Table&nbsp;7: Base de datos con frmato alargado relacionando a la abundancia de 
 </figure>
 </div>
 </div>
-<p>El siguiente grafico de cajas compara a las abundancias por cada sitio y utiliza a la variable abundancia con la transformación log(10), debido a la cantidad de ceros y valores bajos de abundancia. A pesar de esto, las cajas no se organizan de forma satisfactoria (<a href="#fig-fig5a" class="quarto-xref">Figure&nbsp;6</a>).</p>
+<p>El siguiente grafico de cajas compara a las abundancias por cada sitio y utiliza a la variable abundancia con la transformación log(10), debido a la cantidad de ceros y valores bajos de abundancia. A pesar de esto, las cajas no se organizan de forma satisfactoria (<a href="#fig-fig5a" class="quarto-xref">Figura&nbsp;6</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscar en google: colorbrewer2</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(biol.dif, <span class="fu">aes</span>(<span class="at">x=</span>Sitio, <span class="at">y=</span> Abundancia)) <span class="sc">+</span> </span>
@@ -2039,7 +2098,7 @@ Table&nbsp;7: Base de datos con frmato alargado relacionando a la abundancia de 
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#fc8d59'</span>,<span class="st">'#ffffbf'</span>,<span class="st">'#99d594'</span>)) <span class="sc">+</span></span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span> </span>
-<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig5a" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2047,13 +2106,13 @@ Table&nbsp;7: Base de datos con frmato alargado relacionando a la abundancia de 
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig5a-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig5a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6: Diferencias entre los valores de abundancia de individuos para los tres sitios evaluados.
+Figura&nbsp;6: Diferencias entre los valores de abundancia de individuos para los tres sitios evaluados.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>El siguiente grafico de cajas compara a las abundancias por cada microhábitat (<a href="#fig-fig6" class="quarto-xref">Figure&nbsp;7</a>).</p>
+<p>El siguiente grafico de cajas compara a las abundancias por cada microhábitat (<a href="#fig-fig6" class="quarto-xref">Figura&nbsp;7</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscar en google: colorbrewer2</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(biol.dif, <span class="fu">aes</span>(<span class="at">x=</span>Microh, <span class="at">y=</span> Abundancia)) <span class="sc">+</span> </span>
@@ -2065,7 +2124,7 @@ Figure&nbsp;6: Diferencias entre los valores de abundancia de individuos para lo
 <span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
 <span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#fc8d59'</span>,<span class="st">'#ffffbf'</span>,<span class="st">'#99d594'</span>)) <span class="sc">+</span></span>
 <span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid =</span> <span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig6" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2073,13 +2132,13 @@ Figure&nbsp;6: Diferencias entre los valores de abundancia de individuos para lo
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig6-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;7: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
+Figura&nbsp;7: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>En la <a href="#fig-fig7" class="quarto-xref">Figure&nbsp;8</a> se se muetra las diferencias en los valores de abundancia de los insectos, por cada sitio y tipo de microhábitat evaluado.</p>
+<p>En la <a href="#fig-fig7" class="quarto-xref">Figura&nbsp;8</a> se se muetra las diferencias en los valores de abundancia de los insectos, por cada sitio y tipo de microhábitat evaluado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscar en google: colorbrewer2</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(biol.dif, <span class="fu">aes</span>(<span class="at">x=</span>Sitio, <span class="at">y=</span>Abundancia)) <span class="sc">+</span> </span>
@@ -2093,7 +2152,7 @@ Figure&nbsp;7: Diferencias entre los valores de abundancia de individuos para lo
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sitio,<span class="at">scales=</span><span class="st">"free"</span>) <span class="sc">+</span></span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig7" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2101,13 +2160,13 @@ Figure&nbsp;7: Diferencias entre los valores de abundancia de individuos para lo
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig7-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig7-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
+Figura&nbsp;8: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La <a href="#fig-fig8" class="quarto-xref">Figure&nbsp;9</a> muestra una forma complementaria a la anterior para evaluar las diferencias en la abundancia de los insectos acuáticos entre sitios y entre microhábitats.</p>
+<p>La <a href="#fig-fig8" class="quarto-xref">Figura&nbsp;9</a> muestra una forma complementaria a la anterior para evaluar las diferencias en la abundancia de los insectos acuáticos entre sitios y entre microhábitats.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscar en google: colorbrewer2</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(biol.dif, <span class="fu">aes</span>(<span class="at">x=</span>Sitio, <span class="at">y=</span> Abundancia)) <span class="sc">+</span> </span>
@@ -2120,7 +2179,7 @@ Figure&nbsp;8: Diferencias entre los valores de abundancia de individuos para lo
 <span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       ) <span class="sc">+</span></span>
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">'#fc8d59'</span>,<span class="st">'#ffffbf'</span>,<span class="st">'#99d594'</span>)) <span class="sc">+</span></span>
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>()) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig8" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2128,13 +2187,13 @@ Figure&nbsp;8: Diferencias entre los valores de abundancia de individuos para lo
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig8-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;9: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
+Figura&nbsp;9: Diferencias entre los valores de abundancia de individuos para los tres microhábitats evaluados.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>La <a href="#tbl-tbl8" class="quarto-xref">Table&nbsp;8</a> muestra algunos estimadores estadísticos de la abundancia de insectos entre sitios y microhábitats, para poder visualizar diferencias entre los promedios y alguna medida de dispersión (ver <a href="#fig-fig9" class="quarto-xref">Figure&nbsp;10</a>).</p>
+<p>La <a href="#tbl-tbl8" class="quarto-xref">Tabla&nbsp;8</a> muestra algunos estimadores estadísticos de la abundancia de insectos entre sitios y microhábitats, para poder visualizar diferencias entre los promedios y alguna medida de dispersión (ver <a href="#fig-fig9" class="quarto-xref">Figura&nbsp;10</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen estadístico "datos_resum"</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>datos_resum <span class="ot">&lt;-</span> </span>
@@ -2149,11 +2208,11 @@ Figure&nbsp;9: Diferencias entre los valores de abundancia de individuos para lo
 <span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla </span></span>
 <span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>datos_resum <span class="sc">%&gt;%</span></span>
 <span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl8" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;8: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
+Tabla&nbsp;8: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
 </figcaption>
 <div aria-describedby="tbl-tbl8-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2260,7 +2319,7 @@ Table&nbsp;8: Base de datos con diferentes estadísticos descriptivos para cada 
 </figure>
 </div>
 </div>
-<p>La <a href="#fig-fig9" class="quarto-xref">Figure&nbsp;10</a> muestra que los datos con los promedios mayores, también presentan mayor dispersión en sus valores (líneas acotadas más largas).</p>
+<p>La <a href="#fig-fig9" class="quarto-xref">Figura&nbsp;10</a> muestra que los datos con los promedios mayores, también presentan mayor dispersión en sus valores (líneas acotadas más largas).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Figura 1 (f1)</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_resum, <span class="fu">aes</span>(<span class="at">x=</span>Sitio, <span class="at">y=</span>datos.m, <span class="at">fill=</span>Microh)) <span class="sc">+</span> </span>
@@ -2275,7 +2334,7 @@ Table&nbsp;8: Base de datos con diferentes estadísticos descriptivos para cada 
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">facet_wrap</span>(<span class="sc">~</span> Sitio,<span class="at">scales=</span><span class="st">"free"</span>) <span class="sc">+</span></span>
 <span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
 <span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>()) <span class="sc">+</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">panel.grid  =</span> <span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig9" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2283,25 +2342,21 @@ Table&nbsp;8: Base de datos con diferentes estadísticos descriptivos para cada 
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig9-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10: Diferencias entre los promedios de abundancia para los sitios y microhábitat evaluados. Las barras representan a los promedios de abundancia y las líneas acotadas a un error estándar encima del promedio.
+Figura&nbsp;10: Diferencias entre los promedios de abundancia para los sitios y microhábitat evaluados. Las barras representan a los promedios de abundancia y las líneas acotadas a un error estándar encima del promedio.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <hr>
-<p><b style="color:#1f78b4;"></b></p><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b></section><b style="color:#1f78b4;">
-</b><section id="paso-5.-diversidad-alfa" class="level3"><b style="color:#1f78b4;">
+</section>
+</section>
+<section id="paso-5.-diversidad-alfa" class="level3">
 <h3 class="anchored" data-anchor-id="paso-5.-diversidad-alfa"><strong>Paso 5. Diversidad alfa</strong></h3>
-</b><p><b style="color:#1f78b4;"></b></p>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b><section id="estimadores-clásicos" class="level4"><b style="color:#fc8d62;">
+<section id="estimadores-clásicos" class="level4">
 <h4 class="anchored" data-anchor-id="estimadores-clásicos"><strong>5.1 Estimadores clásicos</strong></h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>La <a href="#tbl-tbl9" class="quarto-xref">Table&nbsp;9</a> Muestra los valores promedio de abundancias de macroinvertebrados acuáticos para cada sitio evaluado.</p>
+<p>La <a href="#tbl-tbl9" class="quarto-xref">Tabla&nbsp;9</a> Muestra los valores promedio de abundancias de macroinvertebrados acuáticos para cada sitio evaluado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nombres abreviados de los taxones</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>biol1 <span class="ot">&lt;-</span> </span>
@@ -2319,11 +2374,11 @@ Figure&nbsp;10: Diferencias entre los promedios de abundancia para los sitios y 
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>biol4 <span class="sc">%&gt;%</span></span>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl9" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;9: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
+Tabla&nbsp;9: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
 </figcaption>
 <div aria-describedby="tbl-tbl9-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2412,7 +2467,7 @@ Table&nbsp;9: Base de datos con diferentes estadísticos descriptivos para cada 
 </figure>
 </div>
 </div>
-<p>Con los datos de la <a href="#tbl-tbl9" class="quarto-xref">Table&nbsp;9</a>, a continuación se calculan algunos índices de diversidad general, en la propuesta de Borcard et al.&nbsp;(2018). q_0, q_1 y q_2 corresponden a los valores de diversidad en términos de riqueza o número de taxones, taxones abundantes de acuerdo a euler elevado a la Shannon y los taxones muy abundantes según el inverso del índice de Simpson, respectivamente. De igual forma se evalúa la unidormidad en la abundancia de los diferentes taxones para cada sitio, con el índice de Pielou.</p>
+<p>Con los datos de la <a href="#tbl-tbl9" class="quarto-xref">Tabla&nbsp;9</a>, a continuación se calculan algunos índices de diversidad general, en la propuesta de Borcard et al.&nbsp;(2018). q_0, q_1 y q_2 corresponden a los valores de diversidad en términos de riqueza o número de taxones, taxones abundantes de acuerdo a euler elevado a la Shannon y los taxones muy abundantes según el inverso del índice de Simpson, respectivamente. De igual forma se evalúa la unidormidad en la abundancia de los diferentes taxones para cada sitio, con el índice de Pielou.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>biol5 <span class="ot">&lt;-</span> biol4[,<span class="sc">-</span><span class="dv">1</span>]</span>
@@ -2438,11 +2493,11 @@ Table&nbsp;9: Base de datos con diferentes estadísticos descriptivos para cada 
 <span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Edición de la tabla para su impresión</span></span>
 <span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>d.alfa <span class="sc">%&gt;%</span></span>
 <span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl10" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;10: Base de datos con diferentes estimadores de diversidad para cada sitio y microhábitat evaluado
+Tabla&nbsp;10: Base de datos con diferentes estimadores de diversidad para cada sitio y microhábitat evaluado
 </figcaption>
 <div aria-describedby="tbl-tbl10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2488,12 +2543,10 @@ Table&nbsp;10: Base de datos con diferentes estimadores de diversidad para cada 
 </div>
 </div>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="curvas-rad-localidades-y-microhábitats" class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="curvas-rad-localidades-y-microhábitats" class="level4">
 <h4 class="anchored" data-anchor-id="curvas-rad-localidades-y-microhábitats"><strong>5.2 Curvas RAD (Localidades y Microhábitats)</strong></h4>
-</b><p><b style="color:#fc8d62;"></b></p>
-<p>Para propósitos de este documento se realizarán los diagramas con los quince (15) taxones de invertebrados más abundantes en las tres localidades evaluadas (<strong>biol2</strong>). Este diagrama permite hacer una exploración de los patrones de abundancia de los principales taxones de las muestras en comparación, como complemento a los modelos paraétricos a realizar. Se inserta una columna de rangos de abundancia y otra columna de abundancia relativa. Finalmente se filtran a los 15 taxones más abundantes, para que las curvas no se saturen (<a href="#tbl-tbl11" class="quarto-xref">Table&nbsp;11</a>).</p>
+<p>Para propósitos de este documento se realizarán los diagramas con los quince (15) taxones de invertebrados más abundantes en las tres localidades evaluadas (<strong>biol2</strong>). Este diagrama permite hacer una exploración de los patrones de abundancia de los principales taxones de las muestras en comparación, como complemento a los modelos paraétricos a realizar. Se inserta una columna de rangos de abundancia y otra columna de abundancia relativa. Finalmente se filtran a los 15 taxones más abundantes, para que las curvas no se saturen (<a href="#tbl-tbl11" class="quarto-xref">Tabla&nbsp;11</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lectura de la base de datos</span></span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>datos1 <span class="ot">&lt;-</span><span class="fu">read_xlsx</span>(<span class="st">"datos.gral.xlsx"</span>,<span class="st">"Taxones2"</span>) </span>
@@ -2548,11 +2601,11 @@ Table&nbsp;10: Base de datos con diferentes estimadores de diversidad para cada 
 <span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla con los seis (6) primeros datos (filas)</span></span>
 <span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos1) <span class="sc">%&gt;%</span></span>
 <span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl11" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;11: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
+Tabla&nbsp;11: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
 </figcaption>
 <div aria-describedby="tbl-tbl11-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2618,7 +2671,7 @@ Table&nbsp;11: Base de datos con diferentes estadísticos descriptivos para cada
 </figure>
 </div>
 </div>
-<p>La <a href="#fig-fig12" class="quarto-xref">Figure&nbsp;11</a> muestra el patrón de distribución de abundancias de los quince taxones más abundantes de invertebrados acuáticos, mostrando que en Pozo Azul se presenta la mayor proporción de famlias dominantes o más abundantes.</p>
+<p>La <a href="#fig-fig12" class="quarto-xref">Figura&nbsp;11</a> muestra el patrón de distribución de abundancias de los quince taxones más abundantes de invertebrados acuáticos, mostrando que en Pozo Azul se presenta la mayor proporción de famlias dominantes o más abundantes.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)      <span class="co"># insertar rótulos a los puntos</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -2649,7 +2702,7 @@ Table&nbsp;11: Base de datos con diferentes estadísticos descriptivos para cada
 <span id="cb29-27"><a href="#cb29-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>(),</span>
 <span id="cb29-28"><a href="#cb29-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend.position =</span> <span class="st">"none"</span>,  <span class="co"># ← Oculta la leyenda</span></span>
 <span id="cb29-29"><a href="#cb29-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>)  <span class="co"># Nombres de panel en negrilla</span></span>
-<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-30"><a href="#cb29-30" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig12" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -2657,7 +2710,7 @@ Table&nbsp;11: Base de datos con diferentes estadísticos descriptivos para cada
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig12-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11: Rango-Abundancia pattern for localities, with the 15 most abundant coprophagous species
+Figura&nbsp;11: Rango-Abundancia pattern for localities, with the 15 most abundant coprophagous species
 </figcaption>
 </figure>
 </div>
@@ -2696,7 +2749,7 @@ Figure&nbsp;11: Rango-Abundancia pattern for localities, with the 15 most abunda
 <span id="cb30-29"><a href="#cb30-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">color =</span> <span class="st">"gray30"</span>),</span>
 <span id="cb30-30"><a href="#cb30-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>),</span>
 <span id="cb30-31"><a href="#cb30-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="st">"none"</span></span>
-<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb30-32"><a href="#cb30-32" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -2707,19 +2760,15 @@ Figure&nbsp;11: Rango-Abundancia pattern for localities, with the 15 most abunda
 </div>
 <p>La <strong>?@fig-fig13</strong> muestra el patrón de abundancia por cada microhábitat, siendo la hojarásca la que presenta la mayor proporción, seguida de las gravas y de las arenas.</p>
 <p>–</p>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="diversidad-en-4-pasos.-chao-et-al.-2020." class="level4"><b style="color:#fc8d62;">
+</section>
+<section id="diversidad-en-4-pasos.-chao-et-al.-2020." class="level4">
 <h4 class="anchored" data-anchor-id="diversidad-en-4-pasos.-chao-et-al.-2020.">5.3 Diversidad en 4 Pasos. Chao <em>et al</em>. (2020).</h4>
-</b><p><b style="color:#fc8d62;"></b></p>
 <p>Este procedimiento permite calcular los siguientes cuatro pasos o insumos:&nbsp;<strong>(1) la completitud o integridad de la muestra</strong>,&nbsp;<strong>(2) la diversidad asintótica</strong>,&nbsp;<strong>(3) la diversidad no asintótica</strong>&nbsp;y&nbsp;<strong>(4) la uniformidad de las abundancias</strong>&nbsp;(<a href="https://esj-journals.onlinelibrary.wiley.com/doi/10.1111/1440-1703.12102">Chao et al.&nbsp;2020</a>).</p>
 <p>–</p>
-<p><b style="color:#2ca25f;"></b></p><b style="color:#2ca25f;">
-</b></section><b style="color:#2ca25f;">
-</b><section id="cuatro-pasos-por-sitios" class="level4"><b style="color:#2ca25f;">
+</section>
+<section id="cuatro-pasos-por-sitios" class="level4">
 <h4 class="anchored" data-anchor-id="cuatro-pasos-por-sitios">5.3.1 Cuatro pasos por Sitios</h4>
-</b><p><b style="color:#2ca25f;"></b></p>
-<p>Primero se corre el procedimiento sobre los datos de la <a href="#tbl-tbl14" class="quarto-xref">Table&nbsp;12</a>, con el comando <strong>iNEXT4steps</strong>, el cual general los insumos de diversidad en los cuatro pasos propuestos por <strong>Chao et al.&nbsp;(2020)</strong>.</p>
+<p>Primero se corre el procedimiento sobre los datos de la <a href="#tbl-tbl14" class="quarto-xref">Tabla&nbsp;12</a>, con el comando <strong>iNEXT4steps</strong>, el cual general los insumos de diversidad en los cuatro pasos propuestos por <strong>Chao et al.&nbsp;(2020)</strong>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -2770,11 +2819,11 @@ Figure&nbsp;11: Rango-Abundancia pattern for localities, with the 15 most abunda
 <span id="cb31-47"><a href="#cb31-47" aria-hidden="true" tabindex="-1"></a><span class="co"># Impresión de la tabla con los seis (6) primeros datos (filas)</span></span>
 <span id="cb31-48"><a href="#cb31-48" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos1_ordenado) <span class="sc">%&gt;%</span></span>
 <span id="cb31-49"><a href="#cb31-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb31-50"><a href="#cb31-50" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl14" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;12: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
+Tabla&nbsp;12: Base de datos con diferentes estadísticos descriptivos para cada sitio y microhábitat evaluado
 </figcaption>
 <div aria-describedby="tbl-tbl14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2842,15 +2891,15 @@ Table&nbsp;12: Base de datos con diferentes estadísticos descriptivos para cada
 <span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Resultados de la prueba de diversidad alfa en 4 pasos</span></span>
 <span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>result1 <span class="ot">&lt;-</span> <span class="fu">iNEXT4steps</span>(<span class="at">data =</span> biol.sit, </span>
 <span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">datatype =</span> <span class="st">"abundance"</span>)</span>
-<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># result1$summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="co"># result1$summary</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <section id="a.-paso-1.-perfil-de-completitud" class="level5">
 <h5 class="anchored" data-anchor-id="a.-paso-1.-perfil-de-completitud">a. Paso 1. Perfil de completitud</h5>
-<p>El <strong>perfil de completitud</strong> indica que las dos muestras (sitios) no son completas para el primer orden de diversidad “q=0” representado por los valores de riqueza de taxones (completitud &lt; 0.9) (<a href="#tbl-tbl15" class="quarto-xref">Table&nbsp;13</a>), lo cual puede ser un indicador de requerimiento de mayor esfuerzo de muestreo o del efecto del caudal que si es en periodo de lluvias puede ocasionar lavados frecuentes de estos organismos.</p>
+<p>El <strong>perfil de completitud</strong> indica que las dos muestras (sitios) no son completas para el primer orden de diversidad “q=0” representado por los valores de riqueza de taxones (completitud &lt; 0.9) (<a href="#tbl-tbl15" class="quarto-xref">Tabla&nbsp;13</a>), lo cual puede ser un indicador de requerimiento de mayor esfuerzo de muestreo o del efecto del caudal que si es en periodo de lluvias puede ocasionar lavados frecuentes de estos organismos.</p>
 <p>Nota: en caso que el siguiente comando no se ejecute, se debe a que el paso 1 (perfil de completitud) presenta un nombre diferente, para lo cual se sugiere ejecutar el siguiente comando, que muestra los insumos de este ejercicio: names(<strong>result1$summary</strong>). Para este caso, los insumos son:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(result1<span class="sc">$</span>summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(result1<span class="sc">$</span>summary)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "STEP 1. Sample completeness profiles"                                                                                        
 [2] "STEP 2b. Observed diversity values and asymptotic estimates"                                                                 
@@ -2864,11 +2913,11 @@ Table&nbsp;12: Base de datos con diferentes estadísticos descriptivos para cada
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 1. Perfil de completitud</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP 1. Sample completeness profiles"</span> <span class="sc">%&gt;%</span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl15" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;13: Perfil de completitud entre los sitios evaluados
+Tabla&nbsp;13: Perfil de completitud entre los sitios evaluados
 </figcaption>
 <div aria-describedby="tbl-tbl15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -2913,25 +2962,25 @@ Table&nbsp;13: Perfil de completitud entre los sitios evaluados
 </section>
 <section id="b.-paso-2.-perfil-asintótico" class="level5">
 <h5 class="anchored" data-anchor-id="b.-paso-2.-perfil-asintótico">b. Paso 2. Perfil asintótico</h5>
-<p>El <strong>perfil asintótico</strong> muestra la relación entre la diversidad observada y la estimada, en ese sentido, la diferencia define a la <strong>diversidad no detectada</strong> (sin.det). Pozo Azul y Caracolí son los sitios con mayor cantidad de taxones no detectados (<a href="#tbl-tbl16" class="quarto-xref">Table&nbsp;14</a>).</p>
+<p>El <strong>perfil asintótico</strong> muestra la relación entre la diversidad observada y la estimada, en ese sentido, la diferencia define a la <strong>diversidad no detectada</strong> (sin.det). Pozo Azul y Caracolí son los sitios con mayor cantidad de taxones no detectados (<a href="#tbl-tbl16" class="quarto-xref">Tabla&nbsp;14</a>).</p>
 <p><strong>Nota</strong>: siguiendo con los insumos de names(result1$summary), el paso 2 se debe copiar y pegar en el siguiente fragmento de esta manera: <strong>“STEP 2b. Observed diversity values and asymptotic estimates”</strong></p>
 <p><strong>asinto</strong> es la manera como se asignará la tabla resultado de este segundo paso, para luego incluirle una columna de taxones sin detectar, que mostrará que tan completa es cada muestra (sitio evaluado).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Asignación del paso 2 como "asinto"</span></span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>asinto <span class="ot">=</span> result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP 2b. Observed diversity values and asymptotic estimates"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>asinto <span class="ot">=</span> result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP 2b. Observed diversity values and asymptotic estimates"</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>A continuación se crea la columna de taxones sin detectar y se asigna como sin.det. Esta columna es el resultado de la diferencia entre la diversidad estimada (TD_asy) y la diversidad observada (TD_obs), lo cual permitirá conocer si las muestras son completas (sus pendientes se vuelven asintóticas o se estabilizan o por el contrario no son asintóticas por haber taxones sin detectar hasta en el doble de su proyección, ver <a href="#fig-fig14" class="quarto-xref">Figure&nbsp;12</a>). <strong>asinto$TD_asy</strong> es la diversidad asintótica estimada, <strong>asinto$TD_obs</strong> es la diversidad observada u obtenida en campo</p>
+<p>A continuación se crea la columna de taxones sin detectar y se asigna como sin.det. Esta columna es el resultado de la diferencia entre la diversidad estimada (TD_asy) y la diversidad observada (TD_obs), lo cual permitirá conocer si las muestras son completas (sus pendientes se vuelven asintóticas o se estabilizan o por el contrario no son asintóticas por haber taxones sin detectar hasta en el doble de su proyección, ver <a href="#fig-fig14" class="quarto-xref">Figura&nbsp;12</a>). <strong>asinto$TD_asy</strong> es la diversidad asintótica estimada, <strong>asinto$TD_obs</strong> es la diversidad observada u obtenida en campo</p>
 <p>Nota: En caso que los nombres de los insumos hayan cambiado, se requiere usar el comando <strong>names</strong>, para encontrarlos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(asinto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(asinto)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nueva columna de la tabla, titulada "sin.det"</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>asinto <span class="ot">&lt;-</span> </span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>asinto <span class="sc">%&gt;%</span> </span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sin.det =</span> <span class="fu">round</span>(TD_asy <span class="sc">-</span> TD_obs))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sin.det =</span> <span class="fu">round</span>(TD_asy <span class="sc">-</span> TD_obs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>La <a href="#tbl-tbl16" class="quarto-xref">Table&nbsp;14</a> es editada para que los nombres de las columnas estén en español y se incluya la columna de taxones sin detectar (Sin.Det). <strong>asinto$qTD</strong> son los tres ordenes de diversidad q=0 o Riqueza de taxones, q=1 o diversidad de Shannnon (e^H) y q=2 o diveridad de Simpson (1/Simpson), <strong>asinto$TD_asy</strong> es la diversidad asintótica estimada, <strong>asinto$TD_obs</strong> es la diversidad observada u obtenida en campo, <strong>asinto$sin.det</strong> son los taxones no detectados por cada órden de diversidad.</p>
+<p>La <a href="#tbl-tbl16" class="quarto-xref">Tabla&nbsp;14</a> es editada para que los nombres de las columnas estén en español y se incluya la columna de taxones sin detectar (Sin.Det). <strong>asinto$qTD</strong> son los tres ordenes de diversidad q=0 o Riqueza de taxones, q=1 o diversidad de Shannnon (e^H) y q=2 o diveridad de Simpson (1/Simpson), <strong>asinto$TD_asy</strong> es la diversidad asintótica estimada, <strong>asinto$TD_obs</strong> es la diversidad observada u obtenida en campo, <strong>asinto$sin.det</strong> son los taxones no detectados por cada órden de diversidad.</p>
 <p><strong>Nota:</strong> En caso que se requiera realizar algún ajuste en el siguiente comando, habrá que volver a correr todo el paso 2.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Edición de la tabla al español</span></span>
@@ -2953,11 +3002,11 @@ Table&nbsp;13: Perfil de completitud entre los sitios evaluados
 <span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
 <span id="cb39-18"><a href="#cb39-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>) </span>
 <span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Algunas versiones de iNEXT requieren este comando:</span></span>
-<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate(sin.det = round(Taxonomic.Estimator - Taxonomic.Observed))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate(sin.det = round(Taxonomic.Estimator - Taxonomic.Observed))</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl16" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;14: Perfil asintótico entre los sitios evaluados
+Tabla&nbsp;14: Perfil asintótico entre los sitios evaluados
 </figcaption>
 <div aria-describedby="tbl-tbl16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -3048,16 +3097,16 @@ Table&nbsp;14: Perfil asintótico entre los sitios evaluados
 </section>
 <section id="c.-paso-3.-perfil-no-asintótico" class="level5">
 <h5 class="anchored" data-anchor-id="c.-paso-3.-perfil-no-asintótico">c.&nbsp;Paso 3. Perfil no asintótico</h5>
-<p>El <strong>análisis no asintótico</strong>, compara a los paisajes con una cobertura similar de 0.974, definiendo a pozo Azul como la localidad de mayor diversidad, seguida de Caracolí y de Arimaca (<a href="#tbl-tbl17" class="quarto-xref">Table&nbsp;15</a>).</p>
+<p>El <strong>análisis no asintótico</strong>, compara a los paisajes con una cobertura similar de 0.974, definiendo a pozo Azul como la localidad de mayor diversidad, seguida de Caracolí y de Arimaca (<a href="#tbl-tbl17" class="quarto-xref">Tabla&nbsp;15</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 3. Perfil no asintótico basado en interpolación y extrapolación</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP 3. Non-asymptotic coverage-based rarefaction and extrapolation analysis"</span> <span class="sc">%&gt;%</span></span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl17" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;15: Perfil no asintótico para los tres sitios evaluados
+Tabla&nbsp;15: Perfil no asintótico para los tres sitios evaluados
 </figcaption>
 <div aria-describedby="tbl-tbl17-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -3102,17 +3151,17 @@ Table&nbsp;15: Perfil no asintótico para los tres sitios evaluados
 </section>
 <section id="d.-paso-4.-uniformidad" class="level5">
 <h5 class="anchored" data-anchor-id="d.-paso-4.-uniformidad">d.&nbsp;Paso 4. Uniformidad</h5>
-<p>El <strong>patrón de uniformidad</strong> es elevada y muy similar entre las localidades (<a href="#tbl-tbl18" class="quarto-xref">Table&nbsp;16</a>).</p>
+<p>El <strong>patrón de uniformidad</strong> es elevada y muy similar entre las localidades (<a href="#tbl-tbl18" class="quarto-xref">Tabla&nbsp;16</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 4. Perfil de uniformidad</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 4. Perfil de uniformidad</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>summary<span class="sc">$</span><span class="st">"STEP 4. Evenness among species Abundancias of orders q = 1 and 2 at Cmax based on the normalized slope of a diversity profile"</span> <span class="sc">%&gt;%</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kbl</span>(<span class="at">caption =</span> <span class="st">""</span>, <span class="at">booktabs =</span> F,<span class="at">longtable =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F, <span class="at">html_font =</span> <span class="st">"Cambria"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-tbl18" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tbl18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
+Tabla&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
 </figcaption>
 <div aria-describedby="tbl-tbl18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
@@ -3142,7 +3191,7 @@ Table&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
 <span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Intervalos del eje</span></span>
 <span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Orden q"</span>, <span class="at">y=</span><span class="st">"Completitud de la muestra"</span>, </span>
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Paso 1. </span><span class="sc">\n</span><span class="st">Perfil de Completitud"</span>) <span class="sc">+</span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3152,13 +3201,13 @@ Table&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Líneas verticales resaltando cada orden q (capa adicional)</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_vline(xintercept = c(1,2), </span></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">#             color = "gray", linetype = "dotted")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co">#             color = "gray", linetype = "dotted")</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 </section>
 <section id="figuras-del-perfil-asintótico-paso-2" class="level5">
 <h5 class="anchored" data-anchor-id="figuras-del-perfil-asintótico-paso-2">2. Figuras del perfil asintótico (paso 2)</h5>
-<p>La <strong>curva de rarefacción y extrapolación</strong>, muestra que en pozo Azul se presenta mayor riqueza de taxones (q=0) y taxones abundantes (q=1) y muy abundantes o dominantes (q=2), pero las tres muestras no se estabilizan en q=0 ni proyectandose al doble de la abundancia observada (líneas punteadas), lo cual reafirma el requerimiento de un mayor esfuerzo de muestreo para poder detectar un mayor número de taxones en cada localidad (<a href="#fig-fig14" class="quarto-xref">Figure&nbsp;12</a>).</p>
+<p>La <strong>curva de rarefacción y extrapolación</strong>, muestra que en pozo Azul se presenta mayor riqueza de taxones (q=0) y taxones abundantes (q=1) y muy abundantes o dominantes (q=2), pero las tres muestras no se estabilizan en q=0 ni proyectandose al doble de la abundancia observada (líneas punteadas), lo cual reafirma el requerimiento de un mayor esfuerzo de muestreo para poder detectar un mayor número de taxones en cada localidad (<a href="#fig-fig14" class="quarto-xref">Figura&nbsp;12</a>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 2.1. Figura del tamaño basado en rarefacción / extrapolación</span></span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>figure[[<span class="dv">2</span>]]<span class="sc">+</span></span>
@@ -3166,7 +3215,7 @@ Table&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
 <span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Paso 2.1. </span><span class="sc">\n</span><span class="st">Tamaño basado en Rarefacción/Extrapolación"</span>) <span class="sc">+</span></span>
 <span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="st">""</span>,<span class="at">values =</span>  <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),</span>
 <span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>                        <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Rarefacción"</span>,<span class="st">"Extrapolación"</span>)) <span class="sc">+</span></span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig14" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3174,7 +3223,7 @@ Table&nbsp;16: Perfil de uniformidad para los tres sitios evaluados
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig14-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;12: Perfil de rarefacción y extrapolación por sitios
+Figura&nbsp;12: Perfil de rarefacción y extrapolación por sitios
 </figcaption>
 </figure>
 </div>
@@ -3184,14 +3233,14 @@ Figure&nbsp;12: Perfil de rarefacción y extrapolación por sitios
 </section>
 <section id="figuras-del-perfil-no-asintótico-paso-3" class="level5">
 <h5 class="anchored" data-anchor-id="figuras-del-perfil-no-asintótico-paso-3">3. Figuras del perfil no asintótico (paso 3)</h5>
-<p>Estas curvas complementan al <strong>perfil no asintótico</strong> relacionado en la <a href="#tbl-tbl17" class="quarto-xref">Table&nbsp;15</a>. Se observa que todas alcanzan la cobertura máxima de 1 (eje x de <a href="#fig-fig15" class="quarto-xref">Figure&nbsp;13</a>) y que hay pocas diferencias apreciables entre la diversiad de cada sitio comparado.</p>
+<p>Estas curvas complementan al <strong>perfil no asintótico</strong> relacionado en la <a href="#tbl-tbl17" class="quarto-xref">Tabla&nbsp;15</a>. Se observa que todas alcanzan la cobertura máxima de 1 (eje x de <a href="#fig-fig15" class="quarto-xref">Figura&nbsp;13</a>) y que hay pocas diferencias apreciables entre la diversiad de cada sitio comparado.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 3. Figura del perfil no asintótico basado en rarefacción/extrapolación</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>result1<span class="sc">$</span>figure[[<span class="dv">4</span>]]<span class="sc">+</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Cobertura de los sitios"</span>, <span class="at">y=</span><span class="st">"Diversidad de taxones"</span>, </span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Paso 3. </span><span class="sc">\n</span><span class="st">Perfil de cobertura basado en Rarefacción/Extrapolación"</span>) <span class="sc">+</span></span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="st">""</span>,<span class="at">values =</span>  <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>),<span class="at">labels=</span><span class="fu">c</span>(<span class="st">"Rarefacción"</span>,<span class="st">"Extrapolación"</span>)) <span class="sc">+</span></span>
-<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-fig15" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -3199,7 +3248,7 @@ Figure&nbsp;12: Perfil de rarefacción y extrapolación por sitios
 <img src="Taller9.Diversidad.alfa_files/figure-html/fig-fig15-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-fig15-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;13: Perfil de diversidad no asintótico para los sitios evaluados
+Figura&nbsp;13: Perfil de diversidad no asintótico para los sitios evaluados
 </figcaption>
 </figure>
 </div>
@@ -3217,7 +3266,7 @@ Figure&nbsp;13: Perfil de diversidad no asintótico para los sitios evaluados
 <span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">2</span>, <span class="at">by =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># Intervalos del eje</span></span>
 <span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">"Orden q"</span>, <span class="at">y=</span><span class="st">"Uniformidad"</span>, </span>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Paso 4. </span><span class="sc">\n</span><span class="st">Perfil de Uniformidad"</span>) <span class="sc">+</span></span>
-<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">panel.grid=</span><span class="fu">element_blank</span>())</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -3227,16 +3276,14 @@ Figure&nbsp;13: Perfil de diversidad no asintótico para los sitios evaluados
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Líneas verticales resaltando cada orden q (capa adicional)</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># geom_vline(xintercept = c(1,2), </span></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#             color = "gray", linetype = "dotted")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co">#             color = "gray", linetype = "dotted")</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
-<p><b style="color:#fc8d62;"></b></p><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b></section><b style="color:#fc8d62;">
-</b><section id="taller-para-la-casa" class="level3"><b style="color:#fc8d62;">
+</section>
+</section>
+</section>
+<section id="taller-para-la-casa" class="level3">
 <h3 class="anchored" data-anchor-id="taller-para-la-casa">Taller para la casa</h3>
-</b><p><b style="color:#fc8d62;"></b></p>
 <ol type="1">
 <li>Con los <strong>datos tabulados de campo</strong> realizar los procedimiento para la exploración gráfica de relaciones, diferencias entre sitios y microhábitats, así como el análisis de diversidad alfa realizado en este taller.</li>
 <li>Inluir en el análisis el cálculo de los <strong>modelos de rango - riqueza - abundancia (RAD)</strong> del taller 8 en el siguiente <a href="#0">ENLACE</a> y analizar los resultados.</li>
@@ -3244,7 +3291,6 @@ Figure&nbsp;13: Perfil de diversidad no asintótico para los sitios evaluados
 <li>Realizar el resto de procedimientos descritos en la <strong>guía de campo</strong> (<a href="https://javier-2712.github.io/Manuales/6.Manual_eco1/Salida.campo.eco1.html">ENLACE</a>).</li>
 </ol>
 <hr>
-</section>
 </section>
 </section>
 
@@ -3293,12 +3339,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
